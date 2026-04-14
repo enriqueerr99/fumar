@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUMAR - Respira sin pánico</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, #0f0f0f 0%, #1a0a0a 50%, #2a0a0a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(200, 20, 20, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            filter: blur(40px);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(100, 0, 0, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(50, 50, 100, 0.05) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 40px;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            animation: fadeInUp 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .hero h1 .highlight {
+            color: #ff5555;
+            display: block;
+            margin-top: 20px;
+            background: linear-gradient(135deg, #ff5555 0%, #ff8888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+            color: #a8a8a8;
+            margin-bottom: 60px;
+            font-weight: 400;
+            animation: fadeInUp 1.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            line-height: 1.6;
+        }
+
+        .cta-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            animation: fadeIn 1.8s ease-out;
+            font-weight: 600;
+        }
+
+        /* Sections */
+        .section {
+            padding: 100px 40px;
+            max-width: 950px;
+            margin: 0 auto;
+            position: relative;
+            opacity: 0;
+        }
+
+        .section.visible {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .section h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            margin-bottom: 40px;
+            color: #ffffff;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section h2::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #ff5555, transparent);
+            opacity: 0;
+            animation: slideInWidth 0.8s ease-out 0.2s forwards;
+        }
+
+        .section-content {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: #c0c0c0;
+            white-space: pre-line;
+        }
+
+        /* Section Backgrounds - subtle gradients */
+        .section-1 {
+            background: linear-gradient(180deg, transparent 0%, rgba(50, 10, 10, 0.15) 100%);
+        }
+
+        .section-2 {
+            background: linear-gradient(180deg, transparent 0%, rgba(30, 30, 50, 0.15) 100%);
+        }
+
+        .section-3 {
+            background: linear-gradient(180deg, rgba(50, 10, 10, 0.1) 0%, transparent 100%);
+        }
+
+        .section-4 {
+            background: linear-gradient(180deg, rgba(30, 30, 50, 0.1) 0%, transparent 100%);
+        }
+
+        /* Pain indicators */
+        .pain-point {
+            background: linear-gradient(135deg, rgba(100, 10, 10, 0.15) 0%, rgba(80, 20, 20, 0.05) 100%);
+            border-left: 4px solid #ff5555;
+            padding: 24px;
+            margin: 24px 0;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pain-point::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, #ff5555 0%, transparent 100%);
+            opacity: 0.3;
+        }
+
+        .pain-point:hover {
+            background: linear-gradient(135deg, rgba(120, 20, 20, 0.2) 0%, rgba(100, 30, 30, 0.1) 100%);
+            padding-left: 28px;
+        }
+
+        .pain-point strong {
+            color: #ff7777;
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .pain-point strong::before {
+            opacity: 0.7;
+        }
+
+        /* Pre-Quiz Section */
+        .pre-quiz {
+            padding: 120px 40px;
+            max-width: 950px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, rgba(50, 10, 10, 0.2) 0%, rgba(30, 30, 50, 0.2) 100%);
+            border-radius: 12px;
+            margin: 60px auto;
+        }
+
+        .pre-quiz::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ff5555, transparent);
+            opacity: 0.3;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .pre-quiz h3 {
+            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+            margin-bottom: 30px;
+            color: #ffffff;
+            line-height: 1.5;
+            font-weight: 800;
+        }
+
+        .pre-quiz p {
+            font-size: 1.1rem;
+            color: #a0a0a0;
+            margin-top: 25px;
+            font-weight: 400;
+        }
+
+        .pre-quiz p strong {
+            color: #ff7777;
+            font-weight: 700;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            background: linear-gradient(135deg, #ff5555 0%, #dd1111 100%);
+            color: #ffffff;
+            border: none;
+            padding: 18px 50px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 50px auto 0;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 15px 40px rgba(255, 85, 85, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 50px rgba(255, 85, 85, 0.35);
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:active {
+            transform: translateY(-1px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInWidth {
+            from {
+                width: 0;
+                opacity: 0;
+            }
+            to {
+                width: 60px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 24px;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+                margin-bottom: 30px;
+            }
+
+            .section-content {
+                font-size: 1rem;
+                line-height: 1.7;
+            }
+
+            .pain-point {
+                padding: 20px;
+                margin: 18px 0;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+                margin-bottom: 25px;
+            }
+
+            .hero h1 .highlight {
+                margin-top: 15px;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 40px;
+            }
+
+            .cta-button {
+                padding: 14px 35px;
+                font-size: 0.95rem;
+                width: 90%;
+                max-width: 400px;
+            }
+
+            .pre-quiz {
+                padding: 80px 24px;
+                border-radius: 8px;
+            }
+
+            .pre-quiz h3 {
+                font-size: 1.3rem;
+                margin-bottom: 20px;
+            }
+
+            .pre-quiz p {
+                font-size: 1rem;
+            }
+
+            .hero {
+                padding: 40px 20px;
+            }
+
+            .hero-content {
+                padding: 0 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                padding: 50px 16px;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .cta-label {
+                font-size: 0.75rem;
+            }
+        }
+
+        .cta-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>
+                Fumas cuando te ahoga la ansiedad.
+                <span class="highlight">No porque ames fumar.</span>
+            </h1>
+            <p class="hero-subtitle">Porque es la única forma que conoces para respirar.</p>
+
+            <div class="cta-label">Responde 4 preguntas</div>
+            <p class="hero-subtitle" style="font-size: 1rem; margin-top: -20px; color: #888;">Descubre por qué fumas de verdad</p>
+        </div>
+    </section>
+
+    <!-- Section 1: The Vicious Cycle -->
+    <section class="section section-1 reveal">
+        <h2>🔥 El Ciclo Maldito</h2>
+        <div class="section-content">
+Estrés → Ansiedad → Fumo → Alivio temporal → Culpa → Estrés
+
+Y así 50 veces al día.
+
+Cada cigarrillo es un intento de respirar.
+De calmarte.
+De que la ansiedad suelte.
+
+La nicotina tiene nada que ver.
+Ni siquiera la querías hace 5 años.
+
+La buscas porque es la <strong>ÚNICA HERRAMIENTA</strong> que tu cerebro aprendió
+para bajar la ansiedad cuando está desbordada.
+        </div>
+    </section>
+
+    <!-- Section 2: Failed Attempts -->
+    <section class="section section-2 reveal">
+        <h2>❌ Los Intentos Fallidos</h2>
+        <div class="section-content">
+<strong>Has probado TODO:</strong>
+
+<div class="pain-point">
+<strong>✗ Fuerza de voluntad pura</strong>
+Duraste 3 días antes de que la ansiedad te aplastara
+</div>
+
+<div class="pain-point">
+<strong>✗ Parches de nicotina</strong>
+Bajó la ansiedad en 0. Seguías fumando porque la nicotina no era el problema
+</div>
+
+<div class="pain-point">
+<strong>✗ Apps de tracking ("Día 5 sin fumar!")</strong>
+Motivante por 1 semana. Luego la ansiedad vuelve y la app no hace nada
+</div>
+
+<div class="pain-point">
+<strong>✗ Decirle a otros que dejabas</strong>
+Duró 2 semanas. Luego les mentiste
+</div>
+
+<div class="pain-point">
+<strong>✗ Promesas a tu pareja/familia</strong>
+Cumpliste 10 días. Luego volviste
+</div>
+
+<strong style="display: block; margin-top: 30px; color: #ff6666;">¿Por qué NADA funcionó?</strong>
+
+Porque todos atacaban el SÍNTOMA (la nicotina).
+Nadie atacaba la RAÍZ (tu ansiedad condicionada).
+
+Tu cerebro no aprendió a no fumar.
+Aprendió que fumar = calma la ansiedad.
+
+Hasta que aprendas a calmar la ansiedad SIN fumar,
+volverás a fumar.
+
+<strong>Siempre.</strong>
+        </div>
+    </section>
+
+    <!-- Section 3: The Real Cost -->
+    <section class="section section-3 reveal">
+        <h2>💔 El Costo Real</h2>
+        <div class="section-content">
+€6.000/año en cigarrillos.
+
+Pero el verdadero costo es:
+
+<div class="pain-point">
+<strong>💔 Tu salud mental</strong>
+Empeorando. Fumar aumenta ansiedad a largo plazo
+</div>
+
+<div class="pain-point">
+<strong>💔 Tu autoestima</strong>
+Por el suelo. Dijiste que dejarías. Fallaste 5 veces. ¿Qué más promesas rompes?
+</div>
+
+<div class="pain-point">
+<strong>💔 Tus relaciones</strong>
+Tensas. Pareja/familia/amigos = cansados de tus recaídas
+</div>
+
+<div class="pain-point">
+<strong>💔 Tu libertad</strong>
+Inexistente. No puedes ir a un restaurante sin ansiedad. No puedes estar 2 horas sin fumar
+</div>
+
+<div class="pain-point">
+<strong>💔 Tu cuerpo</strong>
+Pidiendo ayuda. Tos. Cansancio. Piel. Dientes. Huele.
+</div>
+
+<strong style="display: block; margin-top: 30px; color: #ff6666;">Todo esto no por falta de voluntad.</strong>
+Por no saber cómo tratar la ansiedad.
+        </div>
+    </section>
+
+    <!-- Section 4: The Moment of Truth -->
+    <section class="section section-4 reveal">
+        <h2>⚡ El Momento de Verdad</h2>
+        <div class="section-content">
+Hoy estás aquí.
+
+Significa que:
+
+✓ Ya no crees que es por nicotina
+✓ Ya reconoces que es ansiedad
+✓ Ya sabes que intentar más "fuerza de voluntad" es basura
+✓ Estás buscando REALMENTE una solución
+
+Bien.
+
+Porque ahora viene lo importante.
+
+No vamos a hablarte de dejar de fumar.
+Vamos a hablarte de respirar sin pánico.
+De vivir tranquilo.
+De que la ansiedad DEJE DE CONTROLARTE.
+
+Pero primero, necesito saber QUIÉN ERES.
+Porque el dolor de cada fumador es diferente.
+
+Para algunos, es el control (necesitan recuperar poder).
+Para otros, es la familia (necesitan ser la persona que sus hijos necesitan).
+Para otros, es el dinero (necesitan dejar de quemar €6.000/año).
+Para otros, es la ansiedad pura (necesitan respirar sin pánico).
+
+Responde 4 preguntas.
+Sin obligación. Sin venta. Solo preguntas.
+
+Después sabremos EXACTAMENTE qué necesitas.
+        </div>
+    </section>
+
+    <!-- Pre-Quiz Section -->
+    <section class="pre-quiz reveal">
+        <h3>
+            Antes de que sigas leyendo, necesito hacerte una pregunta:
+            <br><br>
+            <strong style="color: #ff6666;">¿Quieres seguir fumando cuando estés ansioso?</strong>
+        </h3>
+        <p>Si la respuesta es NO...</p>
+        <p>Responde estas 4 preguntas.</p>
+        <p style="margin-top: 20px; color: #ff6666;">Te va a doler un poco.<br>Pero necesita doler para que cambies.</p>
+
+        <button class="cta-button" onclick="goToQuiz()">
+            Responder 4 Preguntas
+        </button>
+    </section>
+
+    <script>
+        // Scroll reveal animations
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Check on load
+
+        // CTA Button functionality
+        function goToQuiz() {
+            // Placeholder for quiz navigation
+            // In production, this would navigate to the quiz page
+            console.log('Quiz button clicked');
+            // window.location.href = '/quiz';
+            alert('Quiz coming soon. This is where the 4 questions would appear.');
+        }
+
+        // Smooth scroll for internal links (if needed)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
