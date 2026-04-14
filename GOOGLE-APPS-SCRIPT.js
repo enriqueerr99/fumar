@@ -4,7 +4,7 @@
 // ============================================
 
 const SHEET_ID = "1zFGo1AsoQstAP_iyhg1fVQ-hYeRH63bnbMRIjyX2WnA";
-const SHEET_NAME = "Hoja1"; // Cambia si tu hoja tiene otro nombre
+const SHEET_NAME = "FUMAR-Leads"; // Cambia si tu hoja tiene otro nombre
 
 function doPost(e) {
   try {
@@ -12,7 +12,19 @@ function doPost(e) {
     const data = JSON.parse(e.postData.contents);
 
     // Abrir el Google Sheet
-    const sheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName(SHEET_NAME);
+    const spreadsheet = SpreadsheetApp.openById(SHEET_ID);
+
+    // Obtener todas las hojas disponibles
+    const allSheets = spreadsheet.getSheets();
+    let sheet = null;
+
+    // Intentar obtener la hoja por nombre
+    try {
+      sheet = spreadsheet.getSheetByName(SHEET_NAME);
+    } catch (e) {
+      // Si no existe, intentar con la primera hoja
+      sheet = allSheets[0];
+    }
 
     // Obtener la próxima fila disponible
     const lastRow = sheet.getLastRow();
@@ -33,14 +45,16 @@ function doPost(e) {
     // Retornar respuesta exitosa
     return ContentService.createTextOutput(JSON.stringify({
       success: true,
-      message: "Datos guardados correctamente"
+      message: "Datos guardados correctamente",
+      row: newRow
     })).setMimeType(ContentService.MimeType.JSON);
 
   } catch (error) {
-    // Retornar error si algo falla
+    // Retornar error si algo falla (con más detalles para debugging)
     return ContentService.createTextOutput(JSON.stringify({
       success: false,
-      error: error.toString()
+      error: error.toString(),
+      message: error.message
     })).setMimeType(ContentService.MimeType.JSON);
   }
 }

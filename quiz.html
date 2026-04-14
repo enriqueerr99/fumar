@@ -801,31 +801,32 @@
 
             try {
                 // Send to Google Sheets via Apps Script
-                const response = await fetch('https://script.google.com/macros/s/AKfycbyDlgnTK__T8sAgbGrxhHNB5oqmNlHI2hDaE617qQEtrJWoirgGm5vDtbNa8fSgPaZx/exec', {
+                const payload = {
+                    nombre: nombre,
+                    email: email,
+                    telefono: telefono,
+                    persona: currentPersona,
+                    respuestas: selectedAnswers
+                };
+
+                console.log('Enviando datos:', payload);
+
+                const response = await fetch('https://script.google.com/macros/s/AKfycbzSXC6DCMYGzNL2DLSS08bxeHwAaucg1oS-ngGdesuZxyrX6mw8qN3DJdtVN1xIju1C/exec', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        nombre: nombre,
-                        email: email,
-                        telefono: telefono,
-                        persona: currentPersona,
-                        respuestas: selectedAnswers,
-                        fecha: new Date().toISOString()
-                    })
+                    body: JSON.stringify(payload),
+                    mode: 'no-cors'
                 });
 
-                if (response.ok) {
-                    showSuccess(nombre);
-                } else {
-                    throw new Error('Error en la respuesta del servidor');
-                }
+                // With no-cors, we can't check response.ok or read response body
+                // So we'll consider it successful if fetch completes
+                console.log('Respuesta recibida, mostrando resultados...');
+                showSuccess(nombre);
+
             } catch (error) {
-                console.error('Error:', error);
+                console.error('Error al enviar:', error);
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Enviar datos →';
-                alert('Hubo un error al enviar los datos. Por favor intenta de nuevo.');
+                alert('Hubo un error al enviar los datos. Por favor intenta de nuevo.\n\nDetalle: ' + error.message);
             }
         }
 
