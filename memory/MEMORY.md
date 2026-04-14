@@ -1,0 +1,1 @@
+- [Proyecto Dejar de Fumar](project_fumar.md) — Protocolo 12 sem, €299, quiz de 4 personas, modelo SOMA-like
