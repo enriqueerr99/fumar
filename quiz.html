@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Descubre tu tipo de fumador | FUMAR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #0f0f1e 50%, #1a0a15 100%);
+            color: #e0e0e0;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(200, 30, 30, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(100, 50, 150, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            margin-bottom: 50px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 3px;
+            background: rgba(100, 100, 100, 0.2);
+            border-radius: 50px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff5555 0%, #ff8888 100%);
+            border-radius: 50px;
+            transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .progress-text {
+            font-size: 0.9rem;
+            color: #888;
+            text-align: right;
+        }
+
+        /* Questions Container */
+        .quiz-container {
+            background: linear-gradient(135deg, rgba(40, 10, 10, 0.3) 0%, rgba(30, 30, 50, 0.2) 100%);
+            border: 1px solid rgba(255, 85, 85, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .question {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+
+        .question h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            font-weight: 800;
+            margin-bottom: 40px;
+            color: #ffffff;
+            line-height: 1.3;
+        }
+
+        .question-number {
+            font-size: 0.9rem;
+            color: #ff7777;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        /* Options */
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .option {
+            background: linear-gradient(135deg, rgba(100, 10, 10, 0.1) 0%, rgba(80, 20, 20, 0.05) 100%);
+            border: 2px solid rgba(255, 85, 85, 0.2);
+            border-radius: 12px;
+            padding: 18px 24px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-size: 1.05rem;
+            color: #c0c0c0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .option:hover {
+            background: linear-gradient(135deg, rgba(120, 20, 20, 0.2) 0%, rgba(100, 30, 30, 0.1) 100%);
+            border-color: rgba(255, 85, 85, 0.4);
+            padding-left: 28px;
+        }
+
+        .option.selected {
+            background: linear-gradient(135deg, rgba(255, 85, 85, 0.3) 0%, rgba(255, 136, 136, 0.1) 100%);
+            border-color: #ff5555;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .option::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+            border: 2px solid #ff7777;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .option.selected::before {
+            background: #ff5555;
+            border-color: #ff5555;
+            box-shadow: inset 0 0 0 4px rgba(255, 85, 85, 0.3);
+        }
+
+        /* Multiple Choice */
+        .multi-select-info {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        /* Buttons */
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+            justify-content: space-between;
+        }
+
+        button {
+            font-family: 'Poppins', sans-serif;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .btn-back {
+            background: rgba(100, 100, 100, 0.2);
+            color: #a0a0a0;
+            border: 1px solid rgba(100, 100, 100, 0.3);
+        }
+
+        .btn-back:hover {
+            background: rgba(100, 100, 100, 0.3);
+            color: #c0c0c0;
+        }
+
+        .btn-next {
+            background: linear-gradient(135deg, #ff5555 0%, #cc2222 100%);
+            color: #ffffff;
+            box-shadow: 0 15px 40px rgba(255, 85, 85, 0.3);
+            flex: 1;
+        }
+
+        .btn-next:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 25px 50px rgba(255, 85, 85, 0.4);
+        }
+
+        .btn-next:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Results Screen */
+        .results-container {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out forwards;
+            text-align: center;
+        }
+
+        .results-container.hidden {
+            display: none;
+        }
+
+        .result-icon {
+            font-size: 80px;
+            margin-bottom: 30px;
+            animation: floatUp 3s ease-in-out infinite;
+        }
+
+        .result-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ff5555 0%, #ff8888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .result-description {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, rgba(100, 10, 10, 0.15) 0%, rgba(80, 20, 20, 0.05) 100%);
+            border: 1px solid rgba(255, 85, 85, 0.2);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .result-box h3 {
+            color: #ff7777;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .result-box p {
+            color: #c0c0c0;
+            line-height: 1.7;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floatUp {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 16px;
+            }
+
+            .quiz-container {
+                padding: 30px 20px;
+                min-height: 300px;
+            }
+
+            .question h2 {
+                font-size: 1.6rem;
+                margin-bottom: 30px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn-back {
+                display: none;
+            }
+
+            .option {
+                padding: 16px 20px;
+            }
+
+            .result-title {
+                font-size: 1.8rem;
+            }
+
+            .result-description {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Quiz -->
+        <div id="quiz" class="quiz-container">
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text" id="progressText">1 / 13</div>
+            </div>
+
+            <div class="question" id="question">
+                <div class="question-number" id="questionNumber">Pregunta 1</div>
+                <h2 id="questionText"></h2>
+                <div id="multiInfo" class="multi-select-info"></div>
+                <div class="options" id="options"></div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn-back" id="backBtn" onclick="previousQuestion()">← Atrás</button>
+                <button class="btn-next" id="nextBtn" onclick="nextQuestion()" disabled>Siguiente →</button>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div id="results" class="results-container hidden">
+            <div class="result-icon" id="resultIcon"></div>
+            <h2 class="result-title" id="resultTitle"></h2>
+            <p class="result-description" id="resultMessage"></p>
+
+            <div class="result-box">
+                <h3>Tu tipo de fumador:</h3>
+                <p id="resultType"></p>
+            </div>
+
+            <div class="result-box">
+                <h3>Tu estrategia personalizada:</h3>
+                <p id="resultStrategy"></p>
+            </div>
+
+            <button class="btn-next" onclick="goToForm()" style="margin-top: 30px; width: 100%;">
+                Continuar a formulario →
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Quiz data
+        const questions = [
+            {
+                id: 1,
+                text: "¿Cuántos años llevas fumando?",
+                type: "single",
+                options: [
+                    "Menos de 1 año",
+                    "1-5 años",
+                    "5-10 años",
+                    "10-20 años",
+                    "Más de 20 años"
+                ]
+            },
+            {
+                id: 2,
+                text: "¿Cuánto fumas al día?",
+                type: "single",
+                options: [
+                    "Menos de 5 cigarrillos",
+                    "5-10 cigarrillos",
+                    "10-20 cigarrillos",
+                    "20-40 cigarrillos",
+                    "Más de 40 cigarrillos"
+                ]
+            },
+            {
+                id: 3,
+                text: "¿Cuánto gastas aproximadamente al mes en tabaco?",
+                type: "single",
+                options: [
+                    "Menos de €50",
+                    "€50-100",
+                    "€100-200",
+                    "€200-300",
+                    "Más de €300"
+                ]
+            },
+            {
+                id: 4,
+                text: "¿En qué momento tu cuerpo te pide más fumar?",
+                type: "single",
+                options: [
+                    "Por la mañana (al despertar)",
+                    "Después de comer",
+                    "En momentos de estrés/ansiedad",
+                    "En situaciones sociales",
+                    "Cuando me aburro/no tengo nada que hacer"
+                ]
+            },
+            {
+                id: 5,
+                text: "¿Por qué quieres dejar de fumar?",
+                type: "multi",
+                options: [
+                    "Recuperar control de mi vida/mente",
+                    "Dinero (gastar menos)",
+                    "Salud física (pulmones, corazón)",
+                    "Por mi familia/pareja/hijos",
+                    "Reducir mi ansiedad/estrés",
+                    "Mejorar mi autoestima"
+                ]
+            },
+            {
+                id: 6,
+                text: "¿Qué es lo que más te duele de seguir fumando?",
+                type: "single",
+                options: [
+                    "Me siento débil/sin control",
+                    "El gasto de dinero",
+                    "Mi salud se deteriora",
+                    "La preocupación de mi familia",
+                    "Mi ansiedad aumenta en lugar de disminuir",
+                    "Me siento atrapado en un círculo vicioso"
+                ]
+            },
+            {
+                id: 7,
+                text: "¿Cómo es tu ansiedad/estrés actual en general?",
+                type: "single",
+                options: [
+                    "Baja (manejo bien el estrés)",
+                    "Media (tengo estrés ocasional)",
+                    "Alta (estrés frecuente)",
+                    "Muy alta (estrés constante, afecta mi vida)"
+                ]
+            },
+            {
+                id: 8,
+                text: "¿Has probado a dejar de fumar antes?",
+                type: "single",
+                options: [
+                    "No, es mi primer intento",
+                    "Sí, 1-2 veces",
+                    "Sí, 3-5 veces",
+                    "Sí, más de 5 veces"
+                ]
+            },
+            {
+                id: 9,
+                text: "Si has intentado antes, ¿por qué no pudiste dejarlo?",
+                type: "single",
+                options: [
+                    "Sin apoyo/solo",
+                    "Sin un plan claro",
+                    "Recaída por estrés/ansiedad",
+                    "Falta de sustituto/distracción",
+                    "Falta de motivación/razón fuerte",
+                    "Síntomas de abstinencia muy fuertes",
+                    "No aplica (primer intento)"
+                ]
+            },
+            {
+                id: 10,
+                text: "¿Qué te asusta más de dejar de fumar?",
+                type: "single",
+                options: [
+                    "No poder hacerlo (fallar de nuevo)",
+                    "La ansiedad que sentiré",
+                    "Perder una 'costumbre' que controla mi día",
+                    "Que mi círculo me vea de manera diferente",
+                    "Nada me asusta (estoy decidido)"
+                ]
+            },
+            {
+                id: 11,
+                text: "Tu pareja/familia, ¿sabe que quieres dejar de fumar?",
+                type: "single",
+                options: [
+                    "No, nadie lo sabe",
+                    "Sí, pero no me apoyan mucho",
+                    "Sí, me apoyan moderadamente",
+                    "Sí, me apoyan activamente / Me lo han pedido"
+                ]
+            },
+            {
+                id: 12,
+                text: "¿Cuánto pueden ayudarte tu círculo cercano a que dejes de fumar?",
+                type: "single",
+                options: [
+                    "Poco o nada (estoy solo/a en esto)",
+                    "Algo de apoyo",
+                    "Bastante apoyo",
+                    "Apoyo muy fuerte (es importante para ellos)"
+                ]
+            },
+            {
+                id: 13,
+                text: "En una escala del 1-10, ¿cuánto de determinado estás a dejar de fumar ESTA VEZ?",
+                type: "single",
+                options: [
+                    "1-3 (poco determinado)",
+                    "4-5 (medianamente determinado)",
+                    "6-7 (bastante determinado)",
+                    "8-9 (muy determinado)",
+                    "10 (totalmente decidido)"
+                ]
+            }
+        ];
+
+        const personas = {
+            controlador: {
+                title: "El Controlador",
+                icon: "🎯",
+                description: "Tu principal motivación es recuperar el control de tu mente y tu vida. Necesitas sentir que tienes poder sobre tus decisiones.",
+                type: "Necesitas recuperar el CONTROL.",
+                strategy: "Tu protocolo se enfoca en técnicas de autorregulación mental, meditación y visualización. Te damos herramientas concretas para que sientas que dominas tu mente, no al revés."
+            },
+            familiar: {
+                title: "El Familiar",
+                icon: "❤️",
+                description: "Tu motivación principal es tu familia, pareja o hijos. Quieres ser la versión mejor de ti mismo para los que amas.",
+                type: "Necesitas ser la mejor versión para tu familia.",
+                strategy: "Tu protocolo incluye sesiones de coaching sobre cómo comunicar tu cambio a tu familia y cómo usarlos como sistema de apoyo. La comunidad será tu red de accountability."
+            },
+            racional: {
+                title: "El Racional",
+                icon: "💰",
+                description: "Para ti es un cálculo claro: €279 vs €1.500/año en cigarrillos, más salud, más dinero, más eficiencia.",
+                type: "Es simple: Matemáticas y ROI.",
+                strategy: "Te damos dashboards de ahorro, seguimiento de salud y eficiencia. Tu protocolo se basa en datos, no en emociones. Ves resultados medibles cada semana."
+            },
+            ansioso: {
+                title: "El Ansioso",
+                icon: "🧠",
+                description: "Tu mayor problema no es la nicotina, es la ansiedad. Fumas para calmarte pero luego tienes más ansiedad aún.",
+                type: "Tu verdadero problema es la ANSIEDAD.",
+                strategy: "Tu protocolo trata la raíz: técnicas de respiración, meditación, y nuestra fórmula de suplementación específica para bajar ansiedad basal. Aprendes a calmarte SIN fumar."
+            }
+        };
+
+        let currentQuestion = 0;
+        let answers = {};
+        let selectedAnswers = {};
+
+        // Initialize
+        function init() {
+            showQuestion(0);
+            document.getElementById('backBtn').style.display = currentQuestion > 0 ? 'block' : 'none';
+        }
+
+        function showQuestion(index) {
+            if (index < 0 || index >= questions.length) return;
+
+            currentQuestion = index;
+            const q = questions[index];
+
+            document.getElementById('questionNumber').textContent = `Pregunta ${index + 1}`;
+            document.getElementById('questionText').textContent = q.text;
+            document.getElementById('progressText').textContent = `${index + 1} / ${questions.length}`;
+            document.getElementById('progressFill').style.width = `${((index + 1) / questions.length) * 100}%`;
+
+            // Multi-select info
+            if (q.type === 'multi') {
+                document.getElementById('multiInfo').textContent = 'Puedes marcar más de una opción';
+            } else {
+                document.getElementById('multiInfo').textContent = '';
+            }
+
+            // Render options
+            const optionsDiv = document.getElementById('options');
+            optionsDiv.innerHTML = '';
+
+            q.options.forEach((opt, i) => {
+                const btn = document.createElement('div');
+                btn.className = 'option';
+                btn.textContent = opt;
+
+                if (q.type === 'single') {
+                    btn.onclick = () => selectOption(index, i);
+                    if (selectedAnswers[index] === i) {
+                        btn.classList.add('selected');
+                    }
+                } else {
+                    btn.onclick = () => selectMultiOption(index, i);
+                    if (selectedAnswers[index] && selectedAnswers[index].includes(i)) {
+                        btn.classList.add('selected');
+                    }
+                }
+
+                optionsDiv.appendChild(btn);
+            });
+
+            document.getElementById('backBtn').style.display = index > 0 ? 'block' : 'none';
+            updateNextButton();
+        }
+
+        function selectOption(qIndex, optIndex) {
+            selectedAnswers[qIndex] = optIndex;
+            showQuestion(qIndex);
+            updateNextButton();
+        }
+
+        function selectMultiOption(qIndex, optIndex) {
+            if (!selectedAnswers[qIndex]) {
+                selectedAnswers[qIndex] = [];
+            }
+
+            if (selectedAnswers[qIndex].includes(optIndex)) {
+                selectedAnswers[qIndex] = selectedAnswers[qIndex].filter(i => i !== optIndex);
+            } else {
+                selectedAnswers[qIndex].push(optIndex);
+            }
+
+            showQuestion(qIndex);
+            updateNextButton();
+        }
+
+        function updateNextButton() {
+            const hasAnswer = selectedAnswers[currentQuestion] !== undefined &&
+                            (Array.isArray(selectedAnswers[currentQuestion]) ?
+                                selectedAnswers[currentQuestion].length > 0 :
+                                true);
+            document.getElementById('nextBtn').disabled = !hasAnswer;
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < questions.length - 1) {
+                showQuestion(currentQuestion + 1);
+                window.scrollTo(0, 0);
+            } else {
+                showResults();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 0) {
+                showQuestion(currentQuestion - 1);
+                window.scrollTo(0, 0);
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz').style.display = 'none';
+            document.getElementById('results').classList.remove('hidden');
+
+            // Determine persona based on answers
+            let persona = detectPersona();
+            const p = personas[persona];
+
+            document.getElementById('resultIcon').textContent = p.icon;
+            document.getElementById('resultTitle').textContent = p.title;
+            document.getElementById('resultMessage').textContent = p.description;
+            document.getElementById('resultType').textContent = p.type;
+            document.getElementById('resultStrategy').textContent = p.strategy;
+
+            // Store result
+            localStorage.setItem('quizResult', JSON.stringify({persona, answers: selectedAnswers}));
+        }
+
+        function detectPersona() {
+            // Score-based detection
+            let scores = {
+                controlador: 0,
+                familiar: 0,
+                racional: 0,
+                ansioso: 0
+            };
+
+            // Q5 (Why want to quit) - markers
+            if (selectedAnswers[4] && selectedAnswers[4].includes(0)) scores.controlador += 3;
+            if (selectedAnswers[4] && selectedAnswers[4].includes(1)) scores.racional += 3;
+            if (selectedAnswers[4] && selectedAnswers[4].includes(3)) scores.familiar += 3;
+            if (selectedAnswers[4] && selectedAnswers[4].includes(4)) scores.ansioso += 3;
+
+            // Q6 (What hurts most)
+            if (selectedAnswers[5] === 0) scores.controlador += 2;
+            if (selectedAnswers[5] === 1) scores.racional += 2;
+            if (selectedAnswers[5] === 3) scores.familiar += 2;
+            if (selectedAnswers[5] === 4) scores.ansioso += 2;
+
+            // Q7 (Anxiety level)
+            if (selectedAnswers[6] === 2 || selectedAnswers[6] === 3) scores.ansioso += 2;
+
+            // Q10 (What scares you)
+            if (selectedAnswers[9] === 0) scores.controlador += 2;
+            if (selectedAnswers[9] === 1) scores.ansioso += 2;
+
+            // Q11-12 (Family support)
+            if (selectedAnswers[10] && selectedAnswers[10] >= 2) scores.familiar += 2;
+            if (selectedAnswers[11] && selectedAnswers[11] >= 2) scores.familiar += 2;
+
+            // Find highest score
+            return Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+        }
+
+        function goToForm() {
+            // In production, redirect to form or checkout
+            window.location.href = '#form';
+            alert('Formulario de captura de datos (próximo paso)');
+        }
+
+        // Start
+        init();
+    </script>
+</body>
+</html>
