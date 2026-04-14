@@ -420,7 +420,7 @@
                 </div>
 
                 <button type="submit" class="btn-next" style="margin-top: 40px; width: 100%;" id="submitBtn">
-                    Enviar datos →
+                    Ver Perfil de Fumador →
                 </button>
             </form>
 
@@ -712,7 +712,7 @@
                 showQuestion(currentQuestion + 1);
                 window.scrollTo(0, 0);
             } else {
-                showResults();
+                showForm();
             }
         }
 
@@ -781,6 +781,7 @@
         let currentPersona = null;
 
         function showForm() {
+            document.getElementById('quiz').style.display = 'none';
             document.getElementById('results').classList.add('hidden');
             document.getElementById('formContainer').classList.remove('hidden');
             window.scrollTo(0, 0);
@@ -829,28 +830,9 @@
         }
 
         function showSuccess(nombre) {
-            document.getElementById('formContainer').innerHTML = `
-                <div style="text-align: center;">
-                    <div style="font-size: 80px; margin-bottom: 30px; animation: floatUp 3s ease-in-out infinite;">✅</div>
-                    <h2 class="result-title">¡Perfecto, ${nombre}!</h2>
-                    <p class="result-description" style="margin-bottom: 40px;">
-                        Hemos recibido tus datos y registrado tu perfil.
-                        <br><br>
-                        En breve recibirás un email con tu plan personalizado y acceso al protocolo.
-                    </p>
-                    <div class="result-box">
-                        <h3>Próximos pasos:</h3>
-                        <p>
-                            1. Revisa tu email (incluyendo spam)<br>
-                            2. Completa tu compra por €279<br>
-                            3. Accede al protocolo de 12 semanas
-                        </p>
-                    </div>
-                    <button class="btn-next" onclick="window.location.href='/'" style="margin-top: 30px; width: 100%;">
-                        Volver al inicio
-                    </button>
-                </div>
-            `;
+            document.getElementById('formContainer').classList.add('hidden');
+            document.getElementById('results').classList.remove('hidden');
+            window.scrollTo(0, 0);
         }
 
         // Start
