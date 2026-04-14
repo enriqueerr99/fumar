@@ -37,7 +37,7 @@ G1: ID
 
 ```javascript
 // URL de tu Google Sheet
-const SHEET_ID = "TU_ID_DE_SHEET"; // Ver instrucciones abajo
+const SHEET_ID = "1zFGo1AsoQstAP_iyhg1fVQ-hYeRH63bnbMRIjyX2WnA";
 const SHEET_NAME = "Hoja1"; // O el nombre de tu hoja
 
 function doPost(e) {
