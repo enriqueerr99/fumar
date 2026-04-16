@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist - Proyecto Dejar de Fumar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #0f0f1e 50%, #1a0a15 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #e0e0e0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(100, 10, 10, 0.15) 0%, rgba(80, 20, 20, 0.05) 100%);
+            border: 1px solid rgba(255, 85, 85, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 50px rgba(255, 85, 85, 0.1);
+        }
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff5555 0%, #ff8888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            color: #a0a0a0;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            font-weight: 400;
+            line-height: 1.8;
+        }
+
+        .progress-section {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .progress-bar {
+            flex: 1;
+            background: rgba(255, 85, 85, 0.1);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 85, 85, 0.2);
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #ff5555 0%, #cc2222 100%);
+            height: 100%;
+            transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 0 20px rgba(255, 85, 85, 0.4);
+        }
+
+        .progress-text {
+            font-weight: 700;
+            color: #ff7777;
+            min-width: 120px;
+            text-align: right;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ff5555 0%, #cc2222 100%);
+            color: white;
+            box-shadow: 0 20px 50px rgba(255, 85, 85, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 13px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 30px 70px rgba(255, 85, 85, 0.4);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, rgba(100, 10, 10, 0.2) 0%, rgba(80, 20, 20, 0.1) 100%);
+            color: #e0e0e0;
+            border: 1px solid rgba(255, 85, 85, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, rgba(100, 10, 10, 0.3) 0%, rgba(80, 20, 20, 0.2) 100%);
+            border-color: rgba(255, 85, 85, 0.4);
+            color: #ff7777;
+        }
+
+        .btn-sm {
+            padding: 6px 10px;
+            font-size: 12px;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px 16px;
+            background: linear-gradient(135deg, rgba(100, 10, 10, 0.1) 0%, rgba(80, 20, 20, 0.05) 100%);
+            border: 1px solid rgba(255, 85, 85, 0.2);
+            border-radius: 12px;
+            font-size: 14px;
+            color: #e0e0e0;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .search-box::placeholder {
+            color: #6b6b6b;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: rgba(255, 85, 85, 0.5);
+            background: linear-gradient(135deg, rgba(100, 10, 10, 0.15) 0%, rgba(80, 20, 20, 0.08) 100%);
+            box-shadow: 0 0 20px rgba(255, 85, 85, 0.2);
+        }
+
+        .sections {
+            display: grid;
+            gap: 20px;
+        }
+
+        .section {
+            background: linear-gradient(135deg, rgba(15, 15, 30, 0.8) 0%, rgba(26, 10, 21, 0.8) 100%);
+            border: 1px solid rgba(255, 85, 85, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(255, 85, 85, 0.05);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .section:hover {
+            box-shadow: 0 15px 50px rgba(255, 85, 85, 0.15);
+            border-color: rgba(255, 85, 85, 0.25);
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #ff5555 0%, #cc2222 100%);
+            color: white;
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.3s ease;
+        }
+
+        .section-header:hover {
+            background: linear-gradient(135deg, #ff7777 0%, #dd3333 100%);
+            box-shadow: 0 10px 30px rgba(255, 85, 85, 0.2);
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1rem, 4vw, 1.1rem);
+            letter-spacing: -0.3px;
+        }
+
+        .section-stats {
+            font-size: 13px;
+            opacity: 0.85;
+            font-weight: 500;
+        }
+
+        .toggle-icon {
+            font-size: 18px;
+            transition: transform 0.3s;
+        }
+
+        .section.collapsed .toggle-icon {
+            transform: rotate(90deg);
+        }
+
+        .section-content {
+            padding: 20px;
+            max-height: 2000px;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .section.collapsed .section-content {
+            max-height: 0;
+            padding: 0;
+        }
+
+        .task-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 14px 16px;
+            background: linear-gradient(135deg, rgba(100, 10, 10, 0.1) 0%, rgba(80, 20, 20, 0.05) 100%);
+            border-left: 3px solid rgba(255, 85, 85, 0.3);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .task-item:hover {
+            background: linear-gradient(135deg, rgba(100, 10, 10, 0.15) 0%, rgba(80, 20, 20, 0.08) 100%);
+            border-left-color: #ff5555;
+            padding-left: 20px;
+        }
+
+        .task-item.completed {
+            opacity: 0.5;
+            border-left-color: rgba(255, 85, 85, 0.1);
+        }
+
+        .task-item.completed .task-text {
+            text-decoration: line-through;
+            color: #6b6b6b;
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: #ff5555;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .task-text {
+            flex: 1;
+            word-break: break-word;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            color: #c0c0c0;
+            font-weight: 400;
+        }
+
+        .task-actions {
+            display: flex;
+            gap: 6px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .task-item:hover .task-actions {
+            opacity: 1;
+        }
+
+        .btn-icon {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 6px 8px;
+            color: #6b6b6b;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-icon:hover {
+            color: #ff7777;
+            transform: scale(1.15);
+        }
+
+        .btn-icon.delete:hover {
+            color: #ff5555;
+        }
+
+        .add-task-form {
+            display: flex;
+            gap: 10px;
+            padding-top: 16px;
+            margin-top: 12px;
+            border-top: 1px solid rgba(255, 85, 85, 0.1);
+        }
+
+        .add-task-form input {
+            flex: 1;
+            padding: 12px 14px;
+            background: linear-gradient(135deg, rgba(100, 10, 10, 0.1) 0%, rgba(80, 20, 20, 0.05) 100%);
+            border: 1px solid rgba(255, 85, 85, 0.2);
+            border-radius: 12px;
+            font-size: 14px;
+            color: #e0e0e0;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .add-task-form input::placeholder {
+            color: #6b6b6b;
+        }
+
+        .add-task-form input:focus {
+            outline: none;
+            border-color: rgba(255, 85, 85, 0.5);
+            background: linear-gradient(135deg, rgba(100, 10, 10, 0.15) 0%, rgba(80, 20, 20, 0.08) 100%);
+            box-shadow: 0 0 20px rgba(255, 85, 85, 0.15);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, rgba(15, 15, 30, 0.95) 0%, rgba(26, 10, 21, 0.95) 100%);
+            border: 1px solid rgba(255, 85, 85, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 32px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 20px 60px rgba(255, 85, 85, 0.15);
+            animation: slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ff7777;
+        }
+
+        .modal-input {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, rgba(100, 10, 10, 0.1) 0%, rgba(80, 20, 20, 0.05) 100%);
+            border: 1px solid rgba(255, 85, 85, 0.2);
+            border-radius: 12px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: #e0e0e0;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            resize: vertical;
+        }
+
+        .modal-input::placeholder {
+            color: #6b6b6b;
+        }
+
+        .modal-input:focus {
+            outline: none;
+            border-color: rgba(255, 85, 85, 0.5);
+            background: linear-gradient(135deg, rgba(100, 10, 10, 0.15) 0%, rgba(80, 20, 20, 0.08) 100%);
+            box-shadow: 0 0 20px rgba(255, 85, 85, 0.2);
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(100, 10, 10, 0.15) 0%, rgba(80, 20, 20, 0.05) 100%);
+            border: 1px solid rgba(255, 85, 85, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 24px 16px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(255, 85, 85, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: linear-gradient(135deg, rgba(100, 10, 10, 0.2) 0%, rgba(80, 20, 20, 0.1) 100%);
+            border-color: rgba(255, 85, 85, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .stat-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.8rem, 8vw, 2.2rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #ff5555 0%, #ff8888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: #a0a0a0;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #a0a0a0;
+        }
+
+        .empty-state-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -1000px 0;
+            }
+            100% {
+                background-position: 1000px 0;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 24px;
+                border-radius: 16px;
+            }
+
+            h1 {
+                font-size: clamp(1.5rem, 4vw, 2rem);
+            }
+
+            .progress-section {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+            }
+
+            .progress-text {
+                text-align: center;
+            }
+
+            .controls {
+                flex-direction: column;
+            }
+
+            .search-box {
+                min-width: unset;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            button {
+                width: 100%;
+            }
+
+            .section-header {
+                padding: 16px 16px;
+            }
+
+            .section-content {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Checklist Lanzamiento - Proyecto Dejar de Fumar</h1>
+            <p class="subtitle">Objetivo: Lanzamiento en 8 semanas con protocolo completo, integraciones y comunidad operativa.</p>
+
+            <div class="progress-section">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text" id="progressText">0%</div>
+            </div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" id="statTotal">0</div>
+                <div class="stat-label">Total tareas</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="statCompleted">0</div>
+                <div class="stat-label">Completadas</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="statPending">0</div>
+                <div class="stat-label">Pendientes</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <input type="text" class="search-box" id="searchBox" placeholder="🔍 Buscar tareas...">
+            <button class="btn-primary" onclick="expandAll()">Expandir todo</button>
+            <button class="btn-secondary" onclick="collapseAll()">Contraer todo</button>
+            <button class="btn-secondary" onclick="markAllCompleted()">✓ Marcar todo</button>
+        </div>
+
+        <div class="sections" id="sections"></div>
+    </div>
+
+    <div class="modal" id="editModal">
+        <div class="modal-content">
+            <div class="modal-header">Editar tarea</div>
+            <textarea class="modal-input" id="editInput" rows="4" placeholder="Texto de la tarea..."></textarea>
+            <div class="modal-actions">
+                <button class="btn-secondary" onclick="closeEditModal()">Cancelar</button>
+                <button class="btn-primary" onclick="saveEditTask()">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Datos
+        const data = {
+            sections: [
+                {
+                    title: "✅ SEMANA 1-2: Infraestructura Base",
+                    tasks: [
+                        "Registrar dominio (dejardefumar.es / similar)",
+                        "Contratar hosting (Vercel, Netlify o servidor propio)",
+                        "Configurar Google Workspace / email corporativo",
+                        "Crear proyecto Google Sheets para datos de usuarios",
+                        "Setup Google Apps Script básico para automatizaciones",
+                        "Crear repositorio Git (GitHub/GitLab)",
+                        "Configurar CI/CD básico"
+                    ]
+                },
+                {
+                    title: "✅ SEMANA 1-3: Landing Page + Quiz",
+                    tasks: [
+                        "Copywriting de landing page (hook, CTA, testimonios, FAQ)",
+                        "Diseño visual (Webflow o HTML/CSS custom)",
+                        "Hero (hook: 'No es nicotina, es ansiedad')",
+                        "Problema/Solución",
+                        "4 Personas + Quiz CTA",
+                        "Incluye (beneficios de los €299)",
+                        "Protocolo 12 semanas (timeline visual)",
+                        "Testimonios/Social proof",
+                        "FAQ",
+                        "CTA botón → Quiz",
+                        "Optimizar para mobile",
+                        "Página de privacidad + términos",
+                        "Setup Google Analytics + Pixel tracking",
+                        "Crear flujo de 5-7 preguntas",
+                        "Lógica para detectar: Controlador, Familiar, Racional, Ansioso",
+                        "Resultado personalizado con copy por persona",
+                        "Botón CTA 'Comprar ahora' redirige a pago"
+                    ]
+                },
+                {
+                    title: "✅ SEMANA 2-3: Integraciones de Pago + CRM",
+                    tasks: [
+                        "Crear cuenta Stripe (verificación)",
+                        "Configurar producto €299",
+                        "Implementar checkout en landing",
+                        "Webhook para confirmación de pago",
+                        "Test transacciones en ambiente staging",
+                        "Crear estructura de base datos",
+                        "Tabla clientes (nombre, email, teléfono, persona, fecha_compra, estado)",
+                        "Tabla entregas (seguimiento suplementos + collar)",
+                        "Tabla progreso (semana completada, videos visto, engagement)",
+                        "Script para recibir datos POST de Stripe → Sheet",
+                        "Automation: crear carpeta Google Drive por cliente",
+                        "Automation: enviar email bienvenida + acceso LMS",
+                        "Configurar GHL O HubSpot",
+                        "Email 1: Bienvenida + acceso LMS",
+                        "Email 2: Intro protocolo + semana 1",
+                        "Emails automáticos (1 x semana, contenido según progreso)",
+                        "Setup automático al comprar"
+                    ]
+                },
+                {
+                    title: "✅ SEMANA 2-4: LMS + Contenido (Semanas 1-4)",
+                    tasks: [
+                        "Registrarse en Kajabi / Teachable / Podia",
+                        "Configurar dominio personalizado (opcional)",
+                        "Setup landing interna + login",
+                        "Semana 1 - Lección 1: Intro protocolo (5 min)",
+                        "Semana 1 - Lección 2: La ansiedad condicionada (7 min)",
+                        "Semana 1 - Lección 3: Ritual de sustitución (6 min)",
+                        "Semana 1 - Ejercicio: mapear triggers personales",
+                        "Semana 1 - Worksheet descargable",
+                        "Semana 2 - Lección 4: Suplementación (8 min)",
+                        "Semana 2 - Lección 5: Técnicas respuesta rápida (6 min)",
+                        "Semana 2 - Lección 6: Día 1 completado - check-in (5 min)",
+                        "Semana 2 - Ejercicio: Test suplementos",
+                        "Semana 2 - Video motivacional (persona específica)",
+                        "Semana 3 - Lección 7: Cuerpo en desintoxicación (7 min)",
+                        "Semana 3 - Lección 8: Diferencia psicológico vs físico (6 min)",
+                        "Semana 3 - Lección 9: Herramientas anti-recaída (8 min)",
+                        "Semana 3 - Ejercicio: Crear plan de emergencia",
+                        "Semana 3 - Comunidad checkpoint",
+                        "Semana 4 - Lección 10: Identidad nueva (7 min)",
+                        "Semana 4 - Lección 11: Check-in mes 1 (5 min)",
+                        "Semana 4 - Lección 12: Preview Fase 2 (5 min)",
+                        "Semana 4 - Ejercicio: Redefinir 'quién soy sin fumar'",
+                        "Semana 4 - Bonus: 1:1 coaching"
+                    ]
+                },
+                {
+                    title: "✅ SEMANA 3-5: Productos Físicos",
+                    tasks: [
+                        "Contactar laboratorios para suplementación",
+                        "Magnesio + L-teanina + vitaminas B",
+                        "Formato: cápsulas/polvos 12 semanas",
+                        "Presupuesto unitario y mínimo de compra",
+                        "Timeline de fabricación",
+                        "Buscar fabricante collar / vaper",
+                        "Presupuesto y cantidad mínima",
+                        "Packaging (personalizado con marca)",
+                        "Definir costo de envío",
+                        "Elegir operador (DHL, Correos, similar)",
+                        "Sistema de tracking integrado a Sheet",
+                        "Crear instrucciones de uso (PDF)"
+                    ]
+                },
+                {
+                    title: "✅ SEMANA 4-6: Grabar Contenido (Semanas 5-12)",
+                    tasks: [
+                        "FASE 2 (Semanas 5-8) - Lecciones 13-24",
+                        "Tema: estrés, trabajo, social, emociones",
+                        "Técnicas específicas por trigger",
+                        "FASE 3 (Semanas 9-12) - Lecciones 25-36",
+                        "Tema: refuerzo identidad, comunidad, mantención",
+                        "Bonus: plan post-protocolo",
+                        "Guía descargable completa",
+                        "Meditaciones guiadas",
+                        "Playlist motivacional",
+                        "Workbook PDF (todas las semanas)"
+                    ]
+                },
+                {
+                    title: "✅ SEMANA 5-6: Comunidad Privada",
+                    tasks: [
+                        "Setup Discord / Telegram / WhatsApp Business / Mighty Networks",
+                        "#general (anuncios)",
+                        "#semana-X (por fase)",
+                        "#victorias (celebraciones)",
+                        "#duda-coach (preguntas al coach)",
+                        "#post-protocolo (mantención)",
+                        "Script agregar usuario a comunidad post-compra",
+                        "Bot para recordatorios diarios (opcional)",
+                        "Crear guía de community guidelines"
+                    ]
+                },
+                {
+                    title: "✅ SEMANA 6: Coaching 1:1",
+                    tasks: [
+                        "Crear sistema de booking (Calendly + Google Calendar)",
+                        "Caso de uso por persona (4 plantillas)",
+                        "Script de llamada (15-30 min)",
+                        "Worksheet sesión",
+                        "Follow-up email",
+                        "Definir horarios disponibles (coach)",
+                        "Setup Zoom / Meet integrado",
+                        "Crear política 'recaída en 4 semanas = sesión extra gratis'",
+                        "Sistema de tracking (Sheet con flags)"
+                    ]
+                },
+                {
+                    title: "✅ SEMANA 6-7: Testing Completo",
+                    tasks: [
+                        "Test landing → quiz → resultado → checkout",
+                        "Test email secuencia (automáticos, timestamps)",
+                        "Test acceso LMS post-pago",
+                        "Test entregas suplementos + collar",
+                        "Test acceso comunidad privada",
+                        "Test Stripe con tarjeta de prueba",
+                        "Test webhook (pago confirmado → automations)",
+                        "Test responsivo (mobile, tablet, desktop)",
+                        "Performance (página carga < 2s)",
+                        "SEO básico (meta tags, H1-H6, Open Graph)",
+                        "GDPR: política privacidad + consentimiento",
+                        "Términos de servicio",
+                        "Disclaimers médicos",
+                        "Refunds policy"
+                    ]
+                },
+                {
+                    title: "✅ SEMANA 7: Email Automation + Soporte",
+                    tasks: [
+                        "Email 1 (0h): Bienvenida + acceso LMS",
+                        "Email 2 (24h): 'Tu primer video te espera'",
+                        "Email 3 (3 días): Check-in + motivación",
+                        "Email 4 (7 días): Resumen semana 1 + tips",
+                        "Email 5 (14 días): Transición a Semana 2",
+                        "Setup email support (soporte@dejardefumar.es)",
+                        "Crear FAQ + autorespuesta",
+                        "Tiempo respuesta: < 24h",
+                        "Herramienta ticket (gratuita: Helpscout trial o email manual)"
+                    ]
+                },
+                {
+                    title: "✅ SEMANA 7-8: Marketing + Go-Live",
+                    tasks: [
+                        "LinkedIn post (teaser)",
+                        "Email a contactos (early access)",
+                        "SMS a lista (si existe)",
+                        "Crear página de espera (landing pre-lanzamiento)",
+                        "Definir presupuesto ads (Google, Meta)",
+                        "✓ Landing live + indexado en Google",
+                        "✓ Quiz funcional",
+                        "✓ Stripe en modo live (no sandbox)",
+                        "✓ Emails automatizados confirmados",
+                        "✓ LMS semanas 1-4 completas y testing",
+                        "✓ Comunidad privada activa y moderada",
+                        "✓ Coaching 1:1 disponible + Calendly funcional",
+                        "✓ Seguimiento de suplementos/collar",
+                        "✓ Disclaimers legales en footer",
+                        "✓ Analytics tracking confirmado",
+                        "✓ Test transacción real",
+                        "✓ Verificar email de bienvenida",
+                        "✓ Verificar acceso LMS",
+                        "✓ Comunicado a comunidad",
+                        "✓ Monitor 404s, errores"
+                    ]
+                },
+                {
+                    title: "✅ POST-LANZAMIENTO (Semanas 9-12)",
+                    tasks: [
+                        "Monitoreo diario de conversiones",
+                        "Soporte activo a primeros clientes",
+                        "Grabar contenido semanas 5-12 (en paralelo)",
+                        "Optimizaciones (A/B landing, copy)",
+                        "Recolectar testimonios de primeros clientes",
+                        "Ajustes según feedback"
+                    ]
+                },
+                {
+                    title: "📊 Métricas a Trackear Desde Día 1",
+                    tasks: [
+                        "Visitantes únicos landing",
+                        "% Quiz completado",
+                        "% Conversión quiz → pago",
+                        "Revenue diario",
+                        "Email open rates",
+                        "LMS completion (% users en cada semana)",
+                        "Engagement comunidad (posts/comentarios)",
+                        "Soporte tickets",
+                        "Churn (quién abandona y por qué)"
+                    ]
+                }
+            ]
+        };
+
+        let tasks = {};
+        let currentEditingTask = null;
+
+        // Inicializar
+        function init() {
+            loadTasks();
+            renderSections();
+            updateStats();
+            setupSearch();
+        }
+
+        // Cargar tareas del localStorage
+        function loadTasks() {
+            const saved = localStorage.getItem('checklist-tasks');
+            if (saved) {
+                tasks = JSON.parse(saved);
+            } else {
+                // Inicializar con todas las tareas
+                data.sections.forEach((section, sIdx) => {
+                    if (!tasks[sIdx]) tasks[sIdx] = {};
+                    section.tasks.forEach((_, tIdx) => {
+                        tasks[sIdx][tIdx] = false;
+                    });
+                });
+            }
+        }
+
+        // Guardar tareas en localStorage
+        function saveTasks() {
+            localStorage.setItem('checklist-tasks', JSON.stringify(tasks));
+            updateStats();
+        }
+
+        // Renderizar secciones
+        function renderSections() {
+            const container = document.getElementById('sections');
+            container.innerHTML = '';
+
+            data.sections.forEach((section, sIdx) => {
+                const sectionEl = document.createElement('div');
+                sectionEl.className = 'section';
+                sectionEl.id = `section-${sIdx}`;
+
+                const tasksInSection = section.tasks;
+                const completedInSection = tasksInSection.filter((_, tIdx) => tasks[sIdx][tIdx]).length;
+
+                sectionEl.innerHTML = `
+                    <div class="section-header" onclick="toggleSection(${sIdx})">
+                        <div>
+                            <div class="section-title">${section.title}</div>
+                            <div class="section-stats">${completedInSection}/${tasksInSection.length} completadas</div>
+                        </div>
+                        <div class="toggle-icon">▶</div>
+                    </div>
+                    <div class="section-content">
+                        <div class="task-list" id="task-list-${sIdx}">
+                            ${tasksInSection.map((task, tIdx) => `
+                                <div class="task-item ${tasks[sIdx][tIdx] ? 'completed' : ''}" id="task-${sIdx}-${tIdx}">
+                                    <input type="checkbox"
+                                           ${tasks[sIdx][tIdx] ? 'checked' : ''}
+                                           onchange="toggleTask(${sIdx}, ${tIdx})">
+                                    <span class="task-text">${escapeHtml(task)}</span>
+                                    <div class="task-actions">
+                                        <button class="btn-icon" onclick="editTask(${sIdx}, ${tIdx})">✏️</button>
+                                        <button class="btn-icon delete" onclick="deleteTask(${sIdx}, ${tIdx})">🗑️</button>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div class="add-task-form">
+                            <input type="text"
+                                   placeholder="Agregar nueva tarea..."
+                                   onkeypress="if(event.key==='Enter') addTask(${sIdx}, this.value); this.value=''"
+                                   class="search-box">
+                            <button class="btn-primary btn-sm" onclick="addTask(${sIdx}, this.previousElementSibling.value); this.previousElementSibling.value=''">➕</button>
+                        </div>
+                    </div>
+                `;
+
+                container.appendChild(sectionEl);
+            });
+        }
+
+        // Togglear tarea
+        function toggleTask(sIdx, tIdx) {
+            tasks[sIdx][tIdx] = !tasks[sIdx][tIdx];
+            saveTasks();
+            const taskEl = document.getElementById(`task-${sIdx}-${tIdx}`);
+            taskEl.classList.toggle('completed');
+            updateSectionStats(sIdx);
+        }
+
+        // Editar tarea
+        function editTask(sIdx, tIdx) {
+            currentEditingTask = { sIdx, tIdx };
+            document.getElementById('editInput').value = data.sections[sIdx].tasks[tIdx];
+            document.getElementById('editModal').classList.add('active');
+            document.getElementById('editInput').focus();
+        }
+
+        function closeEditModal() {
+            document.getElementById('editModal').classList.remove('active');
+            currentEditingTask = null;
+        }
+
+        function saveEditTask() {
+            if (!currentEditingTask) return;
+            const newText = document.getElementById('editInput').value.trim();
+            if (!newText) return;
+
+            data.sections[currentEditingTask.sIdx].tasks[currentEditingTask.tIdx] = newText;
+            renderSections();
+            closeEditModal();
+        }
+
+        // Eliminar tarea
+        function deleteTask(sIdx, tIdx) {
+            if (confirm('¿Eliminar esta tarea?')) {
+                data.sections[sIdx].tasks.splice(tIdx, 1);
+                delete tasks[sIdx][tIdx];
+                renderSections();
+                saveTasks();
+            }
+        }
+
+        // Agregar tarea
+        function addTask(sIdx, text) {
+            text = text.trim();
+            if (!text) return;
+
+            data.sections[sIdx].tasks.push(text);
+            const newIdx = data.sections[sIdx].tasks.length - 1;
+            tasks[sIdx][newIdx] = false;
+
+            renderSections();
+            saveTasks();
+        }
+
+        // Togglear sección
+        function toggleSection(sIdx) {
+            document.getElementById(`section-${sIdx}`).classList.toggle('collapsed');
+        }
+
+        // Expandir todo
+        function expandAll() {
+            document.querySelectorAll('.section').forEach(el => el.classList.remove('collapsed'));
+        }
+
+        // Contraer todo
+        function collapseAll() {
+            document.querySelectorAll('.section').forEach(el => el.classList.add('collapsed'));
+        }
+
+        // Marcar todo como completado
+        function markAllCompleted() {
+            if (!confirm('¿Marcar todas las tareas como completadas?')) return;
+            Object.keys(tasks).forEach(sIdx => {
+                Object.keys(tasks[sIdx]).forEach(tIdx => {
+                    tasks[sIdx][tIdx] = true;
+                });
+            });
+            saveTasks();
+            renderSections();
+        }
+
+        // Buscar
+        function setupSearch() {
+            document.getElementById('searchBox').addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase();
+                document.querySelectorAll('.task-item').forEach(el => {
+                    const text = el.querySelector('.task-text').textContent.toLowerCase();
+                    el.style.display = text.includes(query) ? '' : 'none';
+                });
+
+                document.querySelectorAll('.section-content').forEach(content => {
+                    const hasVisible = Array.from(content.querySelectorAll('.task-item')).some(el => el.style.display !== 'none');
+                    content.parentElement.style.display = hasVisible ? '' : 'none';
+                });
+            });
+        }
+
+        // Actualizar stats
+        function updateStats() {
+            let total = 0, completed = 0;
+
+            Object.keys(tasks).forEach(sIdx => {
+                Object.keys(tasks[sIdx]).forEach(tIdx => {
+                    total++;
+                    if (tasks[sIdx][tIdx]) completed++;
+                });
+            });
+
+            const pending = total - completed;
+            const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+            document.getElementById('statTotal').textContent = total;
+            document.getElementById('statCompleted').textContent = completed;
+            document.getElementById('statPending').textContent = pending;
+            document.getElementById('progressText').textContent = percent + '%';
+            document.getElementById('progressFill').style.width = percent + '%';
+        }
+
+        function updateSectionStats(sIdx) {
+            const section = data.sections[sIdx];
+            const completed = section.tasks.filter((_, tIdx) => tasks[sIdx][tIdx]).length;
+            const stats = document.querySelector(`#section-${sIdx} .section-stats`);
+            stats.textContent = `${completed}/${section.tasks.length} completadas`;
+            updateStats();
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Cerrar modal con ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeEditModal();
+        });
+
+        // Inicializar al cargar
+        init();
+    </script>
+</body>
+</html>
