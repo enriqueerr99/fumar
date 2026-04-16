@@ -33,10 +33,10 @@
 - Sin descondicionar la ansiedad, la persona recae
 
 **Gasto actual del cliente:**
-- 1 paquete/día en España: €5,50-7,50 = €165-225/mes = **€495-675/trimestre**
-- 2 paquetes/día: €330-450/mes = **€990-1,350/trimestre**
+- 1 paquete/día en España: €5,50-7,50 = €165-225/mes = €1.980-2.700/año
+- 0,5-0,75 paquetes/día (promedio): ~€1.400/año
 
-**Nuestro precio (€279) = Poco más de una semana fumando**
+**Nuestro precio (€279) = Menos de 1 mes de gasto en tabaco**
 
 ---
 
@@ -120,8 +120,8 @@ Todas compran por €279, pero su razón es diferente. El quiz detecta cuál es.
 ### PERSONA 3: "El Racional"
 - **Edad:** 25-55 años (ambos géneros)
 - **Motivación:** Dinero, salud, eficiencia, ROI
-- **Pain Point:** "Pierdo €6.000/año en cigarrillos. Mi salud se deteriora. No es racional seguir"
-- **Mensaje Clave:** "€279 para recuperar €6.000+ al año"
+- **Pain Point:** "Pierdo €1.400/año en cigarrillos. Mi salud se deteriora. No es racional seguir"
+- **Mensaje Clave:** "€279 para recuperar €1.400+ al año"
 
 ### PERSONA 4: "El Ansioso"
 - **Edad:** 20-50 años

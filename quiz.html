@@ -723,12 +723,10 @@
             }
         }
 
-        function showResults() {
+        function displayResults(persona) {
             document.getElementById('quiz').style.display = 'none';
             document.getElementById('results').classList.remove('hidden');
 
-            // Determine persona based on answers
-            let persona = detectPersona();
             currentPersona = persona;
             const p = personas[persona];
 
@@ -740,42 +738,6 @@
 
             // Store result
             localStorage.setItem('quizResult', JSON.stringify({persona, answers: selectedAnswers}));
-        }
-
-        function detectPersona() {
-            // Score-based detection
-            let scores = {
-                controlador: 0,
-                familiar: 0,
-                racional: 0,
-                ansioso: 0
-            };
-
-            // Q5 (Why want to quit) - markers
-            if (selectedAnswers[4] && selectedAnswers[4].includes(0)) scores.controlador += 3;
-            if (selectedAnswers[4] && selectedAnswers[4].includes(1)) scores.racional += 3;
-            if (selectedAnswers[4] && selectedAnswers[4].includes(3)) scores.familiar += 3;
-            if (selectedAnswers[4] && selectedAnswers[4].includes(4)) scores.ansioso += 3;
-
-            // Q6 (What hurts most)
-            if (selectedAnswers[5] === 0) scores.controlador += 2;
-            if (selectedAnswers[5] === 1) scores.racional += 2;
-            if (selectedAnswers[5] === 3) scores.familiar += 2;
-            if (selectedAnswers[5] === 4) scores.ansioso += 2;
-
-            // Q7 (Anxiety level)
-            if (selectedAnswers[6] === 2 || selectedAnswers[6] === 3) scores.ansioso += 2;
-
-            // Q10 (What scares you)
-            if (selectedAnswers[9] === 0) scores.controlador += 2;
-            if (selectedAnswers[9] === 1) scores.ansioso += 2;
-
-            // Q11-12 (Family support)
-            if (selectedAnswers[10] && selectedAnswers[10] >= 2) scores.familiar += 2;
-            if (selectedAnswers[11] && selectedAnswers[11] >= 2) scores.familiar += 2;
-
-            // Find highest score
-            return Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
         }
 
         let currentPersona = null;
@@ -797,19 +759,19 @@
             // Disable button while sending
             const submitBtn = document.getElementById('submitBtn');
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Enviando...';
+            submitBtn.textContent = 'Analizando tus respuestas...';
 
             try {
-                // Send to Google Sheets via Apps Script
+                // ✨ NUEVA ARQUITECTURA: No enviamos "persona", el servidor lo calcula
                 const payload = {
                     nombre: nombre,
                     email: email,
                     telefono: telefono,
-                    persona: currentPersona,
                     respuestas: selectedAnswers
+                    // ⚠️ NO enviamos "persona" - será calculado por el servidor
                 };
 
-                console.log('Enviando datos:', payload);
+                console.log('Enviando datos al servidor:', payload);
 
                 const response = await fetch('https://script.google.com/macros/s/AKfycbyngNWa-0ggz1rLEpBQ-GSIEDzz7ggE5csKs9RPesKabgh5h2nPwxn0JmHBfQlEVc8d/exec', {
                     method: 'POST',
@@ -817,26 +779,31 @@
                 });
 
                 const result = await response.json();
-                console.log('Respuesta:', result);
+                console.log('Respuesta del servidor:', result);
 
                 if (result.success) {
-                    console.log('Datos enviados correctamente');
-                    showSuccess(nombre);
+                    console.log('✅ Datos enviados y perfil detectado:', result.persona);
+
+                    // ✨ El servidor devuelve el perfil detectado
+                    const personaDetectada = result.persona;
+
+                    showSuccess(nombre, personaDetectada);
                 } else {
                     throw new Error(result.message || 'Error desconocido');
                 }
 
             } catch (error) {
-                console.error('Error al enviar:', error);
+                console.error('❌ Error al enviar:', error);
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Enviar datos →';
+                submitBtn.textContent = 'Ver Perfil de Fumador →';
                 alert('Hubo un error al enviar los datos. Por favor intenta de nuevo.\n\nDetalle: ' + error.message);
             }
         }
 
-        function showSuccess(nombre) {
+        function showSuccess(nombre, personaDetectada) {
+            // ✨ Mostrar los resultados con el perfil detectado por el servidor
             document.getElementById('formContainer').classList.add('hidden');
-            document.getElementById('results').classList.remove('hidden');
+            displayResults(personaDetectada);
             window.scrollTo(0, 0);
         }
 
