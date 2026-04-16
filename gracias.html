@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Bienvenido! | Protocolo VivirSinHumo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #0f0f1e 50%, #1a0a15 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(200, 30, 30, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(100, 50, 150, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(50, 100, 150, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ════════════════════════════════════════ */
+        /* HERO SUCCESS                            */
+        /* ════════════════════════════════════════ */
+        .hero-success {
+            text-align: center;
+            margin-bottom: 120px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .success-checkmark {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #ff5555 0%, #ff8888 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            margin: 0 auto 50px;
+            box-shadow: 0 25px 60px rgba(255, 85, 85, 0.25);
+            animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .hero-success h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 25px;
+            color: #ffffff;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-success h1 .red {
+            background: linear-gradient(135deg, #ff5555 0%, #ff8888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-success p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: #b0b0b0;
+            line-height: 1.8;
+            max-width: 650px;
+            margin: 0 auto;
+            margin-bottom: 60px;
+        }
+
+        /* ════════════════════════════════════════ */
+        /* EMAIL CONFIRMATION                      */
+        /* ════════════════════════════════════════ */
+        .email-box {
+            background: linear-gradient(135deg, rgba(255, 85, 85, 0.08) 0%, rgba(100, 50, 150, 0.08) 100%);
+            border: 1px solid rgba(255, 85, 85, 0.2);
+            border-radius: 20px;
+            padding: 25px 30px;
+            margin-bottom: 100px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            animation: slideInUp 0.9s ease-out 0.1s both;
+        }
+
+        .email-box p {
+            color: #c0c0c0;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .email-box strong {
+            color: #ff7777;
+            font-weight: 600;
+        }
+
+        /* ════════════════════════════════════════ */
+        /* BENEFIT CARDS                           */
+        /* ════════════════════════════════════════ */
+        .benefits-section {
+            margin-bottom: 120px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, rgba(40, 10, 10, 0.25) 0%, rgba(30, 30, 50, 0.15) 100%);
+            border: 1px solid rgba(255, 85, 85, 0.12);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            text-align: left;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            animation: slideInUp 1s ease-out both;
+        }
+
+        .benefit-card:nth-child(1) { animation-delay: 0.2s; }
+        .benefit-card:nth-child(2) { animation-delay: 0.3s; }
+        .benefit-card:nth-child(3) { animation-delay: 0.4s; }
+        .benefit-card:nth-child(4) { animation-delay: 0.5s; }
+
+        .benefit-card:hover {
+            background: linear-gradient(135deg, rgba(50, 15, 15, 0.3) 0%, rgba(40, 35, 55, 0.2) 100%);
+            border-color: rgba(255, 85, 85, 0.25);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(255, 85, 85, 0.1);
+        }
+
+        .benefit-icon {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, rgba(255, 85, 85, 0.2) 0%, rgba(255, 136, 136, 0.1) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 85, 85, 0.2);
+        }
+
+        .benefit-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .benefit-card p {
+            color: #a0a0a0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .benefit-list {
+            list-style: none;
+        }
+
+        .benefit-list li {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .benefit-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #ff5555;
+            font-weight: 700;
+        }
+
+        /* ════════════════════════════════════════ */
+        /* TIMELINE / ROADMAP                      */
+        /* ════════════════════════════════════════ */
+        .timeline-section {
+            margin-bottom: 120px;
+        }
+
+        .timeline-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(255, 85, 85, 0.3) 0%, rgba(255, 85, 85, 0.05) 100%);
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            animation: slideInUp 1s ease-out both;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.6s; }
+
+        .timeline-item:nth-child(odd) {
+            padding-right: calc(50% + 40px);
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-left: calc(50% + 40px);
+            text-align: left;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #ff5555 0%, #ff8888 100%);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 0 8px rgba(255, 85, 85, 0.15);
+            z-index: 1;
+        }
+
+        .timeline-content {
+            background: linear-gradient(135deg, rgba(40, 10, 10, 0.15) 0%, rgba(30, 30, 50, 0.1) 100%);
+            border: 1px solid rgba(255, 85, 85, 0.12);
+            border-radius: 16px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .timeline-content h4 {
+            font-family: 'Poppins', sans-serif;
+            color: #ff7777;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .timeline-content p {
+            color: #a0a0a0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ════════════════════════════════════════ */
+        /* CTA BUTTONS                             */
+        /* ════════════════════════════════════════ */
+        .cta-group {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-bottom: 120px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: slideInUp 1.2s ease-out 0.4s both;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff5555 0%, #cc2222 100%);
+            color: white;
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 20px 50px rgba(255, 85, 85, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 30px 70px rgba(255, 85, 85, 0.4);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background: rgba(255, 85, 85, 0.08);
+            color: #ff7777;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255, 85, 85, 0.25);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 85, 85, 0.12);
+            border-color: rgba(255, 85, 85, 0.4);
+            color: #ff8888;
+        }
+
+        /* ════════════════════════════════════════ */
+        /* SUPPORT SECTION                         */
+        /* ════════════════════════════════════════ */
+        .support-section {
+            background: linear-gradient(135deg, rgba(255, 85, 85, 0.05) 0%, rgba(100, 50, 150, 0.05) 100%);
+            border: 1px solid rgba(255, 85, 85, 0.15);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            margin-bottom: 80px;
+            animation: slideInUp 1.3s ease-out 0.5s both;
+        }
+
+        .support-section h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .support-section p {
+            color: #b0b0b0;
+            margin-bottom: 30px;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .support-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .support-link {
+            display: inline-block;
+            color: #ff7777;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            padding: 8px 0;
+        }
+
+        .support-link:hover {
+            color: #ff8888;
+            text-decoration: underline;
+        }
+
+        /* ════════════════════════════════════════ */
+        /* FOOTER MESSAGE                          */
+        /* ════════════════════════════════════════ */
+        .footer-message {
+            text-align: center;
+            padding-top: 60px;
+            border-top: 1px solid rgba(255, 85, 85, 0.1);
+            animation: slideInUp 1.4s ease-out 0.6s both;
+        }
+
+        .footer-message p {
+            color: #888;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .footer-message strong {
+            color: #ff7777;
+            font-weight: 700;
+        }
+
+        /* ════════════════════════════════════════ */
+        /* ANIMATIONS                              */
+        /* ════════════════════════════════════════ */
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.2);
+            }
+            50% {
+                transform: scale(1.15);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ════════════════════════════════════════ */
+        /* RESPONSIVE                              */
+        /* ════════════════════════════════════════ */
+        @media (max-width: 1024px) {
+            .timeline::before {
+                display: none;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding-left: 60px;
+                padding-right: 0;
+                text-align: left;
+            }
+
+            .timeline-marker {
+                left: 0;
+            }
+
+            .timeline-item {
+                position: relative;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 50px 24px;
+            }
+
+            .benefit-card {
+                padding: 30px;
+            }
+
+            .hero-success h1 {
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+            }
+
+            .hero-success p {
+                font-size: 1rem;
+                margin-bottom: 40px;
+            }
+
+            .hero-success {
+                margin-bottom: 80px;
+            }
+
+            .email-box {
+                margin-bottom: 70px;
+            }
+
+            .success-checkmark {
+                width: 80px;
+                height: 80px;
+                font-size: 50px;
+                margin-bottom: 35px;
+            }
+
+            .timeline-title {
+                font-size: 1.5rem;
+                margin-bottom: 40px;
+            }
+
+            .timeline-item {
+                margin-bottom: 40px;
+            }
+
+            .support-section {
+                padding: 40px 30px;
+                margin-bottom: 60px;
+            }
+
+            .support-section h3 {
+                font-size: 1.3rem;
+            }
+
+            .cta-group {
+                margin-bottom: 80px;
+            }
+
+            .benefits-section {
+                margin-bottom: 80px;
+            }
+
+            .timeline-section {
+                margin-bottom: 80px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 40px 16px;
+            }
+
+            .hero-success h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero-success p {
+                font-size: 0.95rem;
+            }
+
+            .hero-success {
+                margin-bottom: 60px;
+            }
+
+            .success-checkmark {
+                width: 70px;
+                height: 70px;
+                font-size: 40px;
+                margin-bottom: 30px;
+            }
+
+            .benefit-card {
+                padding: 24px;
+            }
+
+            .benefit-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 24px;
+            }
+
+            .benefit-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .email-box {
+                padding: 20px 24px;
+            }
+
+            .support-section {
+                padding: 30px 20px;
+            }
+
+            .timeline-content {
+                padding: 24px;
+            }
+
+            .timeline-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ═══════════════════════════════════════ -->
+        <!-- HERO SUCCESS                           -->
+        <!-- ═══════════════════════════════════════ -->
+        <section class="hero-success">
+            <div class="success-checkmark">✓</div>
+            <h1>Pago confirmado<br><span class="red">Bienvenido al cambio</span></h1>
+            <p>Tu compra se ha procesado correctamente. Ahora tienes acceso a todo lo que necesitas para romper el ciclo de la ansiedad y dejar de fumar de verdad.</p>
+        </section>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- EMAIL CONFIRMATION                     -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="email-box">
+            <p>Hemos enviado los detalles de tu transacción a tu email. Si no lo ves, revisa spam o <strong>promociones</strong></p>
+        </div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- WHAT YOU GET                           -->
+        <!-- ═══════════════════════════════════════ -->
+        <section class="benefits-section">
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📚</div>
+                    <h3>Programa de 12 Semanas</h3>
+                    <p>Acceso inmediato a tu plan personalizado</p>
+                    <ul class="benefit-list">
+                        <li>Lecciones diarias (5-10 min)</li>
+                        <li>Protocolo probado contra ansiedad</li>
+                        <li>Desbloques semanales progresivos</li>
+                    </ul>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">💊</div>
+                    <h3>Suplementación + Ritual</h3>
+                    <p>Envío de tu kit completo a domicilio</p>
+                    <ul class="benefit-list">
+                        <li>12 semanas de suplementos</li>
+                        <li>Collar/Vaper sin nicotina</li>
+                        <li>Sustituto del ritual</li>
+                    </ul>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">👥</div>
+                    <h3>Comunidad Privada</h3>
+                    <p>Soporte diario de gente como tú</p>
+                    <ul class="benefit-list">
+                        <li>12 + 4 semanas de grupo</li>
+                        <li>Moderadores y mentores</li>
+                        <li>Material exclusivo</li>
+                    </ul>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Sesión 1:1 Personalizada</h3>
+                    <p>Coaching individual contigo</p>
+                    <ul class="benefit-list">
+                        <li>Plan adaptado a tu situación</li>
+                        <li>Garantía: recaída = sesión gratis</li>
+                        <li>Acceso directo a tu entrenador</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- TIMELINE / ROADMAP                     -->
+        <!-- ═══════════════════════════════════════ -->
+        <section class="timeline-section">
+            <h2 class="timeline-title">Tus próximos pasos</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>HOY: Acceso a la plataforma</h4>
+                        <p>Revisa tu email para el link de inicio de sesión. Entra al dashboard y ve tu plan personalizado basado en tu tipo de fumador.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>Próximos 3 días: Tu paquete físico</h4>
+                        <p>Los suplementos y el collar/vaper llegarán a tu domicilio. Empieza el ritual de sustitución mientras sigues las primeras lecciones.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>Semana 1: Tu sesión 1:1</h4>
+                        <p>Recibirás un email para reservar tu sesión con tu entrenador personal. Personalizamos tu protocolo según tu situación.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>Semanas 1-12: Tu transformación</h4>
+                        <p>Sigue el programa, conéctate con la comunidad. La ansiedad baja. El control vuelve. La libertad llega.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- CTA BUTTONS                            -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="cta-group">
+            <button class="btn-primary" onclick="window.location.href='#acceso'">
+                Acceder a tu cuenta ahora
+            </button>
+            <button class="btn-secondary" onclick="window.location.href='#guia'">
+                Ver guía de inicio
+            </button>
+        </div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- SUPPORT                                -->
+        <!-- ═══════════════════════════════════════ -->
+        <section class="support-section">
+            <h3>¿Necesitas ayuda?</h3>
+            <p>Si tienes dudas o algo no funciona, nuestro soporte está aquí para ti en cualquier momento.</p>
+            <div class="support-links">
+                <a href="mailto:soporte@vivirsinhumo.es" class="support-link">soporte@vivirsinhumo.es</a>
+                <a href="https://wa.me/34XXXXXXXXX" class="support-link">Chat WhatsApp (respuesta en 2 horas)</a>
+                <a href="#faq" class="support-link">Preguntas frecuentes</a>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- FOOTER MESSAGE                         -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="footer-message">
+            <p>Este es el inicio de tu transformación. Las próximas 12 semanas van a cambiar tu relación con la ansiedad.</p>
+            <p><strong>No es sobre dejar de fumar. Es sobre respirar sin pánico.</strong></p>
+        </div>
+    </div>
+</body>
+</html>
