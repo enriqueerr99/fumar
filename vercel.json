@@ -1,0 +1,24 @@
+{
+  "rewrites": [
+    {
+      "source": "/quiz",
+      "destination": "/quiz.html"
+    },
+    {
+      "source": "/politica-privacidad",
+      "destination": "/politica-privacidad.html"
+    },
+    {
+      "source": "/politica-cookies",
+      "destination": "/politica-cookies.html"
+    },
+    {
+      "source": "/terminos-condiciones",
+      "destination": "/terminos-condiciones.html"
+    },
+    {
+      "source": "/aviso-legal",
+      "destination": "/aviso-legal.html"
+    }
+  ]
+}
