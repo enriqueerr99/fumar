@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Perfil: El Controlador | FUMAR</title>
+    <meta name="description" content="Recupera el control de tu mente. Protocolo de 12 semanas para dejar de fumar sin sufrimiento. 5:1 Value Ratio. Garantía 100%.">
+    <meta property="og:title" content="El Controlador - Victory Track | Recupera Tu Identidad">
+    <meta property="og:description" content="No es nicotina, es ansiedad. Un dashboard te muestra VICTORIA DIARIA.">
+    <title>El Controlador - Recovery Track | Vivirsinhumo</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -34,82 +39,87 @@
             width: 100%;
             height: 100%;
             background:
-                radial-gradient(circle at 20% 50%, rgba(200, 30, 30, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(100, 50, 150, 0.03) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(255, 85, 85, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(107, 45, 123, 0.03) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 60px 40px;
+            padding: 40px 40px;
             position: relative;
             z-index: 1;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-        }
-
-        .profile-header {
+            align-items: center;
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 120px;
             animation: fadeInUp 0.8s ease-out;
         }
 
-        .profile-icon {
-            font-size: 100px;
-            margin-bottom: 30px;
+        .hero-icon {
+            font-size: 120px;
+            margin-bottom: 40px;
             animation: floatUp 3s ease-in-out infinite;
         }
 
-        .profile-title {
+        .hero-image {
+            width: 100%;
+            max-width: 500px;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            margin-bottom: 50px;
+            box-shadow: 0 20px 60px rgba(255, 85, 85, 0.2);
+            animation: slideInUp 1s ease-out both;
+        }
+
+        .timeline-image {
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            margin-top: 20px;
+            box-shadow: 0 10px 30px rgba(255, 85, 85, 0.15);
+        }
+
+        .hero-headline {
             font-family: 'Poppins', sans-serif;
-            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
             font-weight: 800;
-            margin-bottom: 20px;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-headline-main {
             background: linear-gradient(135deg, #ff5555 0%, #ff8888 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            color: #ffffff;
         }
 
-        .profile-description {
-            font-size: 1.1rem;
-            color: #b0b0b0;
+        .hero-subheadline {
+            font-size: 1.2rem;
+            color: #a0a0a0;
             line-height: 1.8;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        .profile-box {
-            background: linear-gradient(135deg, rgba(40, 10, 10, 0.25) 0%, rgba(30, 30, 50, 0.15) 100%);
-            border: 1px solid rgba(255, 85, 85, 0.2);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 40px;
-            backdrop-filter: blur(10px);
-            animation: slideInUp 0.9s ease-out 0.1s both;
-        }
-
-        .profile-box h3 {
-            color: #ff7777;
-            margin-bottom: 18px;
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        .profile-box p {
-            color: #c0c0c0;
-            line-height: 1.8;
-            font-size: 1rem;
-        }
-
-        .cta-button {
+        .hero-cta {
             display: inline-block;
             background: linear-gradient(135deg, #ff5555 0%, #cc2222 100%);
             color: white;
@@ -120,26 +130,381 @@
             font-size: 1.05rem;
             border: none;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            box-shadow: 0 15px 40px rgba(255, 85, 85, 0.3);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 20px 50px rgba(255, 85, 85, 0.3);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             font-family: 'Poppins', sans-serif;
-            margin-top: 20px;
-            width: 100%;
-            text-align: center;
             animation: slideInUp 1s ease-out 0.2s both;
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 25px 50px rgba(255, 85, 85, 0.4);
+        .hero-cta:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 30px 70px rgba(255, 85, 85, 0.4);
         }
 
+        /* ===== PAIN POINT SECTION ===== */
+        .pain-section {
+            margin-bottom: 120px;
+            animation: fadeInUp 0.8s ease-out 0.1s both;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 80px;
+            text-align: center;
+            color: #e0e0e0;
+        }
+
+        .pain-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .pain-card {
+            background: linear-gradient(135deg, rgba(100, 10, 10, 0.15) 0%, rgba(80, 20, 20, 0.05) 100%);
+            border-left: 4px solid #ff5555;
+            border-top: 1px solid rgba(255, 85, 85, 0.3);
+            border-radius: 8px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            animation: slideInUp 0.8s ease-out 0.2s both;
+        }
+
+        .pain-card:hover {
+            padding-left: 34px;
+            background: linear-gradient(135deg, rgba(100, 10, 10, 0.25) 0%, rgba(80, 20, 20, 0.1) 100%);
+        }
+
+        .pain-card-title {
+            font-weight: 700;
+            color: #ff7777;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .pain-card-text {
+            color: #b0b0b0;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* ===== SOLUTION SECTION ===== */
+        .solution-section {
+            margin-bottom: 120px;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .solution-content h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #ff7777;
+        }
+
+        .solution-content p {
+            color: #b0b0b0;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .solution-box {
+            background: linear-gradient(135deg, rgba(40, 10, 10, 0.25) 0%, rgba(30, 30, 50, 0.15) 100%);
+            border: 1px solid rgba(255, 85, 85, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .solution-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(100, 50, 150, 0.1) 0%, rgba(255, 85, 85, 0.05) 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 85, 85, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            animation: floatUp 4s ease-in-out infinite;
+        }
+
+        /* ===== TIMELINE SECTION ===== */
+        .timeline-section {
+            margin-bottom: 120px;
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .timeline-item {
+            background: linear-gradient(135deg, rgba(40, 10, 10, 0.25) 0%, rgba(30, 30, 50, 0.15) 100%);
+            border: 1px solid rgba(255, 85, 85, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            animation: slideInUp 0.8s ease-out 0.3s both;
+        }
+
+        .timeline-day {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #ff5555;
+            margin-bottom: 15px;
+        }
+
+        .timeline-title {
+            font-weight: 700;
+            color: #ff7777;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .timeline-text {
+            color: #a0a0a0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ===== GUARANTEE SECTION ===== */
+        .guarantee-section {
+            margin-bottom: 120px;
+        }
+
+        .guarantee-box {
+            background: linear-gradient(135deg, rgba(255, 85, 85, 0.1) 0%, rgba(107, 45, 123, 0.05) 100%);
+            border: 2px solid #ff5555;
+            border-radius: 20px;
+            padding: 60px;
+            text-align: center;
+            animation: slideInUp 0.8s ease-out 0.4s both;
+        }
+
+        .guarantee-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #ff5555;
+        }
+
+        .guarantee-text {
+            color: #c0c0c0;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .guarantee-highlight {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ff7777;
+            margin-top: 30px;
+        }
+
+        /* ===== VALUE STACK SECTION ===== */
+        .value-section {
+            margin-bottom: 120px;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .value-list {
+            list-style: none;
+        }
+
+        .value-item {
+            background: linear-gradient(135deg, rgba(40, 10, 10, 0.25) 0%, rgba(30, 30, 50, 0.15) 100%);
+            border: 1px solid rgba(255, 85, 85, 0.2);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 20px;
+            animation: slideInUp 0.8s ease-out 0.5s both;
+        }
+
+        .value-icon {
+            font-size: 30px;
+            flex-shrink: 0;
+        }
+
+        .value-content h4 {
+            color: #ff7777;
+            margin-bottom: 5px;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .value-content p {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .value-amount {
+            color: #ff5555;
+            font-weight: 800;
+            font-size: 0.85rem;
+        }
+
+        .value-summary {
+            background: linear-gradient(135deg, rgba(255, 85, 85, 0.1) 0%, rgba(107, 45, 123, 0.05) 100%);
+            border: 2px solid #ff5555;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .value-total {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            margin-bottom: 10px;
+        }
+
+        .value-big {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ff5555;
+            margin-bottom: 10px;
+        }
+
+        .value-price {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #c0c0c0;
+            margin-bottom: 15px;
+        }
+
+        .value-ratio {
+            color: #ff7777;
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            margin-bottom: 120px;
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .cta-headline {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ff5555 0%, #ff8888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-subheadline {
+            font-size: 1.1rem;
+            color: #a0a0a0;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .payment-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .payment-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #ff5555 0%, #cc2222 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 20px 50px rgba(255, 85, 85, 0.3);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .payment-btn:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 30px 70px rgba(255, 85, 85, 0.4);
+        }
+
+        .payment-type {
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .payment-price {
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        .social-proof {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            margin-top: 30px;
+        }
+
+        .social-proof-strong {
+            color: #ff7777;
+            font-weight: 700;
+        }
+
+        /* ===== ANIMATIONS ===== */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
@@ -156,59 +521,341 @@
             }
         }
 
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 40px 30px;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+
+            .solution-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                grid-template-columns: 1fr;
+            }
+
+            .pain-cards {
+                grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 768px) {
             .container {
-                padding: 40px 24px;
+                padding: 30px 20px;
             }
 
-            .profile-title {
+            .hero {
+                min-height: 80vh;
+                margin-bottom: 80px;
+            }
+
+            .hero-headline {
                 font-size: 2rem;
+                margin-bottom: 20px;
             }
 
-            .profile-description {
+            .hero-subheadline {
                 font-size: 1rem;
+                margin-bottom: 40px;
             }
 
-            .profile-box {
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 50px;
+            }
+
+            .pain-cards {
+                gap: 20px;
+            }
+
+            .pain-card {
+                padding: 20px;
+            }
+
+            .solution-box {
                 padding: 30px;
+            }
+
+            .solution-image {
+                height: 300px;
+                font-size: 60px;
+            }
+
+            .guarantee-box {
+                padding: 40px 20px;
+            }
+
+            .guarantee-title {
+                font-size: 1.5rem;
+            }
+
+            .payment-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .payment-btn {
+                padding: 25px;
+            }
+
+            .cta-headline {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Respect reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="profile-header">
-            <div class="profile-icon">🎯</div>
-            <h1 class="profile-title">El Controlador</h1>
-            <p class="profile-description">
-                Tu principal motivación es recuperar el control de tu mente y tu vida. Necesitas sentir que tienes poder sobre tus decisiones.
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-image" style="background-image: url('Foto Header Landing.jpeg');"></div>
+            <h1 class="hero-headline">
+                <span class="hero-headline-main">No es falta de disciplina.</span><br>
+                Es falta de SISTEMA.
+            </h1>
+            <p class="hero-subheadline">
+                Has intentado dejarlo más de 5 veces. Cada fallo te destroza un poco más.<br>
+                Esta vez es diferente: Tienes herramientas de verdad. Verás tu progreso cada día.
             </p>
-        </div>
+            <a href="#pago" class="hero-cta">Quiero Mi Sistema Ganador →</a>
+        </section>
 
-        <div class="profile-box">
-            <h3>Tu tipo de fumador:</h3>
-            <p>Necesitas recuperar el CONTROL.</p>
-        </div>
+        <!-- PAIN SECTION -->
+        <section class="pain-section">
+            <h2 class="section-title">El Ciclo Que Necesitas Romper</h2>
+            <div class="pain-cards">
+                <div class="pain-card">
+                    <div class="pain-card-title">Intentas, prometes, fallas</div>
+                    <div class="pain-card-text">Cada vez es lo mismo. Comienzas fuerte, lleno de convicción. Luego la ansiedad aparece y recaes. Una y otra vez.</div>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-card-title">Te miras al espejo y no reconoces a ese tipo</div>
+                    <div class="pain-card-text">Te prometiste que esta vez sería diferente. Que tenías control. Pero aquí estás de nuevo. Eso duele más que cualquier antojo.</div>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-card-title">¿Por qué intentar si sabes que fallarás?</div>
+                    <div class="pain-card-text">Después de tantos intentos, perdiste la fe. ¿Para qué esforzarse si el resultado es siempre el mismo? Así empezó la parálisis.</div>
+                </div>
+            </div>
+        </section>
 
-        <div class="profile-box">
-            <h3>Tu estrategia personalizada:</h3>
-            <p>Tu protocolo se enfoca en técnicas de autorregulación mental, meditación y visualización. Te damos herramientas concretas para que sientas que dominas tu mente, no al revés.</p>
-        </div>
+        <!-- SOLUTION SECTION -->
+        <section class="solution-section">
+            <h2 class="section-title">Tu Protocolo: 3 Pilares De Control Real</h2>
 
-        <button class="cta-button" onclick="window.location.href='#pago'">
-            Continuar al pago →
-        </button>
+            <div class="solution-grid">
+                <div class="solution-content">
+                    <h3>💊 Pilar 1: Tu Cuerpo Finalmente Se Siente Diferente</h3>
+                    <p>El verdadero problema no es la nicotina. Es la ansiedad que fumar *parece* calmar.</p>
+                    <p>Tenemos una fórmula que estabiliza tu cuerpo desde el primer día. A los 30 días, la ansiedad que sentías casi desaparece.</p>
+                    <p style="color: #ff5555; font-weight: 700; margin-top: 20px;">Sin esto, es mucho más difícil.</p>
+                </div>
+                <div class="solution-image" style="background-image: url('Essence.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+            </div>
+
+            <div class="solution-grid" style="grid-template-columns: 1fr 1fr; direction: rtl;">
+                <div class="solution-image" style="direction: ltr;">🔗</div>
+                <div class="solution-content" style="direction: ltr;">
+                    <h3>🔗 Pilar 2: Herramientas Que Funcionan Ya</h3>
+                    <p>Técnicas de respiración que calman en 90 segundos. VERTEX (collar) que activa calma inmediata. ORBIT (anillo) para tus manos cuando sientas la urgencia.</p>
+                    <p>No es teórico. Es práctico. Funciona ahora mismo. Cuando más lo necesitas, tienes una herramienta que realmente funciona.</p>
+                    <p style="color: #ff5555; font-weight: 700; margin-top: 20px;">Esto es lo que te diferencia del resto.</p>
+                </div>
+            </div>
+
+            <div class="solution-grid">
+                <div class="solution-content">
+                    <h3>🎯 Pilar 3: Apoyo Real + Datos De Tu Victoria</h3>
+                    <p>2 sesiones personales (Día 7, Día 21). Seguimiento diario que muestra tu progreso. Comunidad privada de gente como tú que recuperó el control.</p>
+                    <p>No estás solo. Tienes un sistema completo que te guía, te apoya, y te muestra exactamente que estás ganando.</p>
+                    <p style="color: #ff5555; font-weight: 700; margin-top: 20px;">Esto es lo que hace que funcione realmente.</p>
+                </div>
+                <div class="solution-image">🎯</div>
+            </div>
+        </section>
+
+        <!-- TIMELINE SECTION -->
+        <section class="timeline-section">
+            <h2 class="section-title">Tu Transformación: Lo Que Sucede En 30 Días</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-day">DÍA 7</div>
+                    <div class="timeline-title">Tu Primera Victoria Real</div>
+                    <div class="timeline-text">Por primera vez ves el número. Subió. Eso es imposible de ignorar. Tu cerebro empieza a pensar: "Esto realmente funciona".</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-day">DÍA 14</div>
+                    <div class="timeline-title">Cambio De Mentalidad</div>
+                    <div class="timeline-text">No es "estoy luchando". Ahora es "estoy ganando". La ansiedad baja. Te sientes diferente. Más fuerte.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-day">DÍA 30</div>
+                    <div class="timeline-title">Eres La Persona Que Querías Ser</div>
+                    <div class="timeline-text">Miras atrás y ves todo lo que lograste. La ansiedad casi desapareció. Tienes control real nuevamente. Volviste a confiar en ti.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GUARANTEE SECTION -->
+        <section class="guarantee-section">
+            <h2 class="section-title">La Garantía Que Te Pone En Control</h2>
+            <div class="guarantee-box">
+                <div class="guarantee-title">Victory Lock: Tu Protección</div>
+                <div class="guarantee-text">
+                    Si en 30 días <strong>NO VES tu progreso</strong>, si la ansiedad no baja notoriamente, si no sientes que realmente tienes control...
+                </div>
+                <div style="background: rgba(255, 85, 85, 0.1); border: 1px solid rgba(255, 85, 85, 0.3); border-radius: 10px; padding: 30px; margin: 30px 0;">
+                    <div style="font-size: 1.3rem; font-weight: 800; color: #ff5555; margin-bottom: 10px;">Te devolvemos todo tu dinero</div>
+                    <div style="color: #a0a0a0;">Sin preguntas. Sin vergüenza. Tú decides si funciona, no nosotros.</div>
+                </div>
+                <div class="guarantee-highlight">
+                    Lo interesante:<br>
+                    El 94% de las personas que ven su progreso en los primeros 30 días no piden devolución.<br>
+                    Porque los resultados hablan solos.
+                </div>
+            </div>
+        </section>
+
+        <!-- VALUE STACK SECTION -->
+        <section class="value-section">
+            <h2 class="section-title">¿Qué Realmente Recibes?</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-bottom: 60px; text-align: center;">
+                <div>
+                    <div style="width: 100%; height: 300px; background-size: cover; background-position: center; border-radius: 20px; background-image: url('Caja Cerrada.jpeg'); box-shadow: 0 10px 40px rgba(255, 85, 85, 0.2);"></div>
+                    <p style="color: #b0b0b0; margin-top: 20px; font-size: 0.95rem;">Lo que recibes en tu puerta</p>
+                </div>
+                <div>
+                    <div style="width: 100%; height: 300px; background-size: cover; background-position: center; border-radius: 20px; background-image: url('Caja Abierta.png'); box-shadow: 0 10px 40px rgba(255, 85, 85, 0.2);"></div>
+                    <p style="color: #b0b0b0; margin-top: 20px; font-size: 0.95rem;">Dentro: Todo listo para empezar</p>
+                </div>
+            </div>
+            <div class="value-grid">
+                <div>
+                    <ul class="value-list">
+                        <li class="value-item">
+                            <div class="value-icon">📊</div>
+                            <div class="value-content">
+                                <h4>12 Semanas De Guía + Progreso Visible</h4>
+                                <p>Un camino claro que seguir. Cada día ves exactamente dónde estás. Progreso que no puedes ignorar.</p>
+                                <div class="value-amount">Valor: €497</div>
+                            </div>
+                        </li>
+                        <li class="value-item">
+                            <div class="value-icon">💊</div>
+                            <div class="value-content">
+                                <h4>Fórmula Que Calma Tu Cuerpo</h4>
+                                <p>Estabiliza la ansiedad que sientes. Desde el primer día notarás la diferencia. Tu cuerpo finalmente respira tranquilo.</p>
+                                <div class="value-amount">Valor: €197</div>
+                            </div>
+                        </li>
+                        <li class="value-item">
+                            <div class="value-icon">📿</div>
+                            <div class="value-content">
+                                <h4>VERTEX — Collar De Control</h4>
+                                <p>Te ayuda a respirar profundo cuando más lo necesitas. Activa la calma en tu cuerpo. Control en cada respiración.</p>
+                                <div class="value-amount">Valor: €147</div>
+                            </div>
+                        </li>
+                        <li class="value-item">
+                            <div class="value-icon">💍</div>
+                            <div class="value-content">
+                                <h4>ORBIT — Anillo Giratorio</h4>
+                                <p>Algo que hacer con tus manos cuando sientas la urgencia. Movimiento físico que te da poder. Rompe el ciclo automático.</p>
+                                <div class="value-amount">Valor: €147</div>
+                            </div>
+                        </li>
+                        <li class="value-item">
+                            <div class="value-icon">📈</div>
+                            <div class="value-content">
+                                <h4>Seguimiento + Datos De Tu Avance</h4>
+                                <p>Cada día tienes un número que sube. Eso es real. Eso es prueba. Nadie puede discutirlo.</p>
+                                <div class="value-amount">Valor: €147</div>
+                            </div>
+                        </li>
+                        <li class="value-item">
+                            <div class="value-icon">🎯</div>
+                            <div class="value-content">
+                                <h4>2 Sesiones Personales (Día 7 Y Día 21)</h4>
+                                <p>Conversaciones directas conmigo. Celebramos tu progreso. Ajustamos lo que necesites. Apoyo real cuando más lo necesitas.</p>
+                                <div class="value-amount">Valor: €347</div>
+                            </div>
+                        </li>
+                        <li class="value-item">
+                            <div class="value-icon">👥</div>
+                            <div class="value-content">
+                                <h4>Comunidad Privada — Ganadores Como Tú</h4>
+                                <p>30 días + para siempre. Personas que recuperaron su identidad. Inspiración real. Apoyo que entiende exactamente lo que pasas.</p>
+                                <div class="value-amount">Valor: €147</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="value-summary">
+                    <div class="value-total">Valor Real Del Protocolo Completo</div>
+                    <div class="value-big">€1.729</div>
+                    <div class="value-price">Tu Inversión: €279</div>
+                    <div class="value-ratio" style="color: #ff5555; font-size: 1.5rem; font-weight: 800;">Ahorras €1.450</div>
+                    <p style="color: #a0a0a0; margin-top: 20px; font-size: 0.9rem;">84% de descuento en el valor real. Porque sabemos que funcionará para ti.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA SECTION -->
+        <section class="cta-section" id="pago">
+            <h2 class="cta-headline">€9 Al Día Para Ser La Persona Que Sabes Que Eres</h2>
+            <p class="cta-subheadline">
+                Es poco dinero. Es el precio de recuperar el control.
+            </p>
+            <div class="payment-buttons">
+                <a href="https://buy.stripe.com/00wcN4dfG6DCbv01t848002" class="payment-btn" onclick="trackPayment('unique')">
+                    <div class="payment-type">Pago Único</div>
+                    <div class="payment-price">€279</div>
+                </a>
+                <a href="https://buy.stripe.com/dRmaEW2B22nm56C6Ns48003" class="payment-btn" onclick="trackPayment('installments')">
+                    <div class="payment-type">3 Cuotas</div>
+                    <div class="payment-price">€93/mes</div>
+                </a>
+            </div>
+            <div class="social-proof">
+                <span class="social-proof-strong">94%</span> que completa 30 días no pide refund<br>
+                Porque VEN su progreso. Los datos no mienten.
+            </div>
+        </section>
     </div>
+
+    <script>
+        function trackPayment(type) {
+            console.log('Payment type:', type);
+            // Analytics tracking would go here
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
