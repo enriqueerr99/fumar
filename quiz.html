@@ -801,10 +801,21 @@
         }
 
         function showSuccess(nombre, personaDetectada) {
-            // ✨ Mostrar los resultados con el perfil detectado por el servidor
-            document.getElementById('formContainer').classList.add('hidden');
-            displayResults(personaDetectada);
-            window.scrollTo(0, 0);
+            // ✨ Redirigir a la página del perfil correspondiente
+            const profilePages = {
+                'controlador': 'controlador.html',
+                'familiar': 'familiar.html',
+                'racional': 'racional.html',
+                'ansioso': 'ansioso.html'
+            };
+
+            const pageUrl = profilePages[personaDetectada];
+            if (pageUrl) {
+                window.location.href = pageUrl;
+            } else {
+                console.error('Perfil no reconocido:', personaDetectada);
+                alert('Error: Perfil no reconocido');
+            }
         }
 
         // Start

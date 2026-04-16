@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Perfil: El Controlador | FUMAR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #0f0f1e 50%, #1a0a15 100%);
+            color: #e0e0e0;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(200, 30, 30, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(100, 50, 150, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 80px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .profile-icon {
+            font-size: 100px;
+            margin-bottom: 30px;
+            animation: floatUp 3s ease-in-out infinite;
+        }
+
+        .profile-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ff5555 0%, #ff8888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: #ffffff;
+        }
+
+        .profile-description {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .profile-box {
+            background: linear-gradient(135deg, rgba(40, 10, 10, 0.25) 0%, rgba(30, 30, 50, 0.15) 100%);
+            border: 1px solid rgba(255, 85, 85, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+            animation: slideInUp 0.9s ease-out 0.1s both;
+        }
+
+        .profile-box h3 {
+            color: #ff7777;
+            margin-bottom: 18px;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .profile-box p {
+            color: #c0c0c0;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff5555 0%, #cc2222 100%);
+            color: white;
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 15px 40px rgba(255, 85, 85, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Poppins', sans-serif;
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+            animation: slideInUp 1s ease-out 0.2s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 25px 50px rgba(255, 85, 85, 0.4);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floatUp {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 24px;
+            }
+
+            .profile-title {
+                font-size: 2rem;
+            }
+
+            .profile-description {
+                font-size: 1rem;
+            }
+
+            .profile-box {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-header">
+            <div class="profile-icon">🎯</div>
+            <h1 class="profile-title">El Controlador</h1>
+            <p class="profile-description">
+                Tu principal motivación es recuperar el control de tu mente y tu vida. Necesitas sentir que tienes poder sobre tus decisiones.
+            </p>
+        </div>
+
+        <div class="profile-box">
+            <h3>Tu tipo de fumador:</h3>
+            <p>Necesitas recuperar el CONTROL.</p>
+        </div>
+
+        <div class="profile-box">
+            <h3>Tu estrategia personalizada:</h3>
+            <p>Tu protocolo se enfoca en técnicas de autorregulación mental, meditación y visualización. Te damos herramientas concretas para que sientas que dominas tu mente, no al revés.</p>
+        </div>
+
+        <button class="cta-button" onclick="window.location.href='#pago'">
+            Continuar al pago →
+        </button>
+    </div>
+</body>
+</html>
