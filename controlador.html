@@ -417,6 +417,83 @@
             font-weight: 700;
         }
 
+        /* ===== FAQ SECTION ===== */
+        .faq-section {
+            margin-bottom: 120px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: linear-gradient(135deg, rgba(40, 10, 10, 0.25) 0%, rgba(30, 30, 50, 0.15) 100%);
+            border: 1px solid rgba(255, 85, 85, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            animation: slideInUp 0.8s ease-out 0.3s both;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 25px;
+            background: transparent;
+            border: none;
+            color: #e0e0e0;
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 85, 85, 0.05);
+        }
+
+        .faq-text {
+            color: #ff7777;
+            flex: 1;
+        }
+
+        .faq-toggle {
+            color: #ff5555;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-left: 20px;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-question.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer.show {
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            padding: 0 25px 25px 25px;
+            color: #b0b0b0;
+            line-height: 1.8;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
         /* ===== CTA SECTION ===== */
         .cta-section {
             margin-bottom: 120px;
@@ -818,11 +895,97 @@
             </div>
         </section>
 
-        <!-- FINAL CTA SECTION -->
+        <!-- FAQ SECTION -->
+        <section class="faq-section">
+            <h2 class="section-title">¿Por Qué 94% No Pide Devolución? Las Respuestas Que Necesitas Escuchar</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-text">¿Por qué funciona esto si ya he intentado fallar varias veces?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Porque atacas el verdadero problema: la ansiedad, no solo la nicotina. Los intentos anteriores fracasaron porque trataste síntomas, no la causa. Esta vez tienes una fórmula que estabiliza tu cuerpo desde el día 1, herramientas que funcionan en 90 segundos, y seguimiento real que muestra tu progreso. Sin esto, es mucho más difícil. Con esto, es casi inevitable.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-text">¿Qué pasa si no veo progreso en los primeros 30 días?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Te devolvemos todo. Sin preguntas. Sin vergüenza. Pero el 94% de las personas que completa 30 días ve su progreso (y su ansiedad baja notoriamente). Por eso casi nadie pide devolución: los datos no mienten. Y si eres de ese 6%, recuperas tu dinero completo.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-text">¿Realmente solo 30 días? ¿No es muy rápido?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Son 30 días para VER el cambio y recuperar tu confianza. Después viene el real: 12 semanas para que se solidifique. A los 30 días ya sabes si funciona (porque ves los números). Los 60 días siguientes son para que sea permanente. La mayoría de las recaídas pasan en los primeros 30 días. Aquí no ocurren.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-text">¿Cuánto tiempo libre necesito cada día?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>15-20 minutos. Las técnicas de respiración: 5 minutos. VERTEX y ORBIT funcionan en 90 segundos cuando más lo necesitas. El seguimiento diario: 2 minutos. Las sesiones personales son solo dos (Día 7 y Día 21). Encaja en tu vida normal, sin grandes cambios.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-text">¿Funciona si tengo ansiedad severa o depresión?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Especialmente en esos casos. La fórmula está diseñada para personas con ansiedad alta (eso es exactamente lo que fumar parece calmar). VERTEX activa la calma en tu sistema nervioso en 90 segundos. Si tienes depresión clínica, es mejor trabajar con un profesional primero, pero la ansiedad relacionada al fumar: aquí es donde funciona.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-text">¿Quién me acompaña durante todo esto? ¿Me voy a sentir solo?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tienes tres capas de apoyo: 1) Dos sesiones personales conmigo (Día 7 y 21) para celebrar tu progreso y ajustar lo que necesites. 2) Seguimiento diario que muestra exactamente dónde estás. 3) Comunidad privada de gente que recuperó el control. 30 días + para siempre. No estás solo. Estás con gente que entiende exactamente lo que pasas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-text">¿Qué pasa con la dependencia física? ¿Solo es ansiedad?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>La dependencia física es menor de lo que crees. 95% es psicológica/ansiedad. La fórmula estabiliza tu cuerpo (adiós a los síntomas de abstinencia). VERTEX + técnicas de respiración calman el impulso físico en 90 segundos. El resto es mental: herramientas + datos de progreso + apoyo. Juntos = Victoria.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-text">¿Es seguro? ¿Tiene efectos secundarios? ¿Qué contiene?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>La fórmula está basada en ingredientes naturales reconocidos por su capacidad de estabilizar ansiedad. No hay estimulantes. No hay sustitutos de nicotina. Funciona con tu biología, no contra ella. Si tienes condiciones médicas específicas, consulta con tu médico primero, pero la mayoría de personas no tiene contraindicaciones. Tu salud es lo primero.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA SECTION -->
         <section class="cta-section" id="pago">
-            <h2 class="cta-headline">€3.3 Al Día Para Ser La Persona Que Sabes Que Eres</h2>
+            <h2 class="cta-headline">Ya Hemos Aclarado Tus Dudas. Ahora Es Momento De Actuar.</h2>
             <p class="cta-subheadline">
-                Es poco dinero. Es el precio de recuperar el control.
+                Sabes que funciona. Sabes que estás protegido. Sabes exactamente que recibirás.
             </p>
             <div class="payment-buttons">
                 <a href="https://buy.stripe.com/00wcN4dfG6DCbv01t848002" class="payment-btn" onclick="trackPayment('unique')">
@@ -946,9 +1109,49 @@
                 </div>
             </div>
 
-            <div class="social-proof">
-                <span class="social-proof-strong">94%</span> que completa 30 días no pide refund<br>
-                Porque VEN su progreso. Los datos no mienten.
+            <!-- SOCIAL PROOF STATS -->
+            <div style="margin-top: 40px; text-align: center;">
+                <div style="border: 2px solid #FF6B6B; border-radius: 12px; padding: 20px; display: inline-block; max-width: 400px;">
+                    <p style="font-size: 16px; font-weight: 600; color: #FFFFFF; margin: 0; line-height: 1.6;">
+                        <span style="font-size: 20px; color: #FF6B6B;">94%</span> que completa 30 días no pide devolución<br>
+                        <span style="font-size: 14px; color: #CCCCCC;">Porque VEN su progreso. Los datos no mienten.</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- SOCIAL PROOF SLIDER -->
+            <div style="margin-top: 60px;">
+                <h3 style="text-align: center; font-size: 24px; font-weight: 700; color: #FFFFFF; margin-bottom: 30px;">Gente Que Ya Recuperó El Control</h3>
+                <div id="testimonial-slider" style="display: flex; gap: 20px; overflow-x: auto; padding: 20px 0; scroll-behavior: smooth; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;" onmouseover="clearInterval(window.sliderInterval)" onmouseout="startSliderAutoScroll();">
+                    <!-- Placeholder 1 -->
+                    <div style="flex: 0 0 220px; aspect-ratio: 1; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; scroll-snap-align: start; box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);">
+                        <span style="color: #FFFFFF; font-size: 14px; text-align: center; padding: 20px;">Foto 1</span>
+                    </div>
+                    <!-- Placeholder 2 -->
+                    <div style="flex: 0 0 220px; aspect-ratio: 1; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; scroll-snap-align: start; box-shadow: 0 8px 24px rgba(245, 87, 108, 0.3);">
+                        <span style="color: #FFFFFF; font-size: 14px; text-align: center; padding: 20px;">Foto 2</span>
+                    </div>
+                    <!-- Placeholder 3 -->
+                    <div style="flex: 0 0 220px; aspect-ratio: 1; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; scroll-snap-align: start; box-shadow: 0 8px 24px rgba(79, 172, 254, 0.3);">
+                        <span style="color: #FFFFFF; font-size: 14px; text-align: center; padding: 20px;">Foto 3</span>
+                    </div>
+                    <!-- Placeholder 4 -->
+                    <div style="flex: 0 0 220px; aspect-ratio: 1; background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; scroll-snap-align: start; box-shadow: 0 8px 24px rgba(67, 233, 123, 0.3);">
+                        <span style="color: #FFFFFF; font-size: 14px; text-align: center; padding: 20px;">Foto 4</span>
+                    </div>
+                    <!-- Placeholder 5 -->
+                    <div style="flex: 0 0 220px; aspect-ratio: 1; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; scroll-snap-align: start; box-shadow: 0 8px 24px rgba(250, 112, 154, 0.3);">
+                        <span style="color: #FFFFFF; font-size: 14px; text-align: center; padding: 20px;">Foto 5</span>
+                    </div>
+                    <!-- Placeholder 6 -->
+                    <div style="flex: 0 0 220px; aspect-ratio: 1; background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; scroll-snap-align: start; box-shadow: 0 8px 24px rgba(48, 207, 208, 0.3);">
+                        <span style="color: #FFFFFF; font-size: 14px; text-align: center; padding: 20px;">Foto 6</span>
+                    </div>
+                    <!-- Placeholder 7 -->
+                    <div style="flex: 0 0 220px; aspect-ratio: 1; background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; scroll-snap-align: start; box-shadow: 0 8px 24px rgba(255, 154, 86, 0.3);">
+                        <span style="color: #FFFFFF; font-size: 14px; text-align: center; padding: 20px;">Foto 7</span>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
@@ -958,6 +1161,51 @@
             console.log('Payment type:', type);
             // Analytics tracking would go here
         }
+
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            button.classList.toggle('active');
+            answer.classList.toggle('show');
+        }
+
+        // Open first FAQ by default
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstFAQButton = document.querySelector('.faq-question');
+            if (firstFAQButton) {
+                firstFAQButton.classList.add('active');
+                firstFAQButton.nextElementSibling.classList.add('show');
+            }
+        });
+
+        // Autoscroll testimonial slider
+        const slider = document.getElementById('testimonial-slider');
+        window.sliderInterval = null;
+
+        function startSliderAutoScroll() {
+            if (window.sliderInterval) return;
+
+            window.sliderInterval = setInterval(() => {
+                slider.scrollLeft += 1;
+
+                // Loop infinito suave
+                if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
+                    slider.scrollLeft = 0;
+                }
+            }, 40);
+        }
+
+        if (slider) {
+            startSliderAutoScroll();
+        }
+
+        // CSS para ocultar scrollbar
+        const style = document.createElement('style');
+        style.textContent = `
+            #testimonial-slider::-webkit-scrollbar {
+                display: none;
+            }
+        `;
+        document.head.appendChild(style);
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
