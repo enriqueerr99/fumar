@@ -329,13 +329,15 @@
 
         .value-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            align-items: stretch;
+            margin-bottom: 40px;
         }
 
         .value-list {
             list-style: none;
+            display: contents;
         }
 
         .value-item {
@@ -343,10 +345,14 @@
             border: 1px solid rgba(255, 85, 85, 0.2);
             border-radius: 12px;
             padding: 25px;
-            margin-bottom: 20px;
             display: flex;
-            gap: 20px;
+            flex-direction: column;
+            gap: 15px;
             animation: slideInUp 0.8s ease-out 0.5s both;
+        }
+
+        .value-item:last-child {
+            grid-column: 1 / -1;
         }
 
         .value-icon {
@@ -379,6 +385,7 @@
             border-radius: 20px;
             padding: 40px;
             text-align: center;
+            grid-column: 1 / -1;
         }
 
         .value-total {
@@ -744,65 +751,61 @@
                 </div>
             </div>
             <div class="value-grid">
-                <div>
-                    <ul class="value-list">
-                        <li class="value-item">
-                            <div class="value-icon">📊</div>
-                            <div class="value-content">
-                                <h4>12 Semanas De Guía + Progreso Visible</h4>
-                                <p>Un camino claro que seguir. Cada día ves exactamente dónde estás. Progreso que no puedes ignorar.</p>
-                                <div class="value-amount">Valor: €497</div>
-                            </div>
-                        </li>
-                        <li class="value-item">
-                            <div class="value-icon">💊</div>
-                            <div class="value-content">
-                                <h4>Fórmula Que Calma Tu Cuerpo</h4>
-                                <p>Estabiliza la ansiedad que sientes. Desde el primer día notarás la diferencia. Tu cuerpo finalmente respira tranquilo.</p>
-                                <div class="value-amount">Valor: €197</div>
-                            </div>
-                        </li>
-                        <li class="value-item">
-                            <div class="value-icon">📿</div>
-                            <div class="value-content">
-                                <h4>VERTEX — Collar De Control</h4>
-                                <p>Te ayuda a respirar profundo cuando más lo necesitas. Activa la calma en tu cuerpo. Control en cada respiración.</p>
-                                <div class="value-amount">Valor: €147</div>
-                            </div>
-                        </li>
-                        <li class="value-item">
-                            <div class="value-icon">💍</div>
-                            <div class="value-content">
-                                <h4>ORBIT — Anillo Giratorio</h4>
-                                <p>Algo que hacer con tus manos cuando sientas la urgencia. Movimiento físico que te da poder. Rompe el ciclo automático.</p>
-                                <div class="value-amount">Valor: €147</div>
-                            </div>
-                        </li>
-                        <li class="value-item">
-                            <div class="value-icon">📈</div>
-                            <div class="value-content">
-                                <h4>Seguimiento + Datos De Tu Avance</h4>
-                                <p>Cada día tienes un número que sube. Eso es real. Eso es prueba. Nadie puede discutirlo.</p>
-                                <div class="value-amount">Valor: €147</div>
-                            </div>
-                        </li>
-                        <li class="value-item">
-                            <div class="value-icon">🎯</div>
-                            <div class="value-content">
-                                <h4>2 Sesiones Personales (Día 7 Y Día 21)</h4>
-                                <p>Conversaciones directas conmigo. Celebramos tu progreso. Ajustamos lo que necesites. Apoyo real cuando más lo necesitas.</p>
-                                <div class="value-amount">Valor: €347</div>
-                            </div>
-                        </li>
-                        <li class="value-item">
-                            <div class="value-icon">👥</div>
-                            <div class="value-content">
-                                <h4>Comunidad Privada — Ganadores Como Tú</h4>
-                                <p>30 días + para siempre. Personas que recuperaron su identidad. Inspiración real. Apoyo que entiende exactamente lo que pasas.</p>
-                                <div class="value-amount">Valor: €147</div>
-                            </div>
-                        </li>
-                    </ul>
+                <div class="value-item">
+                    <div class="value-icon">📊</div>
+                    <div class="value-content">
+                        <h4>12 Semanas De Guía + Progreso Visible</h4>
+                        <p>Un camino claro que seguir. Cada día ves exactamente dónde estás. Progreso que no puedes ignorar.</p>
+                        <div class="value-amount">Valor: €497</div>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">💊</div>
+                    <div class="value-content">
+                        <h4>Fórmula Que Calma Tu Cuerpo</h4>
+                        <p>Estabiliza la ansiedad que sientes. Desde el primer día notarás la diferencia. Tu cuerpo finalmente respira tranquilo.</p>
+                        <div class="value-amount">Valor: €197</div>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">📿</div>
+                    <div class="value-content">
+                        <h4>VERTEX — Collar De Control</h4>
+                        <p>Te ayuda a respirar profundo cuando más lo necesitas. Activa la calma en tu cuerpo. Control en cada respiración.</p>
+                        <div class="value-amount">Valor: €147</div>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">💍</div>
+                    <div class="value-content">
+                        <h4>ORBIT — Anillo Giratorio</h4>
+                        <p>Algo que hacer con tus manos cuando sientas la urgencia. Movimiento físico que te da poder. Rompe el ciclo automático.</p>
+                        <div class="value-amount">Valor: €147</div>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">📈</div>
+                    <div class="value-content">
+                        <h4>Seguimiento + Datos De Tu Avance</h4>
+                        <p>Cada día tienes un número que sube. Eso es real. Eso es prueba. Nadie puede discutirlo.</p>
+                        <div class="value-amount">Valor: €147</div>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🎯</div>
+                    <div class="value-content">
+                        <h4>2 Sesiones Personales (Día 7 Y Día 21)</h4>
+                        <p>Conversaciones directas conmigo. Celebramos tu progreso. Ajustamos lo que necesites. Apoyo real cuando más lo necesitas.</p>
+                        <div class="value-amount">Valor: €347</div>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">👥</div>
+                    <div class="value-content">
+                        <h4>Comunidad Privada — Ganadores Como Tú</h4>
+                        <p>30 días + para siempre. Personas que recuperaron su identidad. Inspiración real. Apoyo que entiende exactamente lo que pasas.</p>
+                        <div class="value-amount">Valor: €147</div>
+                    </div>
                 </div>
                 <div class="value-summary">
                     <div class="value-total">Valor Real Del Protocolo Completo</div>
