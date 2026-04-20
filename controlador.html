@@ -496,11 +496,11 @@
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
+            transition: max-height 0.4s ease;
         }
 
         .faq-answer.show {
-            max-height: 500px;
+            max-height: 1000px;
         }
 
         .faq-answer p {
@@ -1223,8 +1223,10 @@
         document.addEventListener('DOMContentLoaded', function() {
             const firstFAQButton = document.querySelector('.faq-question');
             if (firstFAQButton) {
+                const faqItem = firstFAQButton.closest('.faq-item');
+                const answer = faqItem.querySelector('.faq-answer');
                 firstFAQButton.classList.add('active');
-                firstFAQButton.nextElementSibling.classList.add('show');
+                answer.classList.add('show');
             }
 
             // Autoscroll testimonial slider (only on mobile)
