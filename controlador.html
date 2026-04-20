@@ -1127,9 +1127,9 @@
     </div>
 
     <!-- SOCIAL PROOF TESTIMONIALS -->
-    <div style="width: 100%; padding: 60px 0; background: #0a0a0a;">
+    <div style="width: 100%; padding: 60px 40px; background: #0a0a0a;">
         <h3 style="text-align: center; font-size: 24px; font-weight: 700; color: #FFFFFF; margin-bottom: 40px; margin-top: 0;">Gente Que Ya Recuperó El Control</h3>
-        <div id="testimonial-slider" style="display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 0 40px; overflow-y: auto; scrollbar-width: none; -ms-overflow-style: none;" onmouseover="clearInterval(window.sliderInterval)" onmouseout="startSliderAutoScroll();">
+        <div id="testimonial-slider" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1200px; margin: 0 auto;" onmouseover="clearInterval(window.sliderInterval)" onmouseout="startSliderAutoScroll();">
             <!-- Testimonio 1 -->
             <div style="width: 100%; max-width: 400px; text-align: center;">
                 <div style="width: 300px; height: 300px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3); margin: 0 auto 20px;">
@@ -1184,14 +1184,6 @@
                 <p style="color: #CCCCCC; font-size: 14px; margin: 0; line-height: 1.6;">Testimonio corto sobre cómo el protocolo cambió su vida y sus resultados.</p>
             </div>
 
-            <!-- Testimonio 7 -->
-            <div style="width: 100%; max-width: 400px; text-align: center;">
-                <div style="width: 300px; height: 300px; background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(255, 154, 86, 0.3); margin: 0 auto 20px;">
-                    <span style="color: #FFFFFF; font-size: 14px; text-align: center; padding: 20px;">Foto 7</span>
-                </div>
-                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 600; margin: 0 0 10px 0;">Nombre Persona</h4>
-                <p style="color: #CCCCCC; font-size: 14px; margin: 0; line-height: 1.6;">Testimonio corto sobre cómo el protocolo cambió su vida y sus resultados.</p>
-            </div>
         </div>
     </div>
 
@@ -1215,11 +1207,13 @@
                 firstFAQButton.nextElementSibling.classList.add('show');
             }
 
-            // Autoscroll testimonial slider (vertical)
+            // Autoscroll testimonial slider (only on mobile)
             const slider = document.getElementById('testimonial-slider');
             window.sliderInterval = null;
 
             function startSliderAutoScroll() {
+                // Only enable autoscroll on mobile
+                if (window.innerWidth > 768) return;
                 if (window.sliderInterval) return;
 
                 window.sliderInterval = setInterval(() => {
@@ -1235,6 +1229,14 @@
             if (slider) {
                 startSliderAutoScroll();
             }
+
+            // Handle resize to adjust autoscroll
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768 && window.sliderInterval) {
+                    clearInterval(window.sliderInterval);
+                    window.sliderInterval = null;
+                }
+            });
 
             // CSS para ocultar scrollbar
             const style = document.createElement('style');
