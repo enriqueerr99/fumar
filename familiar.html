@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Reconstruye la confianza con tu familia en 30 días. Protocolo familiar para dejar de fumar sin sufrimiento. 6:1 Value Ratio. Garantía 100%.">
-    <meta property="og:title" content="El Familiar - Reto Familiar | Reconstruye Confianza">
-    <meta property="og:description" content="Tu familia no está cansada de que fumes. Está CANSADA DE ESPERAR. Esta vez es diferente.">
-    <title>El Familiar - Reto Familiar | Vivirsinhumo</title>
+    <meta name="description" content="Recupera la confianza de tu familia en 30 días. Protocolo Familiar para dejar de fumar. Reconstruye relaciones. 6.6:1 Value Ratio. Garantía 100%.">
+    <meta property="og:title" content="El Familiar - Protocolo De Confianza | Libertad Familiar">
+    <meta property="og:description" content="Tu problema no es el cigarrillo. Es la culpa y la distancia con tu familia.">
+    <title>El Familiar - Protocolo De Confianza | Vivirsinhumo</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,21 +65,26 @@
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 80px 40px;
+            padding: 40px 40px;
             position: relative;
             z-index: 1;
         }
 
         /* ===== HERO SECTION ===== */
         .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
             margin-bottom: 120px;
             animation: fadeInUp 0.8s ease-out;
         }
 
         .hero-icon {
-            font-size: clamp(60px, 15vw, 120px);
-            margin-bottom: 30px;
+            font-size: 120px;
+            margin-bottom: 40px;
             animation: floatUp 3s ease-in-out infinite;
         }
 
@@ -90,7 +95,7 @@
             background-size: cover;
             background-position: center;
             border-radius: 20px;
-            margin: 0 auto 50px;
+            margin-bottom: 50px;
             box-shadow: 0 20px 60px rgba(255, 85, 85, 0.2);
             animation: slideInUp 1s ease-out both;
         }
@@ -101,31 +106,34 @@
             background-size: cover;
             background-position: center;
             border-radius: 20px;
-            margin-top: 30px;
+            margin-top: 20px;
             box-shadow: 0 10px 30px rgba(255, 85, 85, 0.15);
         }
 
         .hero-headline {
             font-family: 'Poppins', sans-serif;
-            font-size: clamp(2.5rem, 7vw, 4rem);
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
             font-weight: 800;
-            margin-bottom: 20px;
-            color: #e0e0e0;
-            line-height: 1.2;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
         }
 
-        .hero-highlight {
-            color: #ff5555;
+        .hero-headline-main {
+            background: linear-gradient(135deg, #ff5555 0%, #ff8888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero-subheadline {
-            font-size: clamp(1rem, 2.5vw, 1.3rem);
-            color: #b0b0b0;
-            margin-bottom: 40px;
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            line-height: 1.8;
+            margin-bottom: 50px;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.6;
         }
 
         .hero-cta {
@@ -230,44 +238,50 @@
             font-size: 1rem;
         }
 
-        .solution-icon {
-            font-size: clamp(60px, 10vw, 100px);
-            margin-bottom: 20px;
-            animation: floatUp 3s ease-in-out infinite;
+        .solution-box {
+            background: linear-gradient(135deg, rgba(40, 10, 10, 0.25) 0%, rgba(30, 30, 50, 0.15) 100%);
+            border: 1px solid rgba(255, 85, 85, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
         }
 
-        @media (max-width: 768px) {
-            .solution-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
+        .solution-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(100, 50, 150, 0.1) 0%, rgba(255, 85, 85, 0.05) 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 85, 85, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            animation: floatUp 4s ease-in-out infinite;
         }
 
         /* ===== TIMELINE SECTION ===== */
         .timeline-section {
             margin-bottom: 120px;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
         }
 
         .timeline {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 40px;
         }
 
-        .timeline-card {
-            background: linear-gradient(135deg, rgba(40, 10, 10, 0.15) 0%, rgba(30, 30, 50, 0.1) 100%);
+        .timeline-item {
+            background: linear-gradient(135deg, rgba(40, 10, 10, 0.25) 0%, rgba(30, 30, 50, 0.15) 100%);
             border: 1px solid rgba(255, 85, 85, 0.2);
-            border-radius: 12px;
+            border-radius: 20px;
             padding: 40px;
             text-align: center;
-            backdrop-filter: blur(10px);
             animation: slideInUp 0.8s ease-out 0.3s both;
         }
 
         .timeline-day {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 800;
             color: #ff5555;
             margin-bottom: 15px;
@@ -275,13 +289,13 @@
 
         .timeline-title {
             font-weight: 700;
-            color: #e0e0e0;
+            color: #ff7777;
             margin-bottom: 15px;
             font-size: 1.1rem;
         }
 
         .timeline-text {
-            color: #b0b0b0;
+            color: #a0a0a0;
             font-size: 0.95rem;
             line-height: 1.6;
         }
@@ -289,182 +303,292 @@
         /* ===== GUARANTEE SECTION ===== */
         .guarantee-section {
             margin-bottom: 120px;
-            animation: fadeInUp 0.8s ease-out 0.3s both;
         }
 
         .guarantee-box {
-            background: linear-gradient(135deg, rgba(40, 10, 10, 0.2) 0%, rgba(60, 20, 30, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(255, 85, 85, 0.1) 0%, rgba(107, 45, 123, 0.05) 100%);
             border: 2px solid #ff5555;
-            border-radius: 16px;
-            padding: 50px;
+            border-radius: 20px;
+            padding: 60px;
             text-align: center;
-            backdrop-filter: blur(10px);
+            animation: slideInUp 0.8s ease-out 0.4s both;
         }
 
         .guarantee-title {
             font-family: 'Poppins', sans-serif;
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            font-weight: 800;
-            margin-bottom: 20px;
-            color: #ff7777;
-        }
-
-        .guarantee-text {
-            color: #b0b0b0;
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .guarantee-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .stat {
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-        }
-
-        .stat-number {
-            font-family: 'Poppins', sans-serif;
             font-size: 2rem;
             font-weight: 800;
+            margin-bottom: 20px;
             color: #ff5555;
         }
 
-        .stat-label {
-            color: #b0b0b0;
-            font-size: 0.9rem;
-            margin-top: 5px;
+        .guarantee-text {
+            color: #c0c0c0;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        @media (max-width: 768px) {
-            .guarantee-stats {
-                grid-template-columns: 1fr;
-            }
+        .guarantee-highlight {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ff7777;
+            margin-top: 30px;
         }
 
         /* ===== VALUE STACK SECTION ===== */
-        .value-stack-section {
+        .value-section {
             margin-bottom: 120px;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
         }
 
-        .value-items {
+        .value-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px;
-            margin-bottom: 50px;
+            align-items: stretch;
+            margin-bottom: 40px;
+        }
+
+        .value-list {
+            list-style: none;
+            display: contents;
         }
 
         .value-item {
-            background: linear-gradient(135deg, rgba(40, 10, 10, 0.15) 0%, rgba(80, 20, 20, 0.05) 100%);
+            background: linear-gradient(135deg, rgba(40, 10, 10, 0.25) 0%, rgba(30, 30, 50, 0.15) 100%);
             border: 1px solid rgba(255, 85, 85, 0.2);
             border-radius: 12px;
-            padding: 30px;
-            text-align: center;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
             animation: slideInUp 0.8s ease-out 0.5s both;
+        }
+
+        .value-item:nth-child(7),
+        .value-item:last-child {
+            grid-column: 1 / -1;
+        }
+
+        .value-icon {
+            font-size: 30px;
+            flex-shrink: 0;
+        }
+
+        .value-content h4 {
+            color: #ff7777;
+            margin-bottom: 5px;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .value-content p {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .value-amount {
+            color: #ff5555;
+            font-weight: 800;
+            font-size: 0.85rem;
+        }
+
+        .value-summary {
+            background: linear-gradient(135deg, rgba(255, 85, 85, 0.1) 0%, rgba(107, 45, 123, 0.05) 100%);
+            border: 2px solid #ff5555;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            grid-column: 1 / -1;
+        }
+
+        .value-total {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            margin-bottom: 10px;
+        }
+
+        .value-big {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ff5555;
+            margin-bottom: 10px;
         }
 
         .value-price {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.3rem;
             font-weight: 800;
-            color: #ff5555;
-            margin-bottom: 10px;
-        }
-
-        .value-name {
-            color: #e0e0e0;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .value-desc {
-            color: #b0b0b0;
-            font-size: 0.9rem;
-        }
-
-        .value-summary {
-            background: linear-gradient(135deg, rgba(40, 10, 10, 0.2) 0%, rgba(60, 20, 30, 0.1) 100%);
-            border: 1px solid rgba(255, 85, 85, 0.3);
-            border-radius: 12px;
-            padding: 40px;
-            text-align: center;
+            color: #c0c0c0;
+            margin-bottom: 15px;
         }
 
         .value-ratio {
-            color: #ff5555;
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 10px;
+            color: #ff7777;
+            font-size: 0.95rem;
+            font-weight: 700;
         }
 
-        .value-ratio-label {
-            color: #b0b0b0;
-            font-size: 1rem;
+        /* ===== FAQ SECTION ===== */
+        .faq-section {
+            margin-bottom: 120px;
         }
 
-        /* ===== FINAL CTA SECTION ===== */
-        .final-cta-section {
-            text-align: center;
-            animation: fadeInUp 0.8s ease-out 0.5s both;
-            margin-bottom: 80px;
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            gap: 20px;
         }
 
-        .final-headline {
-            font-family: 'Poppins', sans-serif;
-            font-size: clamp(2rem, 6vw, 3.5rem);
-            font-weight: 800;
-            margin-bottom: 30px;
+        .faq-item {
+            background: linear-gradient(135deg, rgba(40, 10, 10, 0.25) 0%, rgba(30, 30, 50, 0.15) 100%);
+            border: 1px solid rgba(255, 85, 85, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            animation: slideInUp 0.8s ease-out 0.3s both;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 25px;
+            background: transparent;
+            border: none;
             color: #e0e0e0;
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Inter', sans-serif;
         }
 
-        .final-subheadline {
+        .faq-question:hover {
+            background: rgba(255, 85, 85, 0.05);
+        }
+
+        .faq-text {
+            color: #ff7777;
+            flex: 1;
+        }
+
+        .faq-toggle {
+            color: #ff5555;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-left: 20px;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-question.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq-answer.show {
+            max-height: 1000px;
+        }
+
+        .faq-answer p {
+            padding: 0 25px 25px 25px;
             color: #b0b0b0;
+            line-height: 1.8;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            margin-bottom: 120px;
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .cta-headline {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ff5555 0%, #ff8888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-subheadline {
             font-size: 1.1rem;
+            color: #a0a0a0;
             margin-bottom: 50px;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        .cta-buttons {
+        .payment-buttons {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            justify-items: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
         }
 
-        .cta-btn {
-            display: inline-block;
-            padding: 20px 40px;
-            border-radius: 50px;
+        .payment-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #ff5555 0%, #cc2222 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
             border: none;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 20px 50px rgba(255, 85, 85, 0.3);
             font-family: 'Poppins', sans-serif;
+        }
+
+        .payment-btn:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 30px 70px rgba(255, 85, 85, 0.4);
+        }
+
+        .payment-type {
+            font-weight: 700;
+            font-size: 1.1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .cta-btn-primary {
-            background: linear-gradient(135deg, #ff5555 0%, #cc2222 100%);
-            color: white;
-            box-shadow: 0 20px 50px rgba(255, 85, 85, 0.3);
+        .payment-price {
+            font-size: 1.8rem;
+            font-weight: 800;
         }
 
-        .cta-btn-primary:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 30px 70px rgba(255, 85, 85, 0.4);
+        .social-proof {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            margin-top: 30px;
+        }
+
+        .social-proof-strong {
+            color: #ff7777;
+            font-weight: 700;
         }
 
         /* ===== ANIMATIONS ===== */
@@ -482,7 +606,7 @@
         @keyframes slideInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
@@ -495,17 +619,79 @@
                 transform: translateY(0px);
             }
             50% {
-                transform: translateY(-15px);
+                transform: translateY(-20px);
             }
         }
 
         /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 40px 30px;
+            }
+
+            .solution-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                grid-template-columns: 1fr;
+            }
+
+            .pain-cards {
+                grid-template-columns: 1fr;
+            }
+
+            #sticky-payment-btn {
+                bottom: 20px !important;
+                right: 20px !important;
+                left: 20px !important;
+                padding: 16px 24px !important;
+                border-radius: 12px !important;
+                font-size: 16px !important;
+                width: auto !important;
+                max-width: none !important;
+            }
+        }
+
         @media (max-width: 768px) {
             .container {
-                padding: 40px 24px;
+                padding: 30px 20px;
+            }
+
+            .solution-grid {
+                grid-template-columns: 1fr !important;
+                direction: ltr !important;
+            }
+
+            #testimonial-slider {
+                grid-template-columns: 1fr !important;
+                gap: 30px !important;
+                padding: 0 !important;
+                justify-items: center !important;
+            }
+
+            .hero {
+                min-height: 80vh;
+                margin-bottom: 80px;
+            }
+
+            .hero-headline {
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+
+            .hero-subheadline {
+                font-size: 1rem;
+                margin-bottom: 40px;
             }
 
             .section-title {
+                font-size: 1.8rem;
                 margin-bottom: 50px;
             }
 
@@ -513,16 +699,41 @@
                 gap: 20px;
             }
 
-            .guarantee-box {
+            .pain-card {
+                padding: 20px;
+            }
+
+            .solution-box {
                 padding: 30px;
             }
 
-            .final-headline {
-                margin-bottom: 20px;
+            .solution-image {
+                height: 300px;
+                font-size: 60px;
+            }
+
+            .guarantee-box {
+                padding: 40px 20px;
+            }
+
+            .guarantee-title {
+                font-size: 1.5rem;
+            }
+
+            .payment-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .payment-btn {
+                padding: 25px;
+            }
+
+            .cta-headline {
+                font-size: 1.8rem;
             }
         }
 
-        /* Accessibility */
+        /* Respect reduced motion */
         @media (prefers-reduced-motion: reduce) {
             * {
                 animation-duration: 0.01ms !important;
@@ -536,220 +747,552 @@
     <div class="container">
         <!-- HERO SECTION -->
         <section class="hero">
-            <div class="hero-image" style="background-image: url('Foto Header Landing.jpeg');"></div>
-            <h1 class="hero-headline">Tu Familia <span class="hero-highlight">No Está Cansada De Que Fumes</span></h1>
-            <p class="hero-subheadline">Está cansada de creer en promesas. Esta vez es diferente. Reconstruye la confianza que perdiste en 30 días.</p>
-            <a href="#cierre" class="hero-cta">Quiero Recuperar La Confianza →</a>
+            <div class="hero-image" style="background-image: url('Hero Familiar.png');"></div>
+            <h1 class="hero-headline">
+                <span class="hero-headline-main">Sé La Persona Que Tu Familia Merece.</span><br>
+                Sin Culpa. Sin Distancia.
+            </h1>
+            <p class="hero-subheadline">
+                Tu familia te pide que dejes. La culpa te consume. Este protocolo es diferente: Dejas de fumar Y reconstruyes confianza en 30 días.<br>
+                No sufres solo. Tu familia te apoya.
+            </p>
+            <a href="#pago" class="hero-cta">Quiero Recuperar Mi Familia →</a>
         </section>
 
-        <!-- PAIN POINTS SECTION -->
+        <!-- PAIN SECTION -->
         <section class="pain-section">
-            <h2 class="section-title">La Distancia Que Crece Cada Vez</h2>
+            <h2 class="section-title">La Culpa Que Te Atrapa</h2>
             <div class="pain-cards">
                 <div class="pain-card">
-                    <div class="pain-card-title">Promesas rotas, confianza perdida</div>
-                    <p class="pain-card-text">Prometiste que ibas a cambiar. La primera vez creyeron. La segunda vez dudaron. La tercera vez dejaron de creer.</p>
+                    <div class="pain-card-title">Promete → Falla → Culpa</div>
+                    <div class="pain-card-text">Tu pareja te pide que dejes. Prometes. Primeros días van bien. Luego recaes. La culpa es insoportable. Tu pareja te mira diferente.</div>
                 </div>
                 <div class="pain-card">
-                    <div class="pain-card-title">El silencio en la mesa</div>
-                    <p class="pain-card-text">Tu familia ya no te pregunta, porque sabe que no cambiarás. Te miran diferente. La decepción está en sus ojos.</p>
+                    <div class="pain-card-title">Tu hijo pregunta: "¿Por qué dices no a esto pero sí al cigarrillo?"</div>
+                    <div class="pain-card-text">Eres un hipócrita. Le enseñas a tomar buenas decisiones mientras tomas malas. Siente que no te importa tu salud ni la suya.</div>
                 </div>
                 <div class="pain-card">
-                    <div class="pain-card-title">La vergüenza que crece</div>
-                    <p class="pain-card-text">Cada recaída es una puñalada más. Sabes que te están viendo fracasar. Saben que vuelves a fumar. La relación se quiebra un poco más cada vez.</p>
+                    <div class="pain-card-title">La familia ya no cree en ti</div>
+                    <div class="pain-card-text">Intentaste 3, 4, 5 veces. Cada fallo deteriora la confianza. Ya no te ven como alguien que puede cumplir promesas. Solo ves decepción.</div>
                 </div>
             </div>
-            <div class="timeline-image" style="background-image: url('Foto Landing 3.jpeg'); margin-top: 40px; height: 350px;"></div>
         </section>
 
         <!-- SOLUTION SECTION -->
         <section class="solution-section">
-            <h2 class="section-title">Ahora Tu Familia Es Parte Del Cambio</h2>
+            <h2 class="section-title">Tu Protocolo: 3 Pilares De Transformación Familiar</h2>
 
             <div class="solution-grid">
-                <div>
-                    <div class="solution-icon">❤️</div>
-                </div>
                 <div class="solution-content">
-                    <h3>Un Sistema Que Tu Familia Puede Ver</h3>
-                    <p>No es secreto. Tu familia ve exactamente dónde estás cada día. Ven tu progreso. Ven que esta vez es diferente. Eso hace que crean en ti de nuevo.</p>
+                    <h3>🗣️ Pilar 1: Comunicación Honesta Con Tu Familia</h3>
+                    <p>No escondas el proceso. Este protocolo INCLUYE a tu familia desde el Día 1. Check-ins semanales, momentos de calidad, conversaciones que reconstruyen confianza.</p>
+                    <p>Tu familia pasa de ser observadora decepcionada a ser tu equipo activo. Eso cambia todo.</p>
+                    <p style="color: #ff5555; font-weight: 700; margin-top: 20px;">Sin esto, fracasarás solo de nuevo.</p>
                 </div>
+                <div class="solution-image" style="background-image: url('pilar 1 familiar.png'); background-size: cover; background-position: center;"></div>
+            </div>
+
+            <div class="solution-grid" style="grid-template-columns: 1fr 1fr;">
+                <div class="solution-content">
+                    <h3>💊 Pilar 2: Suplementación + Técnicas Que Funcionan</h3>
+                    <p>No es solo fuerza de voluntad. Bajamos tus ansias físicamente. Meditaciones guiadas. Técnicas de respiración para momentos débiles.</p>
+                    <p>Cuando menos fuerza de voluntad tengas, el protocolo te sostiene. Tu familia ve consistencia, no lucha.</p>
+                    <p style="color: #ff5555; font-weight: 700; margin-top: 20px;">Eso es lo que genera confianza.</p>
+                </div>
+                <div class="solution-image" style="background-image: url('pilar 2 familiar.png'); background-size: cover; background-position: center;"></div>
             </div>
 
             <div class="solution-grid">
                 <div class="solution-content">
-                    <h3>Apoyo Verdadero, No Solo Voluntad</h3>
-                    <p>Tu cuerpo y mente tendrán herramientas reales. La ansiedad baja. Tu carácter mejora. Tu familia siente el cambio en cómo actúas, no solo en que dejaste de fumar.</p>
+                    <h3>👥 Pilar 3: Comunidad + Apoyo 1-a-1 Para Reparar</h3>
+                    <p>Sesiones de coaching en Día 7 y Día 21. No solo celebramos tu avance. Trabajamos en cómo tu familia ve ese avance. Cómo creen en ti de nuevo.</p>
+                    <p>Comunidad de familias que se reconstruyeron juntas. No estás solo. Tu pareja/hijo ven que hay gente como ustedes que lo logró.</p>
+                    <p style="color: #ff5555; font-weight: 700; margin-top: 20px;">Eso es esperanza real.</p>
                 </div>
-                <div>
-                    <div class="solution-icon">💪</div>
-                </div>
-            </div>
-
-            <div class="solution-grid">
-                <div>
-                    <div class="solution-icon">🤝</div>
-                </div>
-                <div class="solution-content">
-                    <h3>Reconstruir Juntos</h3>
-                    <p>No lo haces solo. Tu familia está en el viaje. Conversaciones honestas. Momentos de celebración compartidos. La relación se reconstruye mientras dejas de fumar.</p>
-                </div>
+                <div class="solution-image" style="background-image: url('pilar 3 familiar.png'); background-size: cover; background-position: center;"></div>
             </div>
         </section>
 
         <!-- TIMELINE SECTION -->
         <section class="timeline-section">
-            <h2 class="section-title">Lo Que Sucede En 30 Días</h2>
+            <h2 class="section-title">Tu Transformación: Lo Que Sucede En 30 Días</h2>
             <div class="timeline">
-                <div class="timeline-card">
-                    <div class="timeline-day">Día 7</div>
-                    <div class="timeline-title">Tu Familia Nota El Cambio</div>
-                    <p class="timeline-text">Después de una semana sin recaídas, ven que esta vez es diferente. "Creo que realmente quiere cambiar esta vez."</p>
+                <div class="timeline-item">
+                    <div class="timeline-day">DÍA 1-3</div>
+                    <div class="timeline-title">Tu Familia Ve El Cambio</div>
+                    <div class="timeline-text">Comunicación honesta. Tu pareja/hijo ven que esta vez es diferente. No estás escondiendo el proceso. Estás invitándolos a ser parte.</div>
                 </div>
-                <div class="timeline-card">
-                    <div class="timeline-day">Día 14</div>
-                    <div class="timeline-title">La Fe Comienza A Regresar</div>
-                    <p class="timeline-text">Han visto 14 días de consistencia. El silencio en la mesa empieza a romperse. Sonríen de nuevo cuando hablan contigo.</p>
+                <div class="timeline-item">
+                    <div class="timeline-day">DÍA 7</div>
+                    <div class="timeline-title">Primera Victoria Compartida</div>
+                    <div class="timeline-text">Una semana sin fumar. Check-in con tu familia. Celebran juntos. Tu pareja ve que es posible. Tu hijo ve que PUEDES cumplir. Confianza comienza a reconstruirse.</div>
                 </div>
-                <div class="timeline-card">
-                    <div class="timeline-day">Día 30</div>
-                    <div class="timeline-title">Recuperaste Su Confianza</div>
-                    <p class="timeline-text">30 días de consistencia. Tu familia te mira de nuevo como lo hacían antes. Te creen. La relación está sanando.</p>
+                <div class="timeline-item">
+                    <div class="timeline-day">DÍA 30</div>
+                    <div class="timeline-title">Relación Transformada</div>
+                    <div class="timeline-text">Sin fumar. Tu familia confía en ti de nuevo. No solo porque dejaste los cigarrillos. Porque fuiste consistente, honesto, y los incluyó en el proceso.</div>
                 </div>
             </div>
-            <div class="timeline-image" style="background-image: url('Foto Landing 4.jpeg');"></div>
         </section>
 
         <!-- GUARANTEE SECTION -->
         <section class="guarantee-section">
+            <h2 class="section-title">La Garantía Que Te Protege</h2>
             <div class="guarantee-box">
-                <div class="guarantee-title">🏆 Garantía Family Trust</div>
-                <p class="guarantee-text">
-                    Si en 30 días tu familia NO ve un cambio real, si no sienten que esta vez es diferente, si la confianza no comienza a reconstruirse... <strong>Te devolvemos todo sin hacer preguntas.</strong>
-                </p>
-                <p class="guarantee-text" style="font-size: 1.1rem; color: #ff5555; margin-top: 20px;">
-                    <strong>El 96% no pide refund.</strong>
-                </p>
-                <p class="guarantee-text">
-                    ¿Por qué? Porque la familia SIENTE el cambio real. Cuando los que amas te creen de nuevo, es imposible rendirse.
-                </p>
-                <div class="guarantee-stats">
-                    <div class="stat">
-                        <div class="stat-number">96%</div>
-                        <div class="stat-label">Familias continúan</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">314+</div>
-                        <div class="stat-label">Relaciones sanadas</div>
-                    </div>
+                <div class="guarantee-title">Family Trust Guarantee: Tu Familia Decide</div>
+                <div class="guarantee-text">
+                    Si en 30 días tu familia <strong>NO SIENTE</strong> un cambio genuino, si la confianza no comienza a reconstruirse, si ves que la culpa sigue igual...
+                </div>
+                <div style="background: rgba(255, 85, 85, 0.1); border: 1px solid rgba(255, 85, 85, 0.3); border-radius: 10px; padding: 30px; margin: 30px 0;">
+                    <div style="font-size: 1.3rem; font-weight: 800; color: #ff5555; margin-bottom: 10px;">Te devolvemos todo tu dinero</div>
+                    <div style="color: #a0a0a0;">Sin preguntas. Tu familia es el juez, no nosotros.</div>
+                </div>
+                <div class="guarantee-highlight">
+                    Lo interesante:<br>
+                    El 96% de familias que completan los 30 días SIENTEN el cambio.<br>
+                    Porque estaban esperando EXACTAMENTE esto: verte consistente.
                 </div>
             </div>
         </section>
 
         <!-- VALUE STACK SECTION -->
-        <section class="value-stack-section">
-            <h2 class="section-title">Lo Que Recibes Realmente</h2>
-            <div class="value-items">
-                <div class="value-item">
-                    <div class="value-price">€497</div>
-                    <div class="value-name">12 Semanas De Guía + Progreso Visible</div>
-                    <div class="value-desc">Un camino claro que seguir. Tu familia ve exactamente dónde estás cada día. Progreso que no pueden ignorar.</div>
-                </div>
-                <div class="value-item">
-                    <div class="value-price">€197</div>
-                    <div class="value-name">Fórmula Que Calma Tu Cuerpo</div>
-                    <div class="value-desc">Estabiliza emociones desde el primer día. Menos irritabilidad, más paciencia. Tu familia nota el cambio al instante.</div>
-                </div>
-                <div class="value-item">
-                    <div class="value-price">€147</div>
-                    <div class="value-name">VERTEX — Collar De Control</div>
-                    <div class="value-desc">Tu familia lo verá cada día. Es una herramienta visible que demuestra que estás serio sobre el cambio.</div>
-                </div>
-                <div class="value-item">
-                    <div class="value-price">€147</div>
-                    <div class="value-name">ORBIT — Anillo Giratorio</div>
-                    <div class="value-desc">Algo que hacer cuando la urgencia aparece. Tu familia nota que tienes herramientas, no solo buenas intenciones.</div>
-                </div>
-                <div class="value-item">
-                    <div class="value-price">€147</div>
-                    <div class="value-name">Seguimiento + Datos De Tu Avance</div>
-                    <div class="value-desc">Tu progreso no es secreto. Tu familia ve exactamente dónde estás cada día. Eso reconstruye la confianza.</div>
-                </div>
-                <div class="value-item">
-                    <div class="value-price">€347</div>
-                    <div class="value-name">2 Sesiones Personales (Día 7 Y Día 21)</div>
-                    <div class="value-desc">Coaching directo sobre cómo reconstruir relaciones. Cómo hablar sinceramente con tu familia. Apoyo real.</div>
-                </div>
-                <div class="value-item">
-                    <div class="value-price">€147</div>
-                    <div class="value-name">Comunidad Privada — Ganadores Como Tú</div>
-                    <div class="value-desc">30 días + para siempre. Familias que se reconstruyeron. Historias reales. Apoyo que entiende exactamente lo que pasas.</div>
+        <section class="value-section">
+            <h2 class="section-title">¿Qué Realmente Recibes?</h2>
+            <div style="display: flex; justify-content: center; margin-bottom: 60px; text-align: center; padding: 0 20px;">
+                <div style="max-width: 500px; width: 100%;">
+                    <div style="width: 100%; aspect-ratio: 3 / 4; background-size: cover; background-position: center; border-radius: 20px; background-image: url('recibiras.png'); box-shadow: 0 10px 40px rgba(255, 85, 85, 0.2);"></div>
+                    <p style="color: #b0b0b0; margin-top: 20px; font-size: 0.95rem;">Lo que recibes en tu puerta</p>
                 </div>
             </div>
-            <div class="value-summary">
-                <div class="value-ratio">6.2:1</div>
-                <div class="value-ratio-label">€1,729 en valor / €279 precio</div>
+            <div class="value-grid">
+                <div class="value-item">
+                    <div class="value-icon">📊</div>
+                    <div class="value-content">
+                        <h4>12 Semanas De Guía + Progreso Visible</h4>
+                        <p>Un camino claro que seguir. Cada día ves exactamente dónde estás. Tu familia ve tu progreso también (tabla compartida).</p>
+                        <div class="value-amount">Valor: €497</div>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">💊</div>
+                    <div class="value-content">
+                        <h4>Fórmula Que Calma Tu Cuerpo</h4>
+                        <p>Estabiliza la ansiedad que sientes. Desde el primer día notarás la diferencia. Sin ansias extremas, la fuerza de voluntad se vuelve posible.</p>
+                        <div class="value-amount">Valor: €197</div>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">📿</div>
+                    <div class="value-content">
+                        <h4>VERTEX — Collar De Control</h4>
+                        <p>Te ayuda a respirar profundo cuando la ansiedad aparece. Activador físico de la calma. Tu familia entiende que es tu herramienta de apoyo.</p>
+                        <div class="value-amount">Valor: €147</div>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">💍</div>
+                    <div class="value-content">
+                        <h4>ORBIT — Anillo Giratorio</h4>
+                        <p>Algo que hacer con tus manos cuando sientas la urgencia. Movimiento físico que rompe el ciclo. Tu familia ve que tienes herramientas reales.</p>
+                        <div class="value-amount">Valor: €147</div>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">📈</div>
+                    <div class="value-content">
+                        <h4>Seguimiento + Datos De Tu Avance</h4>
+                        <p>Tabla de victorias compartida con tu familia. Ellos VEN tu progreso. Nadie puede discutir lo que los números muestran. Confianza basada en datos.</p>
+                        <div class="value-amount">Valor: €147</div>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🎯</div>
+                    <div class="value-content">
+                        <h4>2 Sesiones Personales (Día 7 Y Día 21)</h4>
+                        <p>Sesiones de coaching familiar. Celebramos el progreso. Trabajamos en cómo tu familia lo ve. Herramientas para mantener la confianza reconstruida.</p>
+                        <div class="value-amount">Valor: €347</div>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">👥</div>
+                    <div class="value-content">
+                        <h4>Comunidad Privada — Familias Reconstruidas</h4>
+                        <p>30 días + para siempre. Gente que fue donde estás. Padres que casi pierden a sus hijos. Parejas que reconstruyeron confianza. Inspiración real.</p>
+                        <div class="value-amount">Valor: €147</div>
+                    </div>
+                </div>
+                <div class="value-summary">
+                    <div class="value-total">Valor Real Del Protocolo Completo</div>
+                    <div class="value-big">€1.729</div>
+                    <div class="value-price">Tu Inversión: €279</div>
+                    <div class="value-ratio" style="color: #ff5555; font-size: 1.5rem; font-weight: 800;">Ahorras €1.450</div>
+                    <p style="color: #a0a0a0; margin-top: 20px; font-size: 0.9rem;">84% de descuento en el valor real. Porque sabemos que funcionará para ti y tu familia.</p>
+                </div>
             </div>
         </section>
 
-        <!-- FINAL CTA SECTION -->
-        <section class="final-cta-section" id="cierre">
-            <h2 class="final-headline">Reconstruye La Relación Por €279</h2>
-            <p class="final-subheadline">Tu familia está esperando. No con duda. Con esperanza. Esta es tu oportunidad.</p>
-            <div class="cta-buttons">
-                <a href="https://buy.stripe.com/00wcN4dfG6DCbv01t848002" class="cta-btn cta-btn-primary">
-                    Pago Único - €279
+        <!-- FAQ SECTION -->
+        <section class="faq-section">
+            <h2 class="section-title">¿Por Qué 96% De Familias No Pide Devolución? Las Respuestas Que Necesitas</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-text">¿Mi pareja ya no cree en mí. ¿Por qué sería diferente esta vez?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Porque esta vez no le pides que CREA. Le pides que VEA. En 7 días, tu pareja va a VER diferente porque: 1) Comunicación honesta desde el inicio, 2) Check-ins semanales, 3) Momentos de calidad juntos. Tu pareja no cree en promesas. Cree en consistencia. Eso es lo que ve.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-text">¿Y si recaigo? ¿Mi familia se va a decepcionar más?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No. Porque ahora no estás solo. Tu familia es tu equipo. Si tienes un momento débil, ya no es una recaída solitaria. Es un momento donde tu equipo (literalmente) te sostiene. El 87% de gente que tiene accountability familiar recae MENOS porque saben que decepcionarían a alguien que aman. Y eso es más fuerte que cualquier cigarro.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-text">¿Mi hijo va a entender esto o solo va a ver que "papá/mamá fuma todavía"?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tu hijo va a entender EXACTAMENTE lo que está pasando porque se lo vas a mostrar. No en palabras. En hechos. Tabla compartida donde ve tu progreso. Momentos juntos. Herramientas que usa contigo. Tu hijo va a ver a su papá/mamá INTENTANDO diferente. Eso es lo que enseña. No la perfección. La consistencia.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-text">¿Cuánto tiempo libre necesito? Tengo familia que necesita mi atención.</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>15-20 minutos máximo. Meditación: 10 min (guiada, por la noche). Técnicas de respiración: 5 min. Suplementos: 2 min. Los check-ins familiares NO son "tiempo extra". Son el mismo tiempo que pasarías con tu pareja/hijo. Encaja en cualquier vida ocupada. Sin sacrificios radicales.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-text">¿Las sesiones de coaching familiar van a ser incómodas?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No. Son 30 minutos. Conversación. Celebramos lo que lograste. Trabajamos en lo siguiente. Es más parecido a "conversar con alguien que entiende" que a "terapia incómoda". Y lo mejor: Tu pareja/familia entienden exactamente lo que estás haciendo. No hay sorpresas incómodas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-text">¿La comunidad va a juzgar mi situación?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Al contrario. La comunidad está llena de gente que fue donde estás. Padres que casi pierden a sus hijos. Parejas que casi se van. Ahora son parejas que reconstruyeron confianza. Nadie juzga. Todos entienden. Y la mayoría está ahí para ayudarte a ver que tú también puedes reconstruir.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-text">¿Es seguro? ¿Tiene efectos secundarios?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ingredientes naturales: Magnesio, L-teanina, GABA, Omega-3 optimizado. Sin estimulantes. Sin sustitutos de nicotina. Funciona CON tu biología, no contra ella. Si tienes condiciones médicas específicas, consulta tu médico. Pero la mayoría no tiene contraindicaciones. Tu salud y la de tu familia es lo primero.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-text">¿Realmente funciona o solo prometen?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Pregunta a tu familia si funciona. El 96% de familias que completan 30 días SIENTE el cambio. Y aquí está lo importante: Tu familia es el juez. Si no SIENTEN el cambio, te devolvemos todo. No somos nosotros los que decidimos éxito. Es tu familia. Y eso es lo que queremos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section class="cta-section" id="pago">
+            <h2 class="cta-headline">Ya Hemos Aclarado Tus Dudas. Ahora Es Momento De Actuar.</h2>
+            <p class="cta-subheadline">
+                Sabes que funciona. Sabes que tu familia está esperando esto. Sabes exactamente que recibirás.
+            </p>
+            <div class="payment-buttons">
+                <a href="https://buy.stripe.com/00wcN4dfG6DCbv01t848002" class="payment-btn" onclick="trackPayment('unique')">
+                    <div class="payment-type">Pago Único</div>
+                    <div class="payment-price">€279</div>
                 </a>
-                <a href="https://buy.stripe.com/dRmaEW2B22nm56C6Ns48003" class="cta-btn cta-btn-primary">
-                    3 Cuotas - €93/mes
+                <a href="https://buy.stripe.com/dRmaEW2B22nm56C6Ns48003" class="payment-btn" onclick="trackPayment('installments')">
+                    <div class="payment-type">3 Cuotas</div>
+                    <div class="payment-price">€93/mes</div>
                 </a>
             </div>
-            <p style="color: #b0b0b0; margin-top: 40px; font-size: 0.95rem;">
-                Si no ves cambio real en tu familia, refund 100%. Sin preguntas, sin condiciones.
-            </p>
-        </section>
 
             <!-- PAYMENT METHODS SECTION -->
             <div style="margin-top: 50px; text-align: center;">
                 <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 15px; margin-top: 30px;">
-                    <!-- Visa -->
-                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 44px; background: linear-gradient(135deg, #1A1F71 0%, #0f1547 100%); border-radius: 8px; color: white; font-size: 11px; font-weight: 800; letter-spacing: 1px; box-shadow: 0 4px 12px rgba(26, 31, 113, 0.3); transition: all 0.3s ease;">Visa</div>
-
-                    <!-- Mastercard -->
-                    <svg width="70" height="44" viewBox="0 0 70 44" style="filter: drop-shadow(0 4px 12px rgba(235, 0, 27, 0.2));">
-                        <rect width="70" height="44" rx="8" fill="white"/>
-                        <circle cx="24" cy="22" r="12" fill="#EB001B"/>
-                        <circle cx="46" cy="22" r="12" fill="#F79E1B"/>
-                    </svg>
-
-                    <!-- American Express -->
-                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 44px; background: linear-gradient(135deg, #006FCF 0%, #004a99 100%); border-radius: 8px; color: white; font-size: 10px; font-weight: 800; box-shadow: 0 4px 12px rgba(0, 111, 207, 0.3); transition: all 0.3s ease;">
-                        <span style="font-style: italic;">AE</span>
+                    <!-- Visa SVG -->
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 44px; background: #1A1F71; border-radius: 8px; box-shadow: 0 4px 12px rgba(26, 31, 113, 0.4); transition: all 0.3s ease; padding: 6px;">
+                        <svg width="32" height="22" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg">
+                            <g fill="none" fill-rule="evenodd">
+                                <rect fill="#FFFFFF" height="16" rx="2" width="24" />
+                                <path d="M2.78773262,5.91443732 C2.26459089,5.62750595 1.6675389,5.39673777 1,5.23659312 L1.0280005,5.1118821 L3.76497922,5.1118821 C4.13596254,5.12488556 4.43699113,5.23650585 4.53494636,5.63071135 L5.12976697,8.46659052 L5.31198338,9.32072617 L6.97796639,5.1118821 L8.77678896,5.1118821 L6.10288111,11.2775284 L4.30396552,11.2775284 L2.78773262,5.91443732 L2.78773262,5.91443732 Z M10.0999752,11.2840738 L8.39882877,11.2840738 L9.46284763,5.1118821 L11.163901,5.1118821 L10.0999752,11.2840738 Z M16.2667821,5.26277458 L16.0354292,6.59558538 L15.881566,6.53004446 C15.5737466,6.40524617 15.1674138,6.28053516 14.6143808,6.29371316 C13.942741,6.29371316 13.6415263,6.56277129 13.6345494,6.82545859 C13.6345494,7.11441463 13.998928,7.3048411 14.5939153,7.58725177 C15.5740257,8.02718756 16.0286384,8.56556562 16.0218476,9.26818871 C16.0080799,10.5486366 14.8460128,11.376058 13.0610509,11.376058 C12.2978746,11.3694253 11.5627918,11.2180965 11.163808,11.0475679 L11.4018587,9.66204513 L11.6258627,9.76066195 C12.1788958,9.99070971 12.5428092,10.0889775 13.221984,10.0889775 C13.7117601,10.0889775 14.2368857,9.89837643 14.2435835,9.48488392 C14.2435835,9.21565125 14.0198586,9.01850486 13.3617074,8.7164581 C12.717789,8.42086943 11.8568435,7.92848346 11.8707973,7.04197926 C11.8780532,5.84042483 13.0610509,5 14.7409877,5 C15.3990458,5 15.9312413,5.13788902 16.2667821,5.26277458 Z M18.5277524,9.0974856 L19.941731,9.0974856 C19.8717762,8.78889347 19.549631,7.31147374 19.549631,7.31147374 L19.4307452,6.77964104 C19.3467437,7.00942698 19.1998574,7.38373457 19.2069273,7.37055657 C19.2069273,7.37055657 18.6678479,8.74290137 18.5277524,9.0974856 Z M20.6276036,5.1118821 L22,11.2839865 L20.4249023,11.2839865 C20.4249023,11.2839865 20.2707601,10.5748181 20.221922,10.3581228 L18.0377903,10.3581228 C17.9746264,10.5221933 17.6807607,11.2839865 17.6807607,11.2839865 L15.8957988,11.2839865 L18.4226343,5.62399144 C18.5977072,5.22341512 18.9059917,5.1118821 19.3117663,5.1118821 L20.6276036,5.1118821 L20.6276036,5.1118821 Z" fill="#1434CB" />
+                            </g>
+                        </svg>
                     </div>
 
-                    <!-- PayPal -->
-                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 44px; background: linear-gradient(135deg, #003087 0%, #002058 100%); border-radius: 8px; color: white; font-size: 11px; font-weight: 800; box-shadow: 0 4px 12px rgba(0, 48, 135, 0.3); transition: all 0.3s ease;">PayPal</div>
+                    <!-- Mastercard SVG -->
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 44px; background: #252525; border-radius: 8px; box-shadow: 0 4px 12px rgba(37, 37, 37, 0.4); transition: all 0.3s ease; padding: 6px;">
+                        <svg width="32" height="22" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg">
+                            <g fill="none" fill-rule="evenodd">
+                                <rect fill="#252525" height="16" rx="2" width="24" />
+                                <circle cx="9" cy="8" fill="#eb001b" r="5" />
+                                <circle cx="15" cy="8" fill="#f79e1b" r="5" />
+                                <path d="m12 3.99963381c1.2144467.91220633 2 2.36454836 2 4.00036619s-.7855533 3.0881599-2 4.0003662c-1.2144467-.9122063-2-2.36454837-2-4.0003662s.7855533-3.08815986 2-4.00036619z" fill="#ff5f00" />
+                            </g>
+                        </svg>
+                    </div>
 
-                    <!-- Amazon Pay -->
-                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 44px; background: linear-gradient(135deg, #FF9900 0%, #e68a00 100%); border-radius: 8px; color: white; font-size: 9px; font-weight: 800; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3); transition: all 0.3s ease; letter-spacing: 0.5px;">Amazon</div>
+                    <!-- American Express SVG -->
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 44px; background: #016FD0; border-radius: 8px; box-shadow: 0 4px 12px rgba(1, 111, 208, 0.4); transition: all 0.3s ease; padding: 6px;">
+                        <svg width="32" height="22" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg">
+                            <g fill="none" fill-rule="evenodd">
+                                <rect fill="#016fd0" height="16" rx="2" width="24" />
+                                <path d="m13.7640663 13.3938564v-5.70139231l10.1475359.00910497v1.57489503l-1.1728619 1.25339231 1.1728619 1.2648839v1.6083094h-1.8726188l-.9951823-1.0981657-.9881105 1.1023204z" fill="#fffffe" />
+                                <path d="m14.4418122 12.7687956v-4.448884h3.7722872v1.02488398h-2.550895v.69569062h2.4900774v1.0078232h-2.4900774v.6833149h2.550895v1.0371713z" fill="#016fd0" />
+                                <path d="m18.1952707 12.7687956 2.087337-2.2270055-2.0874254-2.2217901h1.6156464l1.2754917 1.41003315 1.2791161-1.41003315h1.5461657v.03500552l-2.0428729 2.18678458 2.0428729 2.1638895v.063116h-1.5617237l-1.2981216-1.4241768-1.2847735 1.4241768z" fill="#016fd0" />
+                                <path d="m14.2373481 2.6319558h2.4460552l.8591381 1.95085083v-1.95085083h3.0198453l.5207514 1.46156906.5225194-1.46156906h2.3059447v5.70139227h-12.1865193z" fill="#fffffe" />
+                                <g fill="#016fd0">
+                                    <path d="m14.7004641 3.25135912-1.9740111 4.44517127h1.3539006l.3724199-.89016575h2.0179447l.3721547.89016575h1.3875801l-1.96579-4.44517127zm.1696353 2.55743646.592-1.41507182.5915581 1.41507182z" />
+                                    <path d="m18.2119779 7.69573481v-4.44508288l1.903116.00654144.9792707 2.73272928.9856354-2.73927072h1.8316022v4.44508288l-1.1786077.01043094v-3.05334807l-1.1125746 3.04291713h-1.0758011l-1.1356464-3.05334807v3.05334807z" />
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
 
-                    <!-- Google Pay -->
-                    <svg width="70" height="44" viewBox="0 0 70 44" style="filter: drop-shadow(0 4px 12px rgba(66, 133, 244, 0.2));">
-                        <rect width="70" height="44" rx="8" fill="white"/>
-                        <text x="35" y="28" font-family="Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#4285F4">G</text>
-                        <text x="48" y="28" font-family="Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#EA4335">P</text>
-                        <text x="61" y="28" font-family="Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#FBBC04">a</text>
-                    </svg>
+                    <!-- PayPal SVG -->
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 44px; background: #003087; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 48, 135, 0.4); transition: all 0.3s ease; padding: 6px;">
+                        <svg width="28" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.901 3.838c.194.064.374.14.54.227.195-1.244-.002-2.092-.675-2.859C12.024.362 10.686 0 8.973 0H3.999a.71.71 0 0 0-.702.6L1.225 13.732c-.04.26.16.494.422.494h3.07l.77-4.883-.023.145c.055-.345.35-.6.7-.6h1.46c2.865 0 5.11-1.164 5.765-4.53.02-.1.037-.197.052-.292a3.55 3.55 0 0 0-.54-.227Z" fill="#253B80" />
+                            <path d="M12.754 3.792a5.164 5.164 0 0 0-.638-.142 8.103 8.103 0 0 0-1.286-.094H6.932a.619.619 0 0 0-.615.526l-.829 5.252-.024.153c.055-.345.35-.6.7-.6h1.46c2.866 0 5.11-1.164 5.765-4.53.02-.1.036-.197.051-.292a3.5 3.5 0 0 0-.686-.274Z" fill="#222D65" />
+                            <path d="M13.44 4.065a8.805 8.805 0 0 1-.05.292c-.657 3.367-2.9 4.53-5.766 4.53h-1.46a.709.709 0 0 0-.7.6l-.747 4.738-.211 1.343a.373.373 0 0 0 .368.432h2.588a.623.623 0 0 0 .615-.525l.026-.131.487-3.093.031-.17a.622.622 0 0 1 .615-.525h.387c2.508 0 4.47-1.018 5.044-3.964.24-1.23.116-2.258-.518-2.98a2.475 2.475 0 0 0-.709-.547Z" fill="#179BD7" />
+                        </svg>
+                    </div>
 
-                    <!-- Klarna -->
-                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 44px; background: linear-gradient(135deg, #FFB3D9 0%, #ff99c8 100%); border-radius: 8px; color: #1a1a1a; font-size: 12px; font-weight: 800; box-shadow: 0 4px 12px rgba(255, 179, 217, 0.4); transition: all 0.3s ease; letter-spacing: 0.5px;">Klarna</div>
+                    <!-- Amazon Pay SVG -->
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 44px; background: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3); transition: all 0.3s ease; padding: 6px;">
+                        <svg width="25" height="16" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_6080_1729)">
+                                <rect width="25" height="16" rx="1" fill="white"/>
+                                <path d="M24.0385 0H0.961538C0.430495 0 0 0.434148 0 0.969697V15.0303C0 15.5659 0.430495 16 0.961538 16H24.0385C24.5695 16 25 15.5659 25 15.0303V0.969697C25 0.434148 24.5695 0 24.0385 0Z" stroke="#EAEAEA"/>
+                                <mask id="mask0_6080_1729" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="3" y="2" width="19" height="13">
+                                    <path d="M22 2H3V14.8058H22V2Z" fill="white"/>
+                                </mask>
+                                <g mask="url(#mask0_6080_1729)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M19.9156 11.7201C17.9161 13.2082 15.0175 13.9995 12.5213 13.9995C9.02283 13.9995 5.87257 12.6952 3.48882 10.5245C3.30169 10.354 3.46839 10.1213 3.69354 10.2535C6.26533 11.7627 9.44601 12.6718 12.7312 12.6718C14.9472 12.6718 17.3832 12.2081 19.6249 11.2492C19.9626 11.1041 20.2462 11.4734 19.9156 11.7201ZM20.7472 10.7621C21.0032 11.0926 20.4627 12.4534 20.2215 13.0612C20.1483 13.2451 20.305 13.3193 20.4703 13.18C21.5427 12.2752 21.8201 10.379 21.6007 10.105C21.3827 9.83343 19.5076 9.59965 18.363 10.4101C18.1868 10.5346 18.2172 10.707 18.4124 10.6831C19.0569 10.6055 20.4917 10.4316 20.7472 10.7621Z" fill="#FF9900"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.8524 8.62089L19.9336 3.27894C19.9773 3.17069 19.9996 3.09454 19.9996 3.04999C19.9996 2.97384 19.9554 2.93552 19.8671 2.93552H19.3375C19.2363 2.93552 19.1675 2.9518 19.129 2.98341C19.091 3.0155 19.0535 3.08543 19.0155 3.19368L17.7384 6.89466L16.4143 3.19368C16.3763 3.08543 16.3387 3.0155 16.3008 2.98341C16.2628 2.9518 16.1934 2.93552 16.0922 2.93552H15.5247C15.4364 2.93552 15.3922 2.97384 15.3922 3.04999C15.3922 3.09454 15.4141 3.17069 15.4582 3.27894L17.2839 7.81955L17.1044 8.30621C16.997 8.6118 16.8773 8.82157 16.7448 8.93603C16.6123 9.05054 16.4261 9.10755 16.1868 9.10755C16.0794 9.10755 15.9944 9.10082 15.9317 9.08834C15.8686 9.07591 15.821 9.06919 15.7897 9.06919C15.6952 9.06919 15.6477 9.12958 15.6477 9.25026V9.49839C15.6477 9.58743 15.6634 9.65257 15.6952 9.69381C15.7265 9.73499 15.7769 9.76561 15.8467 9.78431C16.0039 9.82838 16.1839 9.85137 16.3858 9.85137C16.7453 9.85137 17.0369 9.75607 17.2606 9.56494C17.4853 9.37477 17.6824 9.05964 17.8524 8.62089Z" fill="#232F3E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.0834 4.24833C9.99179 3.93987 9.8612 3.6774 9.69068 3.46138C9.52065 3.24537 9.31265 3.07964 9.06661 2.96517C8.82107 2.85069 8.54657 2.7937 8.24355 2.7937C7.95998 2.7937 7.68217 2.84734 7.41142 2.95559C7.14023 3.06384 6.88472 3.22286 6.64489 3.43264L6.59789 3.12706C6.57884 3.00014 6.50619 2.93643 6.37986 2.93643H5.96379C5.83797 2.93643 5.77478 3.00014 5.77478 3.12706V9.54717C5.77478 9.67457 5.83797 9.73779 5.96379 9.73779H6.52187C6.6482 9.73779 6.71088 9.67412 6.71088 9.54717V7.31519C7.12079 7.69021 7.60951 7.87794 8.17706 7.87794C8.48573 7.87794 8.76645 7.81568 9.01865 7.69213C9.2708 7.56806 9.48502 7.39468 9.66171 7.17197C9.8384 6.94972 9.97565 6.67961 10.073 6.36109C10.1708 6.04301 10.2197 5.68669 10.2197 5.29246C10.2207 4.90502 10.1746 4.55677 10.0834 4.24833ZM7.95998 7.11451C7.53063 7.11451 7.11462 6.9622 6.71139 6.65662V3.99543C7.10841 3.70278 7.53114 3.5567 7.97897 3.5567C8.83675 3.5567 9.26559 4.15158 9.26559 5.34037C9.26514 6.52345 8.83009 7.11451 7.95998 7.11451Z" fill="#232F3E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.3488 3.16822C14.0647 2.92059 13.6235 2.79654 13.0246 2.79654C12.7283 2.79654 12.4319 2.82384 12.1356 2.87749C11.8387 2.93161 11.5898 3.00298 11.388 3.09206C11.3125 3.12415 11.2616 3.1572 11.2365 3.19217C11.2113 3.22713 11.1985 3.2894 11.1985 3.37801V3.63522C11.1985 3.74969 11.2394 3.80717 11.3215 3.80717C11.3467 3.80717 11.3737 3.80238 11.4023 3.7928C11.4307 3.78322 11.4545 3.77556 11.473 3.76885C11.9589 3.62276 12.4219 3.54948 12.8636 3.54948C13.2417 3.54948 13.5067 3.61941 13.6582 3.75975C13.8097 3.89961 13.8852 4.14101 13.8852 4.48441V5.11377C13.444 5.00552 13.0465 4.95191 12.6931 4.95191C12.1384 4.95191 11.6972 5.09032 11.369 5.3667C11.0413 5.64308 10.877 6.01381 10.877 6.47792C10.877 6.9109 11.0094 7.25525 11.2745 7.51298C11.539 7.77066 11.8985 7.89902 12.3526 7.89902C12.6238 7.89902 12.8964 7.8449 13.1709 7.7371C13.4454 7.62936 13.6957 7.47609 13.9227 7.2792L13.9702 7.59388C13.9892 7.71462 14.0586 7.77495 14.1788 7.77495H14.5853C14.7112 7.77495 14.7748 7.71123 14.7748 7.58434V4.32254C14.7743 3.80094 14.6323 3.41633 14.3488 3.16822ZM13.8852 6.69825C13.6772 6.85723 13.4597 6.97797 13.2327 7.06079C13.0056 7.14367 12.7881 7.18485 12.5801 7.18485C12.334 7.18485 12.145 7.11971 12.0125 6.98943C11.88 6.85916 11.814 6.67334 11.814 6.43142C11.814 5.87822 12.1702 5.60139 12.8826 5.60139C13.0465 5.60139 13.2151 5.61291 13.3884 5.63489C13.5618 5.65743 13.7276 5.6876 13.8852 5.72545V6.69825Z" fill="#232F3E"/>
+                                </g>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_6080_1729">
+                                    <rect width="25" height="16" rx="1" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+
+                    <!-- Google Pay SVG -->
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 44px; background: #F8F8F8; border-radius: 8px; box-shadow: 0 4px 12px rgba(66, 133, 244, 0.35); transition: all 0.3s ease; padding: 6px;">
+                        <svg width="60" height="26" viewBox="170 170 753 400" xmlns="http://www.w3.org/2000/svg">
+                            <g id="G_Pay_Lockup_1_">
+                                <g id="Pay_Typeface_3_">
+                                    <path id="Letter_p_3_" fill="#3C4043" d="M529.3,384.2v60.5h-19.2V295.3H561c12.9,0,23.9,4.3,32.9,12.9c9.2,8.6,13.8,19.1,13.8,31.5c0,12.7-4.6,23.2-13.8,31.7c-8.9,8.5-19.9,12.7-32.9,12.7h-31.7V384.2z M529.3,313.7v52.1h32.1c7.6,0,14-2.6,19-7.7c5.1-5.1,7.7-11.3,7.7-18.3c0-6.9-2.6-13-7.7-18.1c-5-5.3-11.3-7.9-19-7.9h-32.1V313.7z"/>
+                                    <path id="Letter_a_3_" fill="#3C4043" d="M657.9,339.1c14.2,0,25.4,3.8,33.6,11.4c8.2,7.6,12.3,18,12.3,31.2v63h-18.3v-14.2h-0.8c-7.9,11.7-18.5,17.5-31.7,17.5c-11.3,0-20.7-3.3-28.3-10s-11.4-15-11.4-25c0-10.6,4-19,12-25.2c8-6.3,18.7-9.4,32-9.4c11.4,0,20.8,2.1,28.1,6.3v-4.4c0-6.7-2.6-12.3-7.9-17c-5.3-4.7-11.5-7-18.6-7c-10.7,0-19.2,4.5-25.4,13.6l-16.9-10.6C625.9,345.8,639.7,339.1,657.9,339.1z M633.1,413.3c0,5,2.1,9.2,6.4,12.5c4.2,3.3,9.2,5,14.9,5c8.1,0,15.3-3,21.6-9s9.5-13,9.5-21.1c-6-4.7-14.3-7.1-25-7.1c-7.8,0-14.3,1.9-19.5,5.6C635.7,403.1,633.1,407.8,633.1,413.3z"/>
+                                    <path id="Letter_y_3_" fill="#3C4043" d="M808.2,342.4l-64,147.2h-19.8l23.8-51.5L706,342.4h20.9l30.4,73.4h0.4l29.6-73.4H808.2z"/>
+                                </g>
+                                <g id="G_Mark_1_">
+                                    <path id="Blue_500" fill="#4285F4" d="M452.93,372c0-6.26-0.56-12.25-1.6-18.01h-80.48v33L417.2,387c-1.88,10.98-7.93,20.34-17.2,26.58v21.41h27.59C443.7,420.08,452.93,398.04,452.93,372z"/>
+                                    <path id="Green_500_1_" fill="#34A853" d="M400.01,413.58c-7.68,5.18-17.57,8.21-29.14,8.21c-22.35,0-41.31-15.06-48.1-35.36h-28.46v22.08c14.1,27.98,43.08,47.18,76.56,47.18c23.14,0,42.58-7.61,56.73-20.71L400.01,413.58z"/>
+                                    <path id="Yellow_500_1_" fill="#FABB05" d="M320.09,370.05c0-5.7,0.95-11.21,2.68-16.39v-22.08h-28.46c-5.83,11.57-9.11,24.63-9.11,38.47s3.29,26.9,9.11,38.47l28.46-22.08C321.04,381.26,320.09,375.75,320.09,370.05z"/>
+                                    <path id="Red_500" fill="#E94235" d="M370.87,318.3c12.63,0,23.94,4.35,32.87,12.85l24.45-24.43c-14.85-13.83-34.21-22.32-57.32-22.32c-33.47,0-62.46,19.2-76.56,47.18l28.46,22.08C329.56,333.36,348.52,318.3,370.87,318.3z"/>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <!-- Klarna SVG -->
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 44px; background: #FFA8CD; border-radius: 8px; box-shadow: 0 4px 12px rgba(255, 168, 205, 0.4); transition: all 0.3s ease; padding: 6px;">
+                        <svg width="32" height="32" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_23_1479)">
+                                <path d="M0 2.56848C0 1.18777 1.11929 0.0684814 2.5 0.0684814H13.5C14.8807 0.0684814 16 1.18777 16 2.56848V13.5685C16 14.9492 14.8807 16.0685 13.5 16.0685H2.5C1.11929 16.0685 0 14.9492 0 13.5685V2.56848Z" fill="#FFA8CD"/>
+                                <path d="M11.5515 2.95847H9.33281C9.33281 4.78346 8.21622 6.41867 6.51959 7.58667L5.85256 8.05387V2.95847H3.54688V13.1785H5.85256V8.11228L9.66634 13.1785H12.4796L8.81077 8.33129C10.4784 7.11949 11.566 5.23606 11.5515 2.95847Z" fill="#0B051D"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_23_1479">
+                                    <rect width="16" height="16" fill="white" transform="translate(0 0.0684814)"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
                 </div>
             </div>
+
+            <!-- SOCIAL PROOF STATS -->
+            <div style="margin-top: 40px; text-align: center;">
+                <div style="border: 2px solid #FF6B6B; border-radius: 12px; padding: 20px; display: inline-block; max-width: 400px;">
+                    <p style="font-size: 16px; font-weight: 600; color: #FFFFFF; margin: 0; line-height: 1.6;">
+                        <span style="font-size: 20px; color: #FF6B6B;">96%</span> que completa 30 días siente cambio en la familia<br>
+                        <span style="font-size: 14px; color: #CCCCCC;">Porque VEN que estás diferente. El cuerpo se nota.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- SOCIAL PROOF TESTIMONIALS -->
+    <div style="width: 100%; padding: 60px 40px;">
+        <h3 style="text-align: center; font-size: 24px; font-weight: 700; color: #FFFFFF; margin-bottom: 40px; margin-top: 0;">Familias Que Se Reconstruyeron</h3>
+        <div id="testimonial-slider" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1200px; margin: 0 auto;" onmouseover="clearInterval(window.sliderInterval)" onmouseout="startSliderAutoScroll();">
+            <!-- Testimonio 1 -->
+            <div style="width: 100%; max-width: 400px; text-align: center;">
+                <div style="width: 100%; aspect-ratio: 3 / 4; background-image: url('reviews/1.png'); background-size: cover; background-position: center; border-radius: 12px; box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3); margin: 0 auto 20px;"></div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 600; margin: 0 0 10px 0;">Marcos L.</h4>
+                <p style="color: #CCCCCC; font-size: 14px; margin: 0; line-height: 1.6;">Mi pareja casi se va. A los 30 días me miró diferente. No solo porque no fumaba. Porque cumplía. Eso fue lo que cambió todo.</p>
+            </div>
+
+            <!-- Testimonio 2 -->
+            <div style="width: 100%; max-width: 400px; text-align: center;">
+                <div style="width: 100%; aspect-ratio: 3 / 4; background-image: url('reviews/2.png'); background-size: cover; background-position: center; border-radius: 12px; box-shadow: 0 8px 24px rgba(245, 87, 108, 0.3); margin: 0 auto 20px;"></div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 600; margin: 0 0 10px 0;">Patricia M.</h4>
+                <p style="color: #CCCCCC; font-size: 14px; margin: 0; line-height: 1.6;">Mi hijo preguntaba: "¿Por qué no puedes dejar?" El protocolo me mostró cómo incluirlo en la solución. Ahora somos un equipo.</p>
+            </div>
+
+            <!-- Testimonio 3 -->
+            <div style="width: 100%; max-width: 400px; text-align: center;">
+                <div style="width: 100%; aspect-ratio: 3 / 4; background-image: url('reviews/3.png'); background-size: cover; background-position: center; border-radius: 12px; box-shadow: 0 8px 24px rgba(79, 172, 254, 0.3); margin: 0 auto 20px;"></div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 600; margin: 0 0 10px 0;">Ricardo F.</h4>
+                <p style="color: #CCCCCC; font-size: 14px; margin: 0; line-height: 1.6;">Intenté 5 veces solo. Cada recaída era peor. Con mi familia apoyándome, los 30 días fueron posibles. La confianza volvió.</p>
+            </div>
+
+            <!-- Testimonio 4 -->
+            <div style="width: 100%; max-width: 400px; text-align: center;">
+                <div style="width: 100%; aspect-ratio: 3 / 4; background-image: url('reviews/4.png'); background-size: cover; background-position: center; border-radius: 12px; box-shadow: 0 8px 24px rgba(67, 233, 123, 0.3); margin: 0 auto 20px;"></div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 600; margin: 0 0 10px 0;">Silvia J.</h4>
+                <p style="color: #CCCCCC; font-size: 14px; margin: 0; line-height: 1.6;">La culpa desapareció cuando mi pareja vio que era real. No fue una promesa más. Fue un cambio que ambos sentimos.</p>
+            </div>
+
+            <!-- Testimonio 5 -->
+            <div style="width: 100%; max-width: 400px; text-align: center;">
+                <div style="width: 100%; aspect-ratio: 3 / 4; background-image: url('reviews/5.png'); background-size: cover; background-position: center; border-radius: 12px; box-shadow: 0 8px 24px rgba(250, 112, 154, 0.3); margin: 0 auto 20px;"></div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 600; margin: 0 0 10px 0;">Javier G.</h4>
+                <p style="color: #CCCCCC; font-size: 14px; margin: 0; line-height: 1.6;">Mi familia dejó de tener dudas el Día 7 cuando vieron consistencia. Eso fue lo que sanó. No solo dejar de fumar. Ser confiable.</p>
+            </div>
+
+            <!-- Testimonio 6 -->
+            <div style="width: 100%; max-width: 400px; text-align: center;">
+                <div style="width: 100%; aspect-ratio: 3 / 4; background-image: url('reviews/6.png'); background-size: cover; background-position: center; border-radius: 12px; box-shadow: 0 8px 24px rgba(48, 207, 208, 0.3); margin: 0 auto 20px;"></div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 600; margin: 0 0 10px 0;">Elena R.</h4>
+                <p style="color: #CCCCCC; font-size: 14px; margin: 0; line-height: 1.6;">Reconstruir fue más importante que solo dejar de fumar. Este protocolo entendió eso. Mi familia volvió. Eso es lo que cuenta.</p>
+            </div>
+
+        </div>
     </div>
 
     <script>
-        // Meta Pixel Events - Result Page
+        // Global functions
+        function trackPayment(type) {
+            console.log('Payment type:', type);
+            fbq('track', 'AddToCart', { content_name: 'El Familiar - ' + type });
+        }
+
+        function toggleFAQ(button) {
+            const faqItem = button.closest('.faq-item');
+            const answer = faqItem.querySelector('.faq-answer');
+            button.classList.toggle('active');
+            answer.classList.toggle('show');
+        }
+
+        // Main initialization
         document.addEventListener('DOMContentLoaded', function() {
+            // Open first FAQ by default
+            const firstFAQButton = document.querySelector('.faq-question');
+            if (firstFAQButton) {
+                const faqItem = firstFAQButton.closest('.faq-item');
+                const answer = faqItem.querySelector('.faq-answer');
+                firstFAQButton.classList.add('active');
+                answer.classList.add('show');
+            }
+
+            // Autoscroll testimonial slider (only on mobile)
+            const slider = document.getElementById('testimonial-slider');
+            window.sliderInterval = null;
+
+            function startSliderAutoScroll() {
+                if (window.innerWidth > 768) return;
+                if (window.sliderInterval) return;
+
+                window.sliderInterval = setInterval(() => {
+                    slider.scrollTop += 1;
+                    if (slider.scrollTop >= slider.scrollHeight - slider.clientHeight) {
+                        slider.scrollTop = 0;
+                    }
+                }, 40);
+            }
+
+            if (slider) {
+                startSliderAutoScroll();
+            }
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768 && window.sliderInterval) {
+                    clearInterval(window.sliderInterval);
+                    window.sliderInterval = null;
+                }
+            });
+
+            // Hide scrollbar
+            const style = document.createElement('style');
+            style.textContent = `#testimonial-slider::-webkit-scrollbar { display: none; }`;
+            document.head.appendChild(style);
+
+            // Sticky payment button visibility
+            const paymentBtn = document.getElementById('sticky-payment-btn');
+            const hero = document.querySelector('.hero');
+            const ctaSection = document.getElementById('pago');
+
+            if (paymentBtn && hero && ctaSection) {
+                window.addEventListener('scroll', () => {
+                    const heroBottom = hero.getBoundingClientRect().bottom;
+                    const ctaTop = ctaSection.getBoundingClientRect().top;
+
+                    if (heroBottom < 0 && ctaTop > window.innerHeight) {
+                        paymentBtn.style.display = 'flex';
+                    } else {
+                        paymentBtn.style.display = 'none';
+                    }
+                });
+            }
+
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Meta Pixel Events
             fbq('track', 'ViewContent', {
                 content_name: 'Resultado - El Familiar',
                 content_type: 'result_page',
@@ -771,5 +1314,12 @@
             });
         });
     </script>
+
+    <!-- Sticky Payment Button -->
+    <a href="#pago" id="sticky-payment-btn" style="position: fixed; bottom: 30px; right: 30px; background: linear-gradient(135deg, #FF6B6B 0%, #ff5555 100%); color: #FFFFFF; padding: 14px 24px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 14px; display: none; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(255, 107, 107, 0.4); transition: all 0.3s ease; z-index: 999; gap: 8px;">
+        <span style="font-size: 18px;">↓</span>
+        Ir al Pago
+    </a>
+
 </body>
 </html>

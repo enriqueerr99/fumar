@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="€3,650 ahorrados/año = 13:1 ROI. Protocolo para dejar de fumar. Dashboard de ahorros. 6.4:1 Value Ratio. Garantía 100%.">
+    <meta name="description" content="€3,650/año en ROI negativo = 13:1 retorno al dejarlo. Protocolo De ROI para dejar de fumar. Dashboard de ahorros. 6.4:1 Value Ratio. Garantía 100%.">
     <meta property="og:title" content="El Racional - Protocolo De ROI | 13:1 Retorno">
-    <meta property="og:description" content="€3,650/año sin retorno. Eso es €9/día por recuperar capital. ¿Es racional?">
+    <meta property="og:description" content="€3,650/año sin retorno. Eso es irracional. Invierte €279 en tu mejor activo: tú mismo.">
     <title>El Racional - Protocolo De ROI | Vivirsinhumo</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,8 +56,8 @@
             width: 100%;
             height: 100%;
             background:
-                radial-gradient(circle at 20% 50%, rgba(255, 85, 85, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(107, 45, 123, 0.03) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(76, 175, 80, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(25, 118, 210, 0.03) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
         }
@@ -65,21 +65,26 @@
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 80px 40px;
+            padding: 40px 40px;
             position: relative;
             z-index: 1;
         }
 
         /* ===== HERO SECTION ===== */
         .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
             margin-bottom: 120px;
             animation: fadeInUp 0.8s ease-out;
         }
 
         .hero-icon {
-            font-size: clamp(60px, 15vw, 120px);
-            margin-bottom: 30px;
+            font-size: 120px;
+            margin-bottom: 40px;
             animation: floatUp 3s ease-in-out infinite;
         }
 
@@ -90,197 +95,182 @@
             background-size: cover;
             background-position: center;
             border-radius: 20px;
-            margin: 0 auto 50px;
-            box-shadow: 0 20px 60px rgba(255, 85, 85, 0.2);
+            margin-bottom: 50px;
+            box-shadow: 0 20px 60px rgba(76, 175, 80, 0.2);
             animation: slideInUp 1s ease-out both;
         }
 
-        .timeline-image {
-            width: 100%;
-            height: 300px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 20px;
-            margin-top: 30px;
-            box-shadow: 0 10px 30px rgba(255, 85, 85, 0.15);
-        }
-
-        .hero-headline {
+        .hero h1 {
             font-family: 'Poppins', sans-serif;
-            font-size: clamp(2.5rem, 7vw, 4rem);
+            font-size: 3.5rem;
             font-weight: 800;
-            margin-bottom: 20px;
-            color: #e0e0e0;
             line-height: 1.2;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 0 4px 20px rgba(76, 175, 80, 0.3);
         }
 
-        .hero-highlight {
-            color: #ff5555;
-        }
-
-        .hero-subheadline {
-            font-size: clamp(1rem, 2.5vw, 1.3rem);
-            color: #b0b0b0;
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+        .hero p {
+            font-size: 1.3rem;
             line-height: 1.6;
+            margin-bottom: 40px;
+            color: #b0b0b0;
+            max-width: 700px;
         }
 
         .hero-cta {
             display: inline-block;
-            background: linear-gradient(135deg, #ff5555 0%, #cc2222 100%);
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
             color: white;
             padding: 18px 50px;
-            border-radius: 50px;
-            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
             font-weight: 700;
-            font-size: 1.05rem;
-            border: none;
+            text-decoration: none;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            box-shadow: 0 20px 50px rgba(255, 85, 85, 0.3);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-family: 'Poppins', sans-serif;
-            animation: slideInUp 1s ease-out 0.2s both;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
         }
 
         .hero-cta:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 30px 70px rgba(255, 85, 85, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(76, 175, 80, 0.4);
         }
 
-        /* ===== PAIN POINT SECTION ===== */
+        /* ===== PAIN SECTION ===== */
         .pain-section {
             margin-bottom: 120px;
-            animation: fadeInUp 0.8s ease-out 0.1s both;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
         }
 
         .section-title {
             font-family: 'Poppins', sans-serif;
-            font-size: clamp(2rem, 5vw, 3rem);
+            font-size: 2.8rem;
             font-weight: 800;
             margin-bottom: 80px;
             text-align: center;
-            color: #e0e0e0;
+            color: #ffffff;
         }
 
         .pain-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
-            margin-bottom: 40px;
         }
 
         .pain-card {
-            background: linear-gradient(135deg, rgba(100, 10, 10, 0.15) 0%, rgba(80, 20, 20, 0.05) 100%);
-            border-left: 4px solid #ff5555;
-            border-top: 1px solid rgba(255, 85, 85, 0.3);
-            border-radius: 8px;
-            padding: 30px;
+            background: rgba(76, 175, 80, 0.08);
+            border: 2px solid rgba(76, 175, 80, 0.2);
+            border-radius: 16px;
+            padding: 40px;
             transition: all 0.3s ease;
-            animation: slideInUp 0.8s ease-out 0.2s both;
+            cursor: pointer;
         }
 
         .pain-card:hover {
-            padding-left: 34px;
-            background: linear-gradient(135deg, rgba(100, 10, 10, 0.25) 0%, rgba(80, 20, 20, 0.1) 100%);
+            background: rgba(76, 175, 80, 0.15);
+            border-color: rgba(76, 175, 80, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .pain-card-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
         }
 
         .pain-card-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
             font-weight: 700;
-            color: #ff7777;
             margin-bottom: 15px;
-            font-size: 1.1rem;
+            color: #ffffff;
         }
 
         .pain-card-text {
             color: #b0b0b0;
-            line-height: 1.7;
+            line-height: 1.6;
             font-size: 0.95rem;
         }
 
         /* ===== SOLUTION SECTION ===== */
         .solution-section {
             margin-bottom: 120px;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
         }
 
-        .solution-grid {
+        .solution-pillars {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-            margin-bottom: 80px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
         }
 
-        .solution-content h3 {
+        .pillar {
+            text-align: center;
+        }
+
+        .pillar-image {
+            width: 100%;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.15);
+        }
+
+        .pillar-title {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            color: #ff7777;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffffff;
         }
 
-        .solution-content p {
+        .pillar-text {
             color: #b0b0b0;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            font-size: 1rem;
-        }
-
-        .solution-icon {
-            font-size: clamp(60px, 10vw, 100px);
-            margin-bottom: 20px;
-            animation: floatUp 3s ease-in-out infinite;
-        }
-
-        @media (max-width: 768px) {
-            .solution-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
+            line-height: 1.6;
         }
 
         /* ===== TIMELINE SECTION ===== */
         .timeline-section {
             margin-bottom: 120px;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
         }
 
         .timeline {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
+            margin-top: 60px;
         }
 
-        .timeline-card {
-            background: linear-gradient(135deg, rgba(40, 10, 10, 0.15) 0%, rgba(30, 30, 50, 0.1) 100%);
-            border: 1px solid rgba(255, 85, 85, 0.2);
-            border-radius: 12px;
-            padding: 40px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            animation: slideInUp 0.8s ease-out 0.3s both;
+        .timeline-item {
+            background: rgba(76, 175, 80, 0.08);
+            border-left: 4px solid #4CAF50;
+            border-radius: 8px;
+            padding: 30px;
         }
 
         .timeline-day {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: #ff5555;
-            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #4CAF50;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
         }
 
         .timeline-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
             font-weight: 700;
-            color: #e0e0e0;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #ffffff;
         }
 
-        .timeline-text {
+        .timeline-description {
             color: #b0b0b0;
             font-size: 0.95rem;
             line-height: 1.6;
@@ -289,182 +279,323 @@
         /* ===== GUARANTEE SECTION ===== */
         .guarantee-section {
             margin-bottom: 120px;
-            animation: fadeInUp 0.8s ease-out 0.3s both;
+            animation: fadeInUp 0.8s ease-out 0.8s both;
         }
 
         .guarantee-box {
-            background: linear-gradient(135deg, rgba(40, 10, 10, 0.2) 0%, rgba(60, 20, 30, 0.1) 100%);
-            border: 2px solid #ff5555;
+            background: rgba(76, 175, 80, 0.12);
+            border: 2px solid #4CAF50;
             border-radius: 16px;
             padding: 50px;
             text-align: center;
-            backdrop-filter: blur(10px);
+        }
+
+        .guarantee-badge {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
         }
 
         .guarantee-title {
             font-family: 'Poppins', sans-serif;
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-size: 2rem;
             font-weight: 800;
             margin-bottom: 20px;
-            color: #ff7777;
+            color: #ffffff;
         }
 
         .guarantee-text {
             color: #b0b0b0;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             line-height: 1.8;
             margin-bottom: 20px;
         }
 
-        .guarantee-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .stat {
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-        }
-
-        .stat-number {
+        .guarantee-stat {
             font-family: 'Poppins', sans-serif;
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 800;
-            color: #ff5555;
+            color: #4CAF50;
+            margin: 20px 0;
         }
 
-        .stat-label {
-            color: #b0b0b0;
-            font-size: 0.9rem;
-            margin-top: 5px;
-        }
-
-        @media (max-width: 768px) {
-            .guarantee-stats {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* ===== VALUE STACK SECTION ===== */
-        .value-stack-section {
+        /* ===== VALUE SECTION ===== */
+        .value-section {
             margin-bottom: 120px;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
+            animation: fadeInUp 0.8s ease-out 1s both;
         }
 
-        .value-items {
+        .value-stack {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            margin-bottom: 50px;
+            margin-top: 60px;
         }
 
         .value-item {
-            background: linear-gradient(135deg, rgba(40, 10, 10, 0.15) 0%, rgba(80, 20, 20, 0.05) 100%);
-            border: 1px solid rgba(255, 85, 85, 0.2);
+            background: rgba(76, 175, 80, 0.08);
+            border: 1px solid rgba(76, 175, 80, 0.2);
             border-radius: 12px;
             padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .value-item:hover {
+            background: rgba(76, 175, 80, 0.15);
+            border-color: rgba(76, 175, 80, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .value-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .value-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .value-description {
+            color: #b0b0b0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .value-summary {
+            background: rgba(76, 175, 80, 0.12);
+            border: 2px solid #4CAF50;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 40px;
             text-align: center;
-            animation: slideInUp 0.8s ease-out 0.5s both;
+        }
+
+        .value-total {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 10px;
         }
 
         .value-price {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: #ff5555;
+            font-size: 1.3rem;
+            color: #4CAF50;
+            font-weight: 700;
             margin-bottom: 10px;
-        }
-
-        .value-name {
-            color: #e0e0e0;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .value-desc {
-            color: #b0b0b0;
-            font-size: 0.9rem;
-        }
-
-        .value-summary {
-            background: linear-gradient(135deg, rgba(40, 10, 10, 0.2) 0%, rgba(60, 20, 30, 0.1) 100%);
-            border: 1px solid rgba(255, 85, 85, 0.3);
-            border-radius: 12px;
-            padding: 40px;
-            text-align: center;
         }
 
         .value-ratio {
-            color: #ff5555;
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-        }
-
-        .value-ratio-label {
             color: #b0b0b0;
             font-size: 1rem;
         }
 
-        /* ===== FINAL CTA SECTION ===== */
-        .final-cta-section {
-            text-align: center;
-            animation: fadeInUp 0.8s ease-out 0.5s both;
-            margin-bottom: 80px;
+        /* ===== FAQ SECTION ===== */
+        .faq-section {
+            margin-bottom: 120px;
+            animation: fadeInUp 0.8s ease-out 1.2s both;
         }
 
-        .final-headline {
-            font-family: 'Poppins', sans-serif;
-            font-size: clamp(2rem, 6vw, 3.5rem);
-            font-weight: 800;
-            margin-bottom: 30px;
-            color: #e0e0e0;
-        }
-
-        .final-subheadline {
-            color: #b0b0b0;
-            font-size: 1.1rem;
-            margin-bottom: 50px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-buttons {
+        .faq-items {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            justify-items: center;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 60px;
         }
 
-        .cta-btn {
-            display: inline-block;
-            padding: 20px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-            border: none;
+        .faq-item {
+            background: rgba(76, 175, 80, 0.08);
+            border: 1px solid rgba(76, 175, 80, 0.2);
+            border-radius: 12px;
+            padding: 25px;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            background: rgba(76, 175, 80, 0.15);
+            border-color: rgba(76, 175, 80, 0.5);
+        }
+
+        .faq-item.active {
+            background: rgba(76, 175, 80, 0.15);
+            border-color: #4CAF50;
+        }
+
+        .faq-question {
             font-family: 'Poppins', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0;
         }
 
-        .cta-btn-primary {
-            background: linear-gradient(135deg, #ff5555 0%, #cc2222 100%);
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: #4CAF50;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            color: #b0b0b0;
+            line-height: 1.8;
+            margin-top: 15px;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            margin-bottom: 80px;
+            animation: fadeInUp 0.8s ease-out 1.4s both;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.15) 0%, rgba(25, 118, 210, 0.1) 100%);
+            border: 2px solid #4CAF50;
+            border-radius: 16px;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .cta-headline {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .cta-text {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
             color: white;
-            box-shadow: 0 20px 50px rgba(255, 85, 85, 0.3);
+            padding: 20px 60px;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
         }
 
-        .cta-btn-primary:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 30px 70px rgba(255, 85, 85, 0.4);
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(76, 175, 80, 0.4);
+        }
+
+        /* ===== TESTIMONIALS SECTION ===== */
+        .testimonials-section {
+            margin-bottom: 80px;
+            animation: fadeInUp 0.8s ease-out 1.6s both;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .testimonial {
+            background: rgba(76, 175, 80, 0.08);
+            border: 1px solid rgba(76, 175, 80, 0.2);
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial:hover {
+            background: rgba(76, 175, 80, 0.15);
+            border-color: rgba(76, 175, 80, 0.5);
+        }
+
+        .testimonial-stars {
+            font-size: 1.2rem;
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-text {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-name {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: #ffffff;
+            font-size: 0.95rem;
+        }
+
+        /* ===== STICKY PAYMENT BUTTON ===== */
+        .sticky-payment {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: none;
+            z-index: 999;
+        }
+
+        .sticky-payment.show {
+            display: flex;
+            animation: slideInUp 0.3s ease;
+        }
+
+        .sticky-btn {
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.4);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .sticky-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(76, 175, 80, 0.5);
         }
 
         /* ===== ANIMATIONS ===== */
@@ -482,7 +613,7 @@
         @keyframes slideInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -491,43 +622,111 @@
         }
 
         @keyframes floatUp {
-            0%, 100% {
-                transform: translateY(0px);
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                max-height: 0;
             }
-            50% {
-                transform: translateY(-15px);
+            to {
+                opacity: 1;
+                max-height: 500px;
             }
         }
 
         /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             .container {
-                padding: 40px 24px;
+                padding: 30px 30px;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
             }
 
             .section-title {
-                margin-bottom: 50px;
+                font-size: 2.2rem;
             }
 
-            .pain-cards {
+            .pain-cards, .solution-pillars, .timeline, .testimonials-grid {
+                gap: 30px;
+            }
+
+            .cta-box {
+                padding: 40px 30px;
+            }
+
+            .sticky-payment {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 20px;
+            }
+
+            .hero {
+                min-height: auto;
+                margin-bottom: 60px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-image {
+                max-width: 100%;
+                height: 250px;
+                margin-bottom: 30px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 40px;
+            }
+
+            .pain-cards, .solution-pillars, .timeline, .testimonials-grid {
+                grid-template-columns: 1fr;
                 gap: 20px;
             }
 
             .guarantee-box {
-                padding: 30px;
+                padding: 30px 20px;
             }
 
-            .final-headline {
-                margin-bottom: 20px;
+            .guarantee-title {
+                font-size: 1.5rem;
             }
-        }
 
-        /* Accessibility */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
+            .cta-box {
+                padding: 30px 20px;
+            }
+
+            .cta-headline {
+                font-size: 1.6rem;
+            }
+
+            .sticky-payment {
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .sticky-btn {
+                padding: 12px 24px;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -535,238 +734,288 @@
 <body>
     <div class="container">
         <!-- HERO SECTION -->
-        <section class="hero">
-            <div class="hero-image" style="background-image: url('Foto Header Landing.jpeg');"></div>
-            <h1 class="hero-headline">€3,650 Al Año <span class="hero-highlight">Simplemente Desaparece</span></h1>
-            <p class="hero-subheadline">Eso es €9 diarios por recuperar capital. ¿Es racional? Un dashboard te muestra CADA EURO AHORRADO en tiempo real.</p>
-            <a href="#cierre" class="hero-cta">Ver Mi ROI Real</a>
+        <section class="hero" id="hero">
+            <div class="hero-icon">💰</div>
+            <div class="hero-image" style="background-image: url('images/Hero Racional.png');"></div>
+            <h1>Maximiza Tu ROI Personal<br>Dinero + Salud + Años De Vida</h1>
+            <p>€3,650/año es mucho dinero para perder en decisiones irracionales. Este protocolo te muestra el ROI exacto, cada día. Invierte €279 y recupera €3,650+.</p>
+            <a href="#payment" class="hero-cta">Comenzar Con €279 (30-Día Garantía)</a>
         </section>
 
-        <!-- PAIN POINTS SECTION -->
+        <!-- PAIN SECTION -->
         <section class="pain-section">
-            <h2 class="section-title">El Análisis Que Te Asusta Ver</h2>
+            <h2 class="section-title">La Irracionalidad Te Duele</h2>
             <div class="pain-cards">
                 <div class="pain-card">
-                    <div class="pain-card-title">€3,650 Simplemente Desaparece</div>
-                    <p class="pain-card-text">€10 cada día. Sin retorno. Sin beneficio. En 20 años son €73,000. Eso es un auto. O un viaje. O parte de tu jubilación.</p>
+                    <div class="pain-card-icon">💸</div>
+                    <h3 class="pain-card-title">€3,650/Año Tirado</h3>
+                    <p class="pain-card-text">Cada cigarrillo = €0.50-€1. Son 20 al día. No tiene que ser calcular. Lo sabes exactamente. Y duele ver ese dinero desaparecer sin ningún retorno.</p>
                 </div>
                 <div class="pain-card">
-                    <div class="pain-card-title">Te Contradice A Ti Mismo</div>
-                    <p class="pain-card-text">Eres inteligente. Haces buen dinero. Tomas decisiones racionales en todo. Pero aquí: inviertes dinero sin retorno. Eso te asusta.</p>
+                    <div class="pain-card-icon">🧠</div>
+                    <h3 class="pain-card-title">Eres Irracional</h3>
+                    <p class="pain-card-text">Tu identidad es "persona inteligente". Pero fumas. ¿Cómo puedes ser tan inteligente en finanzas y tan irracional en tu mayor activo: tu salud?</p>
                 </div>
                 <div class="pain-card">
-                    <div class="pain-card-title">¿Qué Otros Errores Cometí?</div>
-                    <p class="pain-card-text">Si pierdes €10 al día en algo tan obvio, ¿qué otros cálculos financieros están mal? Esa pregunta te mantiene despierto de noche.</p>
+                    <div class="pain-card-icon">⚠️</div>
+                    <h3 class="pain-card-title">Perdiste El Control</h3>
+                    <p class="pain-card-text">Intentaste con fuerza de voluntad. Fracasaste. Ahora te preguntas: ¿Qué otros malos cálculos estoy haciendo? ¿Mi dinero? ¿Mis inversiones?</p>
                 </div>
             </div>
         </section>
 
         <!-- SOLUTION SECTION -->
         <section class="solution-section">
-            <h2 class="section-title">Ves Cada Euro Ahorrado</h2>
-
-            <div class="solution-grid">
-                <div>
-                    <div class="solution-icon">📊</div>
+            <h2 class="section-title">La Solución: Sistema Basado En Datos</h2>
+            <div class="solution-pillars">
+                <div class="pillar">
+                    <div class="pillar-image" style="background-image: url('images/pilar 1 racional.png');"></div>
+                    <h3 class="pillar-title">📊 Dashboard De ROI</h3>
+                    <p class="pillar-text">Ves cada mañana: "€10 ahorrados ayer. €70 esta semana. €3,650 proyectado este año". Tu cerebro racional no puede argumentar en contra de los números.</p>
                 </div>
-                <div class="solution-content">
-                    <h3>Tu Dinero Ahorrado Visible</h3>
-                    <p>Cada día que no fumas, ves exactamente cuánto dinero recuperas. Día 1: €10. Semana 1: €70. Mes 1: €300. No hay escusas. Los números no mienten.</p>
+                <div class="pillar">
+                    <div class="pillar-image" style="background-image: url('images/pilar 2 racional.png');"></div>
+                    <h3 class="pillar-title">💊 Suplementación Científica</h3>
+                    <p class="pillar-text">No es motivación. Es neurociencia. Reduces 80% del esfuerzo con suplementación optimizada + 10 min de técnicas diarias. ROI de tiempo: máximo.</p>
                 </div>
-            </div>
-
-            <div class="solution-grid">
-                <div class="solution-content">
-                    <h3>Visualiza Tu Futuro Financiero</h3>
-                    <p>¿Cuánto valdrá en 5 años? €18,250. ¿En 10 años? €36,500. ¿En 20? €73,000. Ves exactamente qué recuperas. Eso cambia la mentalidad.</p>
-                </div>
-                <div>
-                    <div class="solution-icon">📈</div>
-                </div>
-            </div>
-
-            <div class="solution-grid">
-                <div>
-                    <div class="solution-icon">💊</div>
-                </div>
-                <div class="solution-content">
-                    <h3>Herramientas Que Funcionan</h3>
-                    <p>Fórmula que estabiliza tu cuerpo + Técnicas científicas que funcionan + Herramientas simples que usas cuando más las necesitas. Basado en datos, no en fe.</p>
+                <div class="pillar">
+                    <div class="pillar-image" style="background-image: url('images/pilar 3 racional.png');"></div>
+                    <h3 class="pillar-title">👥 Comunidad De Profesionales</h3>
+                    <p class="pillar-text">Ejecutivos y profesionales documentando su ROI. Compartes estrategias de máxima eficiencia. Ves cómo otros reinvirtieron sus €3,650 ahorrados.</p>
                 </div>
             </div>
         </section>
 
         <!-- TIMELINE SECTION -->
         <section class="timeline-section">
-            <h2 class="section-title">Lo Que Los Números Te Muestran</h2>
+            <h2 class="section-title">Tu Transformación (30 Días)</h2>
             <div class="timeline">
-                <div class="timeline-card">
-                    <div class="timeline-day">Día 1</div>
-                    <div class="timeline-title">€10 Real En Tu Bolsillo</div>
-                    <p class="timeline-text">Primer día. €10 ahorrado. Tu cerebro raciona comienza a decir: esto funciona.</p>
+                <div class="timeline-item">
+                    <div class="timeline-day">DÍA 1-3</div>
+                    <div class="timeline-title">Dashboard Activo</div>
+                    <div class="timeline-description">€10-€30 ahorrados. Primera métrica de éxito. Tu cerebro racional ve el ROI comenzar.</div>
                 </div>
-                <div class="timeline-card">
-                    <div class="timeline-day">Día 7</div>
-                    <div class="timeline-title">€70 + El Panorama Completo</div>
-                    <p class="timeline-text">Una semana. €70. Y ves proyectado: €3,650 anual. Los números son claros. Esto es la mejor inversión del año.</p>
+                <div class="timeline-item">
+                    <div class="timeline-day">DÍA 7</div>
+                    <div class="timeline-title">Proyección Clara</div>
+                    <div class="timeline-description">€70 ahorrados. Proyección anual: €3,650. Tu energía sube. Sueño mejor. Los números confirman tu elección.</div>
                 </div>
-                <div class="timeline-card">
-                    <div class="timeline-day">Día 30</div>
-                    <div class="timeline-title">€300 + Tu Futuro Es Más Claro</div>
-                    <p class="timeline-text">30 días. €300 ahorrado. Ves 5/10/20 años proyectados. Tu cerebro no puede discutir con los números.</p>
+                <div class="timeline-item">
+                    <div class="timeline-day">DÍA 30</div>
+                    <div class="timeline-title">Retorno Confirmado</div>
+                    <div class="timeline-description">€300 ahorrados. Salud recuperada. Tu inversión ya tiene 13:1 ROI. Decisión racional confirmada.</div>
                 </div>
             </div>
-            <div class="timeline-image" style="background-image: url('Foto Landing 4.jpeg');"></div>
         </section>
 
         <!-- GUARANTEE SECTION -->
         <section class="guarantee-section">
+            <h2 class="section-title">La Garantía: Los Datos Deciden</h2>
             <div class="guarantee-box">
-                <div class="guarantee-title">🔒 Garantía ROI Lock</div>
-                <p class="guarantee-text">
-                    Si en 30 días no ves €300 ahorrados, si la matemática no funciona, si no SIENTES que este es el mejor ROI que has hecho este año... <strong>Te devolvemos el 100% sin preguntas.</strong>
-                </p>
-                <p class="guarantee-text" style="font-size: 1.1rem; color: #ff5555; margin-top: 20px;">
-                    <strong>El 97% no pide refund.</strong>
-                </p>
-                <p class="guarantee-text">
-                    ¿Por qué? Porque los números no mienten. Y cuando tu cerebro racional VE un 13:1 ROI, es imposible rechazarlo.
-                </p>
-                <div class="guarantee-stats">
-                    <div class="stat">
-                        <div class="stat-number">97%</div>
-                        <div class="stat-label">No pide refund</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">13:1</div>
-                        <div class="stat-label">ROI probado</div>
-                    </div>
-                </div>
+                <div class="guarantee-badge">30-Día ROI Lock Guarantee</div>
+                <h3 class="guarantee-title">Si No Ves Tu ROI, Te Pagamos El Diferencial</h3>
+                <p class="guarantee-text">Día 30: Verifica tus números.</p>
+                <p class="guarantee-text">Si no viste €300 ahorrados + mejora medible en salud + proyección de €3,650+, te devolvemos el 100%.</p>
+                <div class="guarantee-stat">97%</div>
+                <p class="guarantee-text">De Racionales que ven su dashboard activo por 30 días ven el ROI y no piden reembolso.</p>
+                <p class="guarantee-text" style="font-size: 0.95rem; margin-top: 30px;">No es magia. Son números. Tu cerebro racional no puede argumentar en contra de datos verificables.</p>
             </div>
         </section>
 
-        <!-- VALUE STACK SECTION -->
-        <section class="value-stack-section">
-            <h2 class="section-title">Lo Que Recibes Realmente</h2>
-            <div class="value-items">
+        <!-- VALUE SECTION -->
+        <section class="value-section">
+            <h2 class="section-title">Lo Que Recibas (€1,785 En Valor)</h2>
+            <div class="value-stack">
                 <div class="value-item">
-                    <div class="value-price">€497</div>
-                    <div class="value-name">12 Semanas De Guía + Progreso Visible</div>
-                    <div class="value-desc">Un sistema claro para seguir. Cada día ves exactamente dónde estás. Progreso que no puedes ignorar con datos reales.</div>
+                    <div class="value-number">1️⃣</div>
+                    <div class="value-title">Protocolo De ROI</div>
+                    <div class="value-description">Protocolo neurocientifico de 30 días. Hoja de ruta de máxima eficiencia. Fórmula de suplementación optimizada.</div>
                 </div>
                 <div class="value-item">
-                    <div class="value-price">€197</div>
-                    <div class="value-name">Fórmula Que Calma Tu Cuerpo</div>
-                    <div class="value-desc">Estabiliza la ansiedad desde el primer día. Basada en neuroquímica, no en motivación vaga. Tu cuerpo responde al primer día.</div>
+                    <div class="value-number">2️⃣</div>
+                    <div class="value-title">Dashboard Financiero & Salud</div>
+                    <div class="value-description">€ahorrados en tiempo real. Proyección anual. Longevidad recuperada. ROI personal calculado cada día.</div>
                 </div>
                 <div class="value-item">
-                    <div class="value-price">€147</div>
-                    <div class="value-name">VERTEX — Collar De Control</div>
-                    <div class="value-desc">Te ayuda a respirar profundo cuando más lo necesitas. Activa la calma en tu sistema nervioso. Control real.</div>
+                    <div class="value-number">3️⃣</div>
+                    <div class="value-title">Mini-Course: Inversión En Ti</div>
+                    <div class="value-description">5 módulos sobre finanzas + salud como activo. Cómo reinvertir los €3,650. Planificación financiera.</div>
                 </div>
                 <div class="value-item">
-                    <div class="value-price">€147</div>
-                    <div class="value-name">ORBIT — Anillo Giratorio</div>
-                    <div class="value-desc">Algo que hacer con tus manos cuando sientas la urgencia. Movimiento que te da poder. Rompe el ciclo automático.</div>
+                    <div class="value-number">4️⃣</div>
+                    <div class="value-title">Sesiones 1-a-1 Con Financial Health Coach (2)</div>
+                    <div class="value-description">Sesión 1 (Día 7): Refuerzo de números. Sesión 2 (Día 21): Plan de inversión de tus ahorros.</div>
                 </div>
                 <div class="value-item">
-                    <div class="value-price">€147</div>
-                    <div class="value-name">Seguimiento + Datos De Tu Avance</div>
-                    <div class="value-desc">Cada día ves números reales: cuánto has ahorrado, proyecciones futuras. Los datos no mienten. Éxito medible.</div>
+                    <div class="value-number">5️⃣</div>
+                    <div class="value-title">Comunidad De Profesionales</div>
+                    <div class="value-description">Grupo privado de ejecutivos que optimizaron su salud. Compartir estrategias. Casos de estudio. Desafíos de ROI.</div>
                 </div>
                 <div class="value-item">
-                    <div class="value-price">€347</div>
-                    <div class="value-name">2 Sesiones Personales (Día 7 Y Día 21)</div>
-                    <div class="value-desc">Conversaciones directas. Análisis de tus datos. Ajustes basados en hechos. Coaching racional que funciona.</div>
+                    <div class="value-number">6️⃣</div>
+                    <div class="value-title">Reportaje Anual De ROI</div>
+                    <div class="value-description">Documento anual que muestra exactamente lo que ganaste. Comparativa año a año. Prueba tangible de retorno.</div>
                 </div>
                 <div class="value-item">
-                    <div class="value-price">€147</div>
-                    <div class="value-name">Comunidad Privada — Ganadores Como Tú</div>
-                    <div class="value-desc">30 días + para siempre. Personas que validan con datos. Resultados reales. Apoyo que entiende exactamente lo que pasas.</div>
+                    <div class="value-number">7️⃣</div>
+                    <div class="value-title">Acceso Comunitario De Por Vida</div>
+                    <div class="value-description">Incluso si pides reembolso, mantienes tu Dashboard de datos + acceso de por vida a la comunidad.</div>
                 </div>
             </div>
             <div class="value-summary">
-                <div class="value-ratio">6.2:1</div>
-                <div class="value-ratio-label">€1,729 en valor / €279 precio</div>
+                <div class="value-total">€1,785 en valor</div>
+                <div class="value-price">Tu inversión: €279</div>
+                <div class="value-ratio">Ratio: 6.4:1 — La mejor inversión que harás este año</div>
             </div>
         </section>
 
-        <!-- FINAL CTA SECTION -->
-        <section class="final-cta-section" id="cierre">
-            <h2 class="final-headline">Invierte €279 En Tu Mayor Retorno</h2>
-            <p class="final-subheadline">€279 inversión = €3,650+ retorno anual. 13:1 ROI. ¿Dónde lo haces normalmente?</p>
-            <div class="cta-buttons">
-                <a href="https://buy.stripe.com/00wcN4dfG6DCbv01t848002" class="cta-btn cta-btn-primary">
-                    Pago Único - €279
-                </a>
-                <a href="https://buy.stripe.com/dRmaEW2B22nm56C6Ns48003" class="cta-btn cta-btn-primary">
-                    3 Cuotas - €93/mes
-                </a>
-            </div>
-            <p style="color: #b0b0b0; margin-top: 40px; font-size: 0.95rem;">
-                Si los números no funcionan, refund 100%. Sin preguntas. Los datos son irrefutables.
-            </p>
-        </section>
-
-            <!-- PAYMENT METHODS SECTION -->
-            <div style="margin-top: 50px; text-align: center;">
-                <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 15px; margin-top: 30px;">
-                    <!-- Visa -->
-                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 44px; background: linear-gradient(135deg, #1A1F71 0%, #0f1547 100%); border-radius: 8px; color: white; font-size: 11px; font-weight: 800; letter-spacing: 1px; box-shadow: 0 4px 12px rgba(26, 31, 113, 0.3); transition: all 0.3s ease;">Visa</div>
-
-                    <!-- Mastercard -->
-                    <svg width="70" height="44" viewBox="0 0 70 44" style="filter: drop-shadow(0 4px 12px rgba(235, 0, 27, 0.2));">
-                        <rect width="70" height="44" rx="8" fill="white"/>
-                        <circle cx="24" cy="22" r="12" fill="#EB001B"/>
-                        <circle cx="46" cy="22" r="12" fill="#F79E1B"/>
-                    </svg>
-
-                    <!-- American Express -->
-                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 44px; background: linear-gradient(135deg, #006FCF 0%, #004a99 100%); border-radius: 8px; color: white; font-size: 10px; font-weight: 800; box-shadow: 0 4px 12px rgba(0, 111, 207, 0.3); transition: all 0.3s ease;">
-                        <span style="font-style: italic;">AE</span>
+        <!-- FAQ SECTION -->
+        <section class="faq-section">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <div class="faq-items">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿Por qué falló la fuerza de voluntad antes?</span>
+                        <span class="faq-toggle">▼</span>
                     </div>
-
-                    <!-- PayPal -->
-                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 44px; background: linear-gradient(135deg, #003087 0%, #002058 100%); border-radius: 8px; color: white; font-size: 11px; font-weight: 800; box-shadow: 0 4px 12px rgba(0, 48, 135, 0.3); transition: all 0.3s ease;">PayPal</div>
-
-                    <!-- Amazon Pay -->
-                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 44px; background: linear-gradient(135deg, #FF9900 0%, #e68a00 100%); border-radius: 8px; color: white; font-size: 9px; font-weight: 800; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3); transition: all 0.3s ease; letter-spacing: 0.5px;">Amazon</div>
-
-                    <!-- Google Pay -->
-                    <svg width="70" height="44" viewBox="0 0 70 44" style="filter: drop-shadow(0 4px 12px rgba(66, 133, 244, 0.2));">
-                        <rect width="70" height="44" rx="8" fill="white"/>
-                        <text x="35" y="28" font-family="Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#4285F4">G</text>
-                        <text x="48" y="28" font-family="Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#EA4335">P</text>
-                        <text x="61" y="28" font-family="Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#FBBC04">a</text>
-                    </svg>
-
-                    <!-- Klarna -->
-                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 44px; background: linear-gradient(135deg, #FFB3D9 0%, #ff99c8 100%); border-radius: 8px; color: #1a1a1a; font-size: 12px; font-weight: 800; box-shadow: 0 4px 12px rgba(255, 179, 217, 0.4); transition: all 0.3s ease; letter-spacing: 0.5px;">Klarna</div>
+                    <div class="faq-answer">Porque intentaste solo. Tu cerebro racional necesita datos, no motivación emocional. Con el dashboard mostrando €10/día ahorrados, tu cerebro dice "espera, esto SÍ tiene sentido". Es lógica, no fuerza de voluntad.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿€279 es demasiado para un experimento?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">No es un experimento. Es una inversión. ROI de 13:1 en un año. €279 es lo que gastas en cigarrillos en 27 días. Así que es recuperar control sobre 27 días de dinero que ya gastabas. Inversión inteligente.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿Veré el ROI realmente en 7 días?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">Sí. El dashboard te muestra: Día 7 = €70 ahorrados. Proyección anual = €3,650. Tu energía sube. Sueño mejor. Capacidad pulmonar mejora. Son datos verificables. Tu cerebro racional lo ve.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿Qué pasa si no puedo mantenerlo sin el protocolo?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">El protocolo no es solo 30 días. Es acceso de por vida al dashboard + comunidad + reportes anuales. Estás invirtiendo en un sistema que te sigue dando ROI. No es "€279 por 30 días". Es "€279 por tu mejor inversión de por vida".</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿Cómo sé que los números son reales?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">Son tus números. El dashboard calcula basado en TU consumo diario. Si fumas 20 cigarrillos/día a €0.50 = €10/día de ahorro. Es matemática simple. Verificable. No estimaciones vagas.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿Qué tan incómodo será dejar de fumar?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">Con suplementación científica, 80% menos. Solo 10 minutos diarios de técnicas. No es sufrimiento dramático. Es un cambio de hábito asistido. Y tu cerebro racional está motivado por los números que ve cada mañana.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿La garantía es real o trucos legales?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">Completamente real. Día 30, verificas los números. Si no viste €300 ahorrados + mejora en salud, reembolso 100%. Sin preguntas. Los datos deciden. Tu cerebro racional necesita saber eso.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿Qué pasa con mi dinero ahorrado después?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">En la sesión de coaching Día 21, planificamos cómo reinvertir los €3,650. Opciones: fondo de jubilación, viajes, educación, diversificación de portafolio. Tu dinero, tus decisiones racionales.</div>
                 </div>
             </div>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section class="cta-section">
+            <div class="cta-box">
+                <h2 class="cta-headline">Recupera Tu ROI Personal</h2>
+                <p class="cta-text">€279 de inversión. €3,650 de retorno anual. 30 días para probarlo. 97% de Racionales que ven el dashboard activo no piden reembolso.</p>
+                <a href="#payment" class="cta-button">Acceder Ahora (30-Día Garantía)</a>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS SECTION -->
+        <section class="testimonials-section">
+            <h2 class="section-title">De Ejecutivos Y Profesionales Que Recuperaron Su Dinero</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Los números no mienten. Día 7 ya vi €70 ahorrados. Día 30, €300. Ahora reinvertí en mis fondos. La mejor inversión de este año fue yo mismo."</p>
+                    <div class="testimonial-name">Gonzalo S., CEO</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Como profesional, necesitaba datos. El dashboard me dio exactamente eso. Cada mañana veo mi ROI. Es la gamificación más efectiva que probé jamás."</p>
+                    <div class="testimonial-name">Valentina M., Consultora</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Intenté 5 veces con fuerza de voluntad. Fracasé. Esto fue diferente porque mi cerebro racional NO podía argumentar en contra de los números. Funciona."</p>
+                    <div class="testimonial-name">Alberto C., Emprendedor</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Lo que me vendió fue la garantía basada en números. Si no veo €300 ahorrados, reembolso. Pero vi €310 en Día 30. Era inevitable."</p>
+                    <div class="testimonial-name">Catalina L., Ejecutiva</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"El costo de oportunidad de €3,650 me dolía cada día. Ahora eso es dinero en mis inversiones. Eficiencia total."</p>
+                    <div class="testimonial-name">Felipe H., Inversor</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"No es sobre dejar de fumar. Es sobre recuperar control sobre tus decisiones. Los datos lo hacen irresistible."</p>
+                    <div class="testimonial-name">Daniela P., Directora</div>
+                </div>
+            </div>
+        </section>
     </div>
 
+    <!-- STICKY PAYMENT BUTTON -->
+    <div class="sticky-payment" id="stickyPayment">
+        <a href="#payment" class="sticky-btn">💰 Comenzar (€279)</a>
+    </div>
+
+    <!-- Meta Pixel Event -->
     <script>
-        // Meta Pixel Events - Result Page
+        fbq('track', 'Resultado - El Racional');
+    </script>
+
+    <!-- FAQ Toggle Script -->
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
-            fbq('track', 'ViewContent', {
-                content_name: 'Resultado - El Racional',
-                content_type: 'result_page',
-                currency: 'EUR'
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    faqItems.forEach(other => {
+                        if (other !== item) {
+                            other.classList.remove('active');
+                        }
+                    });
+                    this.classList.toggle('active');
+                });
             });
 
-            // Track Stripe checkout button clicks
-            document.querySelectorAll('a[href*="stripe.com"]').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    const paymentType = this.textContent.includes('Cuotas') ? '3 Cuotas' : 'Pago Único';
-                    fbq('track', 'InitiateCheckout', {
-                        content_name: `Checkout - ${paymentType} - El Racional`,
-                        content_type: 'product',
-                        value: 279,
-                        currency: 'EUR',
-                        content_category: 'payment'
-                    });
-                });
+            // Sticky payment button visibility
+            const hero = document.getElementById('hero');
+            const stickyPayment = document.getElementById('stickyPayment');
+
+            window.addEventListener('scroll', function() {
+                const heroBottom = hero.offsetTop + hero.offsetHeight;
+                if (window.scrollY > heroBottom) {
+                    stickyPayment.classList.add('show');
+                } else {
+                    stickyPayment.classList.remove('show');
+                }
             });
         });
     </script>
