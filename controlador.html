@@ -1213,7 +1213,8 @@
         }
 
         function toggleFAQ(button) {
-            const answer = button.nextElementSibling;
+            const faqItem = button.closest('.faq-item');
+            const answer = faqItem.querySelector('.faq-answer');
             button.classList.toggle('active');
             answer.classList.toggle('show');
         }
