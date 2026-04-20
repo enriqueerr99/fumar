@@ -628,6 +628,17 @@
             .pain-cards {
                 grid-template-columns: 1fr;
             }
+
+            #sticky-payment-btn {
+                bottom: 20px !important;
+                right: 20px !important;
+                left: 20px !important;
+                padding: 16px 24px !important;
+                border-radius: 12px !important;
+                font-size: 16px !important;
+                width: auto !important;
+                max-width: none !important;
+            }
         }
 
         @media (max-width: 768px) {
@@ -638,6 +649,13 @@
             .solution-grid {
                 grid-template-columns: 1fr !important;
                 direction: ltr !important;
+            }
+
+            #testimonial-slider {
+                grid-template-columns: 1fr !important;
+                gap: 30px !important;
+                padding: 0 !important;
+                justify-items: center !important;
             }
 
             .hero {
@@ -1127,7 +1145,7 @@
     </div>
 
     <!-- SOCIAL PROOF TESTIMONIALS -->
-    <div style="width: 100%; padding: 60px 40px; background: #0a0a0a;">
+    <div style="width: 100%; padding: 60px 40px;">
         <h3 style="text-align: center; font-size: 24px; font-weight: 700; color: #FFFFFF; margin-bottom: 40px; margin-top: 0;">Gente Que Ya Recuperó El Control</h3>
         <div id="testimonial-slider" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1200px; margin: 0 auto;" onmouseover="clearInterval(window.sliderInterval)" onmouseout="startSliderAutoScroll();">
             <!-- Testimonio 1 -->
@@ -1261,6 +1279,29 @@
                 }
             });
         });
+        // Sticky payment button visibility
+        const paymentBtn = document.getElementById('sticky-payment-btn');
+        const hero = document.querySelector('.hero');
+        const ctaSection = document.getElementById('pago');
+
+        window.addEventListener('scroll', () => {
+            const heroBottom = hero.getBoundingClientRect().bottom;
+            const ctaTop = ctaSection.getBoundingClientRect().top;
+
+            // Show button after hero, hide when CTA is visible
+            if (heroBottom < 0 && ctaTop > window.innerHeight) {
+                paymentBtn.style.display = 'flex';
+            } else {
+                paymentBtn.style.display = 'none';
+            }
+        });
     </script>
+
+    <!-- Sticky Payment Button -->
+    <a href="#pago" id="sticky-payment-btn" style="position: fixed; bottom: 30px; right: 30px; background: linear-gradient(135deg, #FF6B6B 0%, #ff5555 100%); color: #FFFFFF; padding: 14px 24px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 14px; display: none; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(255, 107, 107, 0.4); transition: all 0.3s ease; z-index: 999; gap: 8px;">
+        <span style="font-size: 18px;">↓</span>
+        Ir al Pago
+    </a>
+
 </body>
 </html>
