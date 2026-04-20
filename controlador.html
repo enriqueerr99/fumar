@@ -635,6 +635,11 @@
                 padding: 30px 20px;
             }
 
+            .solution-grid {
+                grid-template-columns: 1fr !important;
+                direction: ltr !important;
+            }
+
             .hero {
                 min-height: 80vh;
                 margin-bottom: 80px;
@@ -752,14 +757,14 @@
                 <div class="solution-image" style="background-image: url('pilar 1 controlador.png'); background-size: cover; background-position: center;"></div>
             </div>
 
-            <div class="solution-grid" style="grid-template-columns: 1fr 1fr; direction: rtl;">
-                <div class="solution-image" style="direction: ltr; background-image: url('pilar 2 controlador.png'); background-size: cover; background-position: center;"></div>
-                <div class="solution-content" style="direction: ltr;">
+            <div class="solution-grid" style="grid-template-columns: 1fr 1fr;">
+                <div class="solution-content">
                     <h3>🔗 Pilar 2: Herramientas Que Funcionan Ya</h3>
                     <p>Técnicas de respiración que calman en 90 segundos. VERTEX (collar) que activa calma inmediata. ORBIT (anillo) para tus manos cuando sientas la urgencia.</p>
                     <p>No es teórico. Es práctico. Funciona ahora mismo. Cuando más lo necesitas, tienes una herramienta que realmente funciona.</p>
                     <p style="color: #ff5555; font-weight: 700; margin-top: 20px;">Esto es lo que te diferencia del resto.</p>
                 </div>
+                <div class="solution-image" style="background-image: url('pilar 2 controlador.png'); background-size: cover; background-position: center;"></div>
             </div>
 
             <div class="solution-grid">
@@ -1118,42 +1123,76 @@
                     </p>
                 </div>
             </div>
-
-            <!-- SOCIAL PROOF SLIDER -->
-            <div style="margin-top: 60px;">
-                <h3 style="text-align: center; font-size: 24px; font-weight: 700; color: #FFFFFF; margin-bottom: 30px;">Gente Que Ya Recuperó El Control</h3>
-                <div id="testimonial-slider" style="display: flex; gap: 20px; overflow-x: auto; padding: 20px 0; scroll-behavior: smooth; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;" onmouseover="clearInterval(window.sliderInterval)" onmouseout="startSliderAutoScroll();">
-                    <!-- Placeholder 1 -->
-                    <div style="flex: 0 0 220px; aspect-ratio: 1; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; scroll-snap-align: start; box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);">
-                        <span style="color: #FFFFFF; font-size: 14px; text-align: center; padding: 20px;">Foto 1</span>
-                    </div>
-                    <!-- Placeholder 2 -->
-                    <div style="flex: 0 0 220px; aspect-ratio: 1; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; scroll-snap-align: start; box-shadow: 0 8px 24px rgba(245, 87, 108, 0.3);">
-                        <span style="color: #FFFFFF; font-size: 14px; text-align: center; padding: 20px;">Foto 2</span>
-                    </div>
-                    <!-- Placeholder 3 -->
-                    <div style="flex: 0 0 220px; aspect-ratio: 1; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; scroll-snap-align: start; box-shadow: 0 8px 24px rgba(79, 172, 254, 0.3);">
-                        <span style="color: #FFFFFF; font-size: 14px; text-align: center; padding: 20px;">Foto 3</span>
-                    </div>
-                    <!-- Placeholder 4 -->
-                    <div style="flex: 0 0 220px; aspect-ratio: 1; background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; scroll-snap-align: start; box-shadow: 0 8px 24px rgba(67, 233, 123, 0.3);">
-                        <span style="color: #FFFFFF; font-size: 14px; text-align: center; padding: 20px;">Foto 4</span>
-                    </div>
-                    <!-- Placeholder 5 -->
-                    <div style="flex: 0 0 220px; aspect-ratio: 1; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; scroll-snap-align: start; box-shadow: 0 8px 24px rgba(250, 112, 154, 0.3);">
-                        <span style="color: #FFFFFF; font-size: 14px; text-align: center; padding: 20px;">Foto 5</span>
-                    </div>
-                    <!-- Placeholder 6 -->
-                    <div style="flex: 0 0 220px; aspect-ratio: 1; background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; scroll-snap-align: start; box-shadow: 0 8px 24px rgba(48, 207, 208, 0.3);">
-                        <span style="color: #FFFFFF; font-size: 14px; text-align: center; padding: 20px;">Foto 6</span>
-                    </div>
-                    <!-- Placeholder 7 -->
-                    <div style="flex: 0 0 220px; aspect-ratio: 1; background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; scroll-snap-align: start; box-shadow: 0 8px 24px rgba(255, 154, 86, 0.3);">
-                        <span style="color: #FFFFFF; font-size: 14px; text-align: center; padding: 20px;">Foto 7</span>
-                    </div>
-                </div>
-            </div>
         </section>
+    </div>
+
+    <!-- SOCIAL PROOF TESTIMONIALS -->
+    <div style="width: 100%; padding: 60px 0; background: #0a0a0a;">
+        <h3 style="text-align: center; font-size: 24px; font-weight: 700; color: #FFFFFF; margin-bottom: 40px; margin-top: 0;">Gente Que Ya Recuperó El Control</h3>
+        <div id="testimonial-slider" style="display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 0 40px; overflow-y: auto; scrollbar-width: none; -ms-overflow-style: none;" onmouseover="clearInterval(window.sliderInterval)" onmouseout="startSliderAutoScroll();">
+            <!-- Testimonio 1 -->
+            <div style="width: 100%; max-width: 400px; text-align: center;">
+                <div style="width: 300px; height: 300px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3); margin: 0 auto 20px;">
+                    <span style="color: #FFFFFF; font-size: 14px; text-align: center; padding: 20px;">Foto 1</span>
+                </div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 600; margin: 0 0 10px 0;">Nombre Persona</h4>
+                <p style="color: #CCCCCC; font-size: 14px; margin: 0; line-height: 1.6;">Testimonio corto sobre cómo el protocolo cambió su vida y sus resultados.</p>
+            </div>
+
+            <!-- Testimonio 2 -->
+            <div style="width: 100%; max-width: 400px; text-align: center;">
+                <div style="width: 300px; height: 300px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(245, 87, 108, 0.3); margin: 0 auto 20px;">
+                    <span style="color: #FFFFFF; font-size: 14px; text-align: center; padding: 20px;">Foto 2</span>
+                </div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 600; margin: 0 0 10px 0;">Nombre Persona</h4>
+                <p style="color: #CCCCCC; font-size: 14px; margin: 0; line-height: 1.6;">Testimonio corto sobre cómo el protocolo cambió su vida y sus resultados.</p>
+            </div>
+
+            <!-- Testimonio 3 -->
+            <div style="width: 100%; max-width: 400px; text-align: center;">
+                <div style="width: 300px; height: 300px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(79, 172, 254, 0.3); margin: 0 auto 20px;">
+                    <span style="color: #FFFFFF; font-size: 14px; text-align: center; padding: 20px;">Foto 3</span>
+                </div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 600; margin: 0 0 10px 0;">Nombre Persona</h4>
+                <p style="color: #CCCCCC; font-size: 14px; margin: 0; line-height: 1.6;">Testimonio corto sobre cómo el protocolo cambió su vida y sus resultados.</p>
+            </div>
+
+            <!-- Testimonio 4 -->
+            <div style="width: 100%; max-width: 400px; text-align: center;">
+                <div style="width: 300px; height: 300px; background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(67, 233, 123, 0.3); margin: 0 auto 20px;">
+                    <span style="color: #FFFFFF; font-size: 14px; text-align: center; padding: 20px;">Foto 4</span>
+                </div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 600; margin: 0 0 10px 0;">Nombre Persona</h4>
+                <p style="color: #CCCCCC; font-size: 14px; margin: 0; line-height: 1.6;">Testimonio corto sobre cómo el protocolo cambió su vida y sus resultados.</p>
+            </div>
+
+            <!-- Testimonio 5 -->
+            <div style="width: 100%; max-width: 400px; text-align: center;">
+                <div style="width: 300px; height: 300px; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(250, 112, 154, 0.3); margin: 0 auto 20px;">
+                    <span style="color: #FFFFFF; font-size: 14px; text-align: center; padding: 20px;">Foto 5</span>
+                </div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 600; margin: 0 0 10px 0;">Nombre Persona</h4>
+                <p style="color: #CCCCCC; font-size: 14px; margin: 0; line-height: 1.6;">Testimonio corto sobre cómo el protocolo cambió su vida y sus resultados.</p>
+            </div>
+
+            <!-- Testimonio 6 -->
+            <div style="width: 100%; max-width: 400px; text-align: center;">
+                <div style="width: 300px; height: 300px; background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(48, 207, 208, 0.3); margin: 0 auto 20px;">
+                    <span style="color: #FFFFFF; font-size: 14px; text-align: center; padding: 20px;">Foto 6</span>
+                </div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 600; margin: 0 0 10px 0;">Nombre Persona</h4>
+                <p style="color: #CCCCCC; font-size: 14px; margin: 0; line-height: 1.6;">Testimonio corto sobre cómo el protocolo cambió su vida y sus resultados.</p>
+            </div>
+
+            <!-- Testimonio 7 -->
+            <div style="width: 100%; max-width: 400px; text-align: center;">
+                <div style="width: 300px; height: 300px; background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(255, 154, 86, 0.3); margin: 0 auto 20px;">
+                    <span style="color: #FFFFFF; font-size: 14px; text-align: center; padding: 20px;">Foto 7</span>
+                </div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 600; margin: 0 0 10px 0;">Nombre Persona</h4>
+                <p style="color: #CCCCCC; font-size: 14px; margin: 0; line-height: 1.6;">Testimonio corto sobre cómo el protocolo cambió su vida y sus resultados.</p>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -1175,37 +1214,37 @@
                 firstFAQButton.classList.add('active');
                 firstFAQButton.nextElementSibling.classList.add('show');
             }
-        });
 
-        // Autoscroll testimonial slider
-        const slider = document.getElementById('testimonial-slider');
-        window.sliderInterval = null;
+            // Autoscroll testimonial slider (vertical)
+            const slider = document.getElementById('testimonial-slider');
+            window.sliderInterval = null;
 
-        function startSliderAutoScroll() {
-            if (window.sliderInterval) return;
+            function startSliderAutoScroll() {
+                if (window.sliderInterval) return;
 
-            window.sliderInterval = setInterval(() => {
-                slider.scrollLeft += 1;
+                window.sliderInterval = setInterval(() => {
+                    slider.scrollTop += 1;
 
-                // Loop infinito suave
-                if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
-                    slider.scrollLeft = 0;
-                }
-            }, 40);
-        }
-
-        if (slider) {
-            startSliderAutoScroll();
-        }
-
-        // CSS para ocultar scrollbar
-        const style = document.createElement('style');
-        style.textContent = `
-            #testimonial-slider::-webkit-scrollbar {
-                display: none;
+                    // Loop infinito suave
+                    if (slider.scrollTop >= slider.scrollHeight - slider.clientHeight) {
+                        slider.scrollTop = 0;
+                    }
+                }, 40);
             }
-        `;
-        document.head.appendChild(style);
+
+            if (slider) {
+                startSliderAutoScroll();
+            }
+
+            // CSS para ocultar scrollbar
+            const style = document.createElement('style');
+            style.textContent = `
+                #testimonial-slider::-webkit-scrollbar {
+                    display: none;
+                }
+            `;
+            document.head.appendChild(style);
+        });
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
