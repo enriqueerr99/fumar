@@ -841,14 +841,10 @@
         <!-- VALUE STACK SECTION -->
         <section class="value-section">
             <h2 class="section-title">¿Qué Realmente Recibes?</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-bottom: 60px; text-align: center;">
-                <div>
-                    <div style="width: 100%; height: 300px; background-size: cover; background-position: center; border-radius: 20px; background-image: url('Caja Cerrada.jpeg'); box-shadow: 0 10px 40px rgba(255, 85, 85, 0.2);"></div>
+            <div style="display: flex; justify-content: center; margin-bottom: 60px; text-align: center; padding: 0 20px;">
+                <div style="max-width: 90%; width: 100%;">
+                    <div style="width: 100%; height: 400px; background-size: cover; background-position: center; border-radius: 20px; background-image: url('recibiras.png'); box-shadow: 0 10px 40px rgba(255, 85, 85, 0.2);"></div>
                     <p style="color: #b0b0b0; margin-top: 20px; font-size: 0.95rem;">Lo que recibes en tu puerta</p>
-                </div>
-                <div>
-                    <div style="width: 100%; height: 300px; background-size: cover; background-position: center; border-radius: 20px; background-image: url('Caja Abierta.png'); box-shadow: 0 10px 40px rgba(255, 85, 85, 0.2);"></div>
-                    <p style="color: #b0b0b0; margin-top: 20px; font-size: 0.95rem;">Dentro: Todo listo para empezar</p>
                 </div>
             </div>
             <div class="value-grid">
@@ -1279,21 +1275,23 @@
                 }
             });
         });
-        // Sticky payment button visibility
-        const paymentBtn = document.getElementById('sticky-payment-btn');
-        const hero = document.querySelector('.hero');
-        const ctaSection = document.getElementById('pago');
 
-        window.addEventListener('scroll', () => {
-            const heroBottom = hero.getBoundingClientRect().bottom;
-            const ctaTop = ctaSection.getBoundingClientRect().top;
+            // Sticky payment button visibility
+            const paymentBtn = document.getElementById('sticky-payment-btn');
+            const hero = document.querySelector('.hero');
+            const ctaSection = document.getElementById('pago');
 
-            // Show button after hero, hide when CTA is visible
-            if (heroBottom < 0 && ctaTop > window.innerHeight) {
-                paymentBtn.style.display = 'flex';
-            } else {
-                paymentBtn.style.display = 'none';
-            }
+            window.addEventListener('scroll', () => {
+                const heroBottom = hero.getBoundingClientRect().bottom;
+                const ctaTop = ctaSection.getBoundingClientRect().top;
+
+                // Show button after hero, hide when CTA is visible
+                if (heroBottom < 0 && ctaTop > window.innerHeight) {
+                    paymentBtn.style.display = 'flex';
+                } else {
+                    paymentBtn.style.display = 'none';
+                }
+            });
         });
     </script>
 
