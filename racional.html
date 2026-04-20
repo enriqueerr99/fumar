@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="€3,650/año en ROI negativo = 13:1 retorno al dejarlo. Protocolo De ROI para dejar de fumar. Dashboard de ahorros. 6.4:1 Value Ratio. Garantía 100%.">
+    <meta name="description" content="€3,650/año en ROI negativo. Protocolo De ROI para dejar de fumar. Dashboard de ahorros. 13:1 retorno. 6.4:1 Value Ratio. Garantía 100%.">
     <meta property="og:title" content="El Racional - Protocolo De ROI | 13:1 Retorno">
-    <meta property="og:description" content="€3,650/año sin retorno. Eso es irracional. Invierte €279 en tu mejor activo: tú mismo.">
+    <meta property="og:description" content="€3,650/año sin retorno. Es irracional. Invierte €279 en tu mejor inversión: tú.">
     <title>El Racional - Protocolo De ROI | Vivirsinhumo</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,7 +56,7 @@
             width: 100%;
             height: 100%;
             background:
-                radial-gradient(circle at 20% 50%, rgba(76, 175, 80, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 20% 50%, rgba(255, 85, 85, 0.05) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(25, 118, 210, 0.03) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
@@ -82,12 +82,6 @@
             animation: fadeInUp 0.8s ease-out;
         }
 
-        .hero-icon {
-            font-size: 120px;
-            margin-bottom: 40px;
-            animation: floatUp 3s ease-in-out infinite;
-        }
-
         .hero-image {
             width: 100%;
             max-width: 500px;
@@ -96,182 +90,206 @@
             background-position: center;
             border-radius: 20px;
             margin-bottom: 50px;
-            box-shadow: 0 20px 60px rgba(76, 175, 80, 0.2);
+            box-shadow: 0 20px 60px rgba(255, 85, 85, 0.2);
             animation: slideInUp 1s ease-out both;
         }
 
-        .hero h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            color: #ffffff;
-            text-shadow: 0 4px 20px rgba(76, 175, 80, 0.3);
+        .timeline-image {
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            margin-top: 20px;
+            box-shadow: 0 10px 30px rgba(255, 85, 85, 0.15);
         }
 
-        .hero p {
-            font-size: 1.3rem;
-            line-height: 1.6;
-            margin-bottom: 40px;
-            color: #b0b0b0;
+        .hero-headline {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-headline-main {
+            background: linear-gradient(135deg, #ff5555 0%, #ff7777 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subheadline {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            line-height: 1.8;
+            margin-bottom: 50px;
             max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-cta {
             display: inline-block;
-            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+            background: linear-gradient(135deg, #ff5555 0%, #cc3333 100%);
             color: white;
             padding: 18px 50px;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 700;
+            border-radius: 50px;
             text-decoration: none;
-            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.05rem;
             border: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 20px 50px rgba(255, 85, 85, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-family: 'Poppins', sans-serif;
+            animation: slideInUp 1s ease-out 0.2s both;
         }
 
         .hero-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(76, 175, 80, 0.4);
+            transform: translateY(-6px);
+            box-shadow: 0 30px 70px rgba(255, 85, 85, 0.4);
         }
 
-        /* ===== PAIN SECTION ===== */
+        /* ===== PAIN POINT SECTION ===== */
         .pain-section {
             margin-bottom: 120px;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
+            animation: fadeInUp 0.8s ease-out 0.1s both;
         }
 
         .section-title {
             font-family: 'Poppins', sans-serif;
-            font-size: 2.8rem;
+            font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 800;
             margin-bottom: 80px;
             text-align: center;
-            color: #ffffff;
+            color: #e0e0e0;
         }
 
         .pain-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
+            margin-bottom: 40px;
         }
 
         .pain-card {
-            background: rgba(76, 175, 80, 0.08);
-            border: 2px solid rgba(76, 175, 80, 0.2);
-            border-radius: 16px;
-            padding: 40px;
+            background: linear-gradient(135deg, rgba(40, 100, 40, 0.15) 0%, rgba(60, 100, 60, 0.05) 100%);
+            border-left: 4px solid #ff5555;
+            border-top: 1px solid rgba(255, 85, 85, 0.3);
+            border-radius: 8px;
+            padding: 30px;
             transition: all 0.3s ease;
-            cursor: pointer;
+            animation: slideInUp 0.8s ease-out 0.2s both;
         }
 
         .pain-card:hover {
-            background: rgba(76, 175, 80, 0.15);
-            border-color: rgba(76, 175, 80, 0.5);
-            transform: translateY(-5px);
-        }
-
-        .pain-card-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            padding-left: 34px;
+            background: linear-gradient(135deg, rgba(40, 100, 40, 0.25) 0%, rgba(60, 100, 60, 0.1) 100%);
         }
 
         .pain-card-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.3rem;
             font-weight: 700;
+            color: #ff7777;
             margin-bottom: 15px;
-            color: #ffffff;
+            font-size: 1.1rem;
         }
 
         .pain-card-text {
             color: #b0b0b0;
-            line-height: 1.6;
+            line-height: 1.7;
             font-size: 0.95rem;
         }
 
         /* ===== SOLUTION SECTION ===== */
         .solution-section {
             margin-bottom: 120px;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
         }
 
-        .solution-pillars {
+        .solution-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 80px;
         }
 
-        .pillar {
-            text-align: center;
-        }
-
-        .pillar-image {
-            width: 100%;
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 16px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.15);
-        }
-
-        .pillar-title {
+        .solution-content h3 {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #ffffff;
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #ff7777;
         }
 
-        .pillar-text {
+        .solution-content p {
             color: #b0b0b0;
-            line-height: 1.6;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .solution-box {
+            background: linear-gradient(135deg, rgba(40, 100, 40, 0.25) 0%, rgba(30, 60, 30, 0.15) 100%);
+            border: 1px solid rgba(255, 85, 85, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .solution-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(255, 85, 85, 0.1) 0%, rgba(255, 85, 85, 0.05) 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 85, 85, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            animation: floatUp 4s ease-in-out infinite;
         }
 
         /* ===== TIMELINE SECTION ===== */
         .timeline-section {
             margin-bottom: 120px;
-            animation: fadeInUp 0.8s ease-out 0.6s both;
         }
 
         .timeline {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 40px;
-            margin-top: 60px;
         }
 
         .timeline-item {
-            background: rgba(76, 175, 80, 0.08);
-            border-left: 4px solid #4CAF50;
-            border-radius: 8px;
-            padding: 30px;
+            background: linear-gradient(135deg, rgba(40, 100, 40, 0.25) 0%, rgba(30, 60, 30, 0.15) 100%);
+            border: 1px solid rgba(255, 85, 85, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            animation: slideInUp 0.8s ease-out 0.3s both;
         }
 
         .timeline-day {
             font-family: 'Poppins', sans-serif;
-            font-size: 0.9rem;
-            color: #4CAF50;
-            font-weight: 700;
-            margin-bottom: 10px;
-            text-transform: uppercase;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #ff5555;
+            margin-bottom: 15px;
         }
 
         .timeline-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.2rem;
             font-weight: 700;
-            margin-bottom: 10px;
-            color: #ffffff;
+            color: #ff7777;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
         }
 
-        .timeline-description {
-            color: #b0b0b0;
+        .timeline-text {
+            color: #a0a0a0;
             font-size: 0.95rem;
             line-height: 1.6;
         }
@@ -279,27 +297,15 @@
         /* ===== GUARANTEE SECTION ===== */
         .guarantee-section {
             margin-bottom: 120px;
-            animation: fadeInUp 0.8s ease-out 0.8s both;
         }
 
         .guarantee-box {
-            background: rgba(76, 175, 80, 0.12);
-            border: 2px solid #4CAF50;
-            border-radius: 16px;
-            padding: 50px;
-            text-align: center;
-        }
-
-        .guarantee-badge {
-            display: inline-block;
-            background: #4CAF50;
-            color: white;
-            padding: 8px 20px;
+            background: linear-gradient(135deg, rgba(255, 85, 85, 0.1) 0%, rgba(25, 118, 210, 0.05) 100%);
+            border: 2px solid #ff5555;
             border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-transform: uppercase;
+            padding: 60px;
+            text-align: center;
+            animation: slideInUp 0.8s ease-out 0.4s both;
         }
 
         .guarantee-title {
@@ -307,295 +313,276 @@
             font-size: 2rem;
             font-weight: 800;
             margin-bottom: 20px;
-            color: #ffffff;
+            color: #ff5555;
         }
 
         .guarantee-text {
-            color: #b0b0b0;
-            font-size: 1.1rem;
+            color: #c0c0c0;
             line-height: 1.8;
-            margin-bottom: 20px;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .guarantee-stat {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #4CAF50;
-            margin: 20px 0;
+        .guarantee-highlight {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ff7777;
+            margin-top: 30px;
         }
 
-        /* ===== VALUE SECTION ===== */
+        /* ===== VALUE STACK SECTION ===== */
         .value-section {
             margin-bottom: 120px;
-            animation: fadeInUp 0.8s ease-out 1s both;
         }
 
-        .value-stack {
+        .value-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px;
-            margin-top: 60px;
+            align-items: stretch;
+            margin-bottom: 40px;
+        }
+
+        .value-list {
+            list-style: none;
+            display: contents;
         }
 
         .value-item {
-            background: rgba(76, 175, 80, 0.08);
-            border: 1px solid rgba(76, 175, 80, 0.2);
+            background: linear-gradient(135deg, rgba(40, 100, 40, 0.25) 0%, rgba(30, 60, 30, 0.15) 100%);
+            border: 1px solid rgba(255, 85, 85, 0.2);
             border-radius: 12px;
-            padding: 30px;
-            transition: all 0.3s ease;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            animation: slideInUp 0.8s ease-out 0.5s both;
         }
 
-        .value-item:hover {
-            background: rgba(76, 175, 80, 0.15);
-            border-color: rgba(76, 175, 80, 0.5);
-            transform: translateY(-5px);
+        .value-item:nth-child(7),
+        .value-item:last-child {
+            grid-column: 1 / -1;
         }
 
-        .value-number {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: #4CAF50;
-            margin-bottom: 10px;
+        .value-icon {
+            font-size: 30px;
+            flex-shrink: 0;
         }
 
-        .value-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.1rem;
+        .value-content h4 {
+            color: #ff7777;
+            margin-bottom: 5px;
             font-weight: 700;
-            margin-bottom: 10px;
-            color: #ffffff;
+            font-size: 1rem;
         }
 
-        .value-description {
-            color: #b0b0b0;
+        .value-content p {
+            color: #a0a0a0;
             font-size: 0.9rem;
-            line-height: 1.6;
+            line-height: 1.5;
+        }
+
+        .value-amount {
+            color: #ff5555;
+            font-weight: 800;
+            font-size: 0.85rem;
         }
 
         .value-summary {
-            background: rgba(76, 175, 80, 0.12);
-            border: 2px solid #4CAF50;
-            border-radius: 12px;
-            padding: 30px;
-            margin-top: 40px;
+            background: linear-gradient(135deg, rgba(255, 85, 85, 0.1) 0%, rgba(25, 118, 210, 0.05) 100%);
+            border: 2px solid #ff5555;
+            border-radius: 20px;
+            padding: 40px;
             text-align: center;
+            grid-column: 1 / -1;
         }
 
         .value-total {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            margin-bottom: 10px;
+        }
+
+        .value-big {
             font-family: 'Poppins', sans-serif;
             font-size: 2.5rem;
             font-weight: 800;
-            color: #ffffff;
+            color: #ff5555;
             margin-bottom: 10px;
         }
 
         .value-price {
             font-family: 'Poppins', sans-serif;
             font-size: 1.3rem;
-            color: #4CAF50;
-            font-weight: 700;
-            margin-bottom: 10px;
+            font-weight: 800;
+            color: #c0c0c0;
+            margin-bottom: 15px;
         }
 
         .value-ratio {
-            color: #b0b0b0;
-            font-size: 1rem;
+            color: #ff7777;
+            font-size: 0.95rem;
+            font-weight: 700;
         }
 
         /* ===== FAQ SECTION ===== */
         .faq-section {
             margin-bottom: 120px;
-            animation: fadeInUp 0.8s ease-out 1.2s both;
         }
 
-        .faq-items {
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr;
             gap: 20px;
-            margin-top: 60px;
         }
 
         .faq-item {
-            background: rgba(76, 175, 80, 0.08);
-            border: 1px solid rgba(76, 175, 80, 0.2);
+            background: linear-gradient(135deg, rgba(40, 100, 40, 0.25) 0%, rgba(30, 60, 30, 0.15) 100%);
+            border: 1px solid rgba(255, 85, 85, 0.2);
             border-radius: 12px;
-            padding: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .faq-item:hover {
-            background: rgba(76, 175, 80, 0.15);
-            border-color: rgba(76, 175, 80, 0.5);
-        }
-
-        .faq-item.active {
-            background: rgba(76, 175, 80, 0.15);
-            border-color: #4CAF50;
+            overflow: hidden;
+            animation: slideInUp 0.8s ease-out 0.3s both;
         }
 
         .faq-question {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #ffffff;
+            width: 100%;
+            padding: 25px;
+            background: transparent;
+            border: none;
+            color: #e0e0e0;
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 85, 85, 0.05);
+        }
+
+        .faq-text {
+            color: #ff7777;
+            flex: 1;
         }
 
         .faq-toggle {
+            color: #ff5555;
             font-size: 1.5rem;
-            color: #4CAF50;
+            font-weight: 800;
+            margin-left: 20px;
             transition: transform 0.3s ease;
+            flex-shrink: 0;
         }
 
-        .faq-item.active .faq-toggle {
-            transform: rotate(180deg);
+        .faq-question.active .faq-toggle {
+            transform: rotate(45deg);
         }
 
         .faq-answer {
-            color: #b0b0b0;
-            line-height: 1.8;
-            margin-top: 15px;
-            display: none;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
         }
 
-        .faq-item.active .faq-answer {
-            display: block;
-            animation: slideDown 0.3s ease;
+        .faq-answer.show {
+            max-height: 1000px;
+        }
+
+        .faq-answer p {
+            padding: 0 25px 25px 25px;
+            color: #b0b0b0;
+            line-height: 1.8;
+            font-size: 0.95rem;
+            margin: 0;
         }
 
         /* ===== CTA SECTION ===== */
         .cta-section {
-            margin-bottom: 80px;
-            animation: fadeInUp 0.8s ease-out 1.4s both;
-        }
-
-        .cta-box {
-            background: linear-gradient(135deg, rgba(76, 175, 80, 0.15) 0%, rgba(25, 118, 210, 0.1) 100%);
-            border: 2px solid #4CAF50;
-            border-radius: 16px;
-            padding: 60px 40px;
+            margin-bottom: 120px;
             text-align: center;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
         }
 
         .cta-headline {
             font-family: 'Poppins', sans-serif;
-            font-size: 2.2rem;
+            font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 800;
             margin-bottom: 20px;
-            color: #ffffff;
+            background: linear-gradient(135deg, #ff5555 0%, #ff7777 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .cta-text {
+        .cta-subheadline {
             font-size: 1.1rem;
-            color: #b0b0b0;
-            margin-bottom: 40px;
-            line-height: 1.8;
+            color: #a0a0a0;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
-            color: white;
-            padding: 20px 60px;
-            border-radius: 12px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(76, 175, 80, 0.4);
-        }
-
-        /* ===== TESTIMONIALS SECTION ===== */
-        .testimonials-section {
-            margin-bottom: 80px;
-            animation: fadeInUp 0.8s ease-out 1.6s both;
-        }
-
-        .testimonials-grid {
+        .payment-buttons {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 700px;
+            margin: 0 auto 50px;
         }
 
-        .testimonial {
-            background: rgba(76, 175, 80, 0.08);
-            border: 1px solid rgba(76, 175, 80, 0.2);
-            border-radius: 12px;
-            padding: 30px;
-            transition: all 0.3s ease;
-        }
-
-        .testimonial:hover {
-            background: rgba(76, 175, 80, 0.15);
-            border-color: rgba(76, 175, 80, 0.5);
-        }
-
-        .testimonial-stars {
-            font-size: 1.2rem;
-            color: #FFD700;
-            margin-bottom: 15px;
-        }
-
-        .testimonial-text {
-            color: #b0b0b0;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-
-        .testimonial-name {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            color: #ffffff;
-            font-size: 0.95rem;
-        }
-
-        /* ===== STICKY PAYMENT BUTTON ===== */
-        .sticky-payment {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            display: none;
-            z-index: 999;
-        }
-
-        .sticky-payment.show {
+        .payment-btn {
             display: flex;
-            animation: slideInUp 0.3s ease;
-        }
-
-        .sticky-btn {
-            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #ff5555 0%, #cc3333 100%);
             color: white;
-            padding: 16px 32px;
-            border-radius: 50px;
-            font-weight: 700;
+            padding: 30px;
+            border-radius: 15px;
             text-decoration: none;
-            cursor: pointer;
             border: none;
-            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.4);
-            transition: all 0.3s ease;
-            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 20px 50px rgba(255, 85, 85, 0.3);
+            font-family: 'Poppins', sans-serif;
         }
 
-        .sticky-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(76, 175, 80, 0.5);
+        .payment-btn:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 30px 70px rgba(255, 85, 85, 0.4);
+        }
+
+        .payment-type {
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .payment-price {
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        .social-proof {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            margin-top: 30px;
+        }
+
+        .social-proof-strong {
+            color: #ff7777;
+            font-weight: 700;
         }
 
         /* ===== ANIMATIONS ===== */
@@ -613,7 +600,7 @@
         @keyframes slideInUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
@@ -622,111 +609,130 @@
         }
 
         @keyframes floatUp {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                max-height: 0;
+            0%, 100% {
+                transform: translateY(0px);
             }
-            to {
-                opacity: 1;
-                max-height: 500px;
+            50% {
+                transform: translateY(-20px);
             }
         }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
             .container {
-                padding: 30px 30px;
-            }
-
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .section-title {
-                font-size: 2.2rem;
-            }
-
-            .pain-cards, .solution-pillars, .timeline, .testimonials-grid {
-                gap: 30px;
-            }
-
-            .cta-box {
                 padding: 40px 30px;
             }
 
-            .sticky-payment {
-                bottom: 20px;
-                right: 20px;
+            .solution-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                grid-template-columns: 1fr;
+            }
+
+            .pain-cards {
+                grid-template-columns: 1fr;
+            }
+
+            #sticky-payment-btn {
+                bottom: 20px !important;
+                right: 20px !important;
+                left: 20px !important;
+                padding: 16px 24px !important;
+                border-radius: 12px !important;
+                font-size: 16px !important;
+                width: auto !important;
+                max-width: none !important;
             }
         }
 
         @media (max-width: 768px) {
             .container {
-                padding: 20px 20px;
+                padding: 30px 20px;
+            }
+
+            .solution-grid {
+                grid-template-columns: 1fr !important;
+                direction: ltr !important;
+            }
+
+            #testimonial-slider {
+                grid-template-columns: 1fr !important;
+                gap: 30px !important;
+                padding: 0 !important;
+                justify-items: center !important;
             }
 
             .hero {
-                min-height: auto;
-                margin-bottom: 60px;
+                min-height: 80vh;
+                margin-bottom: 80px;
             }
 
-            .hero h1 {
+            .hero-headline {
                 font-size: 2rem;
+                margin-bottom: 20px;
             }
 
-            .hero p {
+            .hero-subheadline {
                 font-size: 1rem;
-            }
-
-            .hero-image {
-                max-width: 100%;
-                height: 250px;
-                margin-bottom: 30px;
+                margin-bottom: 40px;
             }
 
             .section-title {
                 font-size: 1.8rem;
-                margin-bottom: 40px;
+                margin-bottom: 50px;
             }
 
-            .pain-cards, .solution-pillars, .timeline, .testimonials-grid {
-                grid-template-columns: 1fr;
+            .pain-cards {
                 gap: 20px;
             }
 
+            .pain-card {
+                padding: 20px;
+            }
+
+            .solution-box {
+                padding: 30px;
+            }
+
+            .solution-image {
+                height: 300px;
+                font-size: 60px;
+            }
+
             .guarantee-box {
-                padding: 30px 20px;
+                padding: 40px 20px;
             }
 
             .guarantee-title {
                 font-size: 1.5rem;
             }
 
-            .cta-box {
-                padding: 30px 20px;
+            .payment-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .payment-btn {
+                padding: 25px;
             }
 
             .cta-headline {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
+        }
 
-            .sticky-payment {
-                bottom: 15px;
-                right: 15px;
-            }
-
-            .sticky-btn {
-                padding: 12px 24px;
-                font-size: 0.9rem;
+        /* Respect reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
             }
         }
     </style>
@@ -734,12 +740,17 @@
 <body>
     <div class="container">
         <!-- HERO SECTION -->
-        <section class="hero" id="hero">
-            <div class="hero-icon">💰</div>
-            <div class="hero-image" style="background-image: url('images/Hero Racional.png');"></div>
-            <h1>Maximiza Tu ROI Personal<br>Dinero + Salud + Años De Vida</h1>
-            <p>€3,650/año es mucho dinero para perder en decisiones irracionales. Este protocolo te muestra el ROI exacto, cada día. Invierte €279 y recupera €3,650+.</p>
-            <a href="#payment" class="hero-cta">Comenzar Con €279 (30-Día Garantía)</a>
+        <section class="hero">
+            <div class="hero-image" style="background-image: url('Hero Racional.png');"></div>
+            <h1 class="hero-headline">
+                <span class="hero-headline-main">Maximiza Tu ROI Personal.</span><br>
+                Dinero, Salud, Años De Vida.
+            </h1>
+            <p class="hero-subheadline">
+                €3,650/año es mucho dinero para perder en decisiones irracionales. Este protocolo te muestra el ROI exacto cada día.<br>
+                Invierte €279 y recupera €3,650+ en ahorros documentados.
+            </p>
+            <a href="#pago" class="hero-cta">Maximizar Mi ROI →</a>
         </section>
 
         <!-- PAIN SECTION -->
@@ -747,63 +758,73 @@
             <h2 class="section-title">La Irracionalidad Te Duele</h2>
             <div class="pain-cards">
                 <div class="pain-card">
-                    <div class="pain-card-icon">💸</div>
-                    <h3 class="pain-card-title">€3,650/Año Tirado</h3>
-                    <p class="pain-card-text">Cada cigarrillo = €0.50-€1. Son 20 al día. No tiene que ser calcular. Lo sabes exactamente. Y duele ver ese dinero desaparecer sin ningún retorno.</p>
+                    <div class="pain-card-title">€3,650/Año Tirado Sin Retorno</div>
+                    <div class="pain-card-text">20 cigarrillos/día a €0.50 = €10/día = €3,650/año. Lo calculaste. Sabes exactamente lo que cuesta. ¿Qué podrías haber hecho con ese dinero?</div>
                 </div>
                 <div class="pain-card">
-                    <div class="pain-card-icon">🧠</div>
-                    <h3 class="pain-card-title">Eres Irracional</h3>
-                    <p class="pain-card-text">Tu identidad es "persona inteligente". Pero fumas. ¿Cómo puedes ser tan inteligente en finanzas y tan irracional en tu mayor activo: tu salud?</p>
+                    <div class="pain-card-title">Tu Identidad Es "Persona Inteligente" Pero Actúas Irracionalmente</div>
+                    <div class="pain-card-text">Eres brillante en finanzas, inversiones, decisiones. Pero fumas. ¿Cómo puedes ser tan inteligente en algunos aspectos y tan irracional en otros?</div>
                 </div>
                 <div class="pain-card">
-                    <div class="pain-card-icon">⚠️</div>
-                    <h3 class="pain-card-title">Perdiste El Control</h3>
-                    <p class="pain-card-text">Intentaste con fuerza de voluntad. Fracasaste. Ahora te preguntas: ¿Qué otros malos cálculos estoy haciendo? ¿Mi dinero? ¿Mis inversiones?</p>
+                    <div class="pain-card-title">Perdiste El Control Sobre Tu Mayor Activo: Tú</div>
+                    <div class="pain-card-text">Intentaste con fuerza de voluntad. Fracasaste. Ahora te preguntas: ¿Qué otros malos cálculos estoy haciendo? ¿Con mi dinero? ¿Con mi salud?</div>
                 </div>
             </div>
         </section>
 
         <!-- SOLUTION SECTION -->
         <section class="solution-section">
-            <h2 class="section-title">La Solución: Sistema Basado En Datos</h2>
-            <div class="solution-pillars">
-                <div class="pillar">
-                    <div class="pillar-image" style="background-image: url('images/pilar 1 racional.png');"></div>
-                    <h3 class="pillar-title">📊 Dashboard De ROI</h3>
-                    <p class="pillar-text">Ves cada mañana: "€10 ahorrados ayer. €70 esta semana. €3,650 proyectado este año". Tu cerebro racional no puede argumentar en contra de los números.</p>
+            <h2 class="section-title">Tu Protocolo: Sistema Basado En Datos</h2>
+
+            <div class="solution-grid">
+                <div class="solution-content">
+                    <h3>📊 Pilar 1: Dashboard De ROI Visible</h3>
+                    <p>Cada mañana ves: "€10 ahorrados ayer. €70 esta semana. €3,650 proyectado este año."</p>
+                    <p>Tu cerebro racional no puede argumentar en contra de los números. Ver €ahorrados cada día es más fuerte que cualquier motivación.</p>
+                    <p style="color: #ff5555; font-weight: 700; margin-top: 20px;">Los datos deciden. No las emociones.</p>
                 </div>
-                <div class="pillar">
-                    <div class="pillar-image" style="background-image: url('images/pilar 2 racional.png');"></div>
-                    <h3 class="pillar-title">💊 Suplementación Científica</h3>
-                    <p class="pillar-text">No es motivación. Es neurociencia. Reduces 80% del esfuerzo con suplementación optimizada + 10 min de técnicas diarias. ROI de tiempo: máximo.</p>
+                <div class="solution-image" style="background-image: url('pilar 1 racional.png'); background-size: cover; background-position: center;"></div>
+            </div>
+
+            <div class="solution-grid" style="grid-template-columns: 1fr 1fr;">
+                <div class="solution-content">
+                    <h3>💊 Pilar 2: Suplementación Científica + Eficiencia</h3>
+                    <p>No es motivación. Es neurociencia. Reduces 80% del esfuerzo con suplementación optimizada.</p>
+                    <p>Solo 10 minutos/día de técnicas. ROI de tiempo: máximo. Cero drama. Todo ciencia.</p>
+                    <p style="color: #ff5555; font-weight: 700; margin-top: 20px;">Eficiencia total. Tu estilo.</p>
                 </div>
-                <div class="pillar">
-                    <div class="pillar-image" style="background-image: url('images/pilar 3 racional.png');"></div>
-                    <h3 class="pillar-title">👥 Comunidad De Profesionales</h3>
-                    <p class="pillar-text">Ejecutivos y profesionales documentando su ROI. Compartes estrategias de máxima eficiencia. Ves cómo otros reinvirtieron sus €3,650 ahorrados.</p>
+                <div class="solution-image" style="background-image: url('pilar 2 racional.png'); background-size: cover; background-position: center;"></div>
+            </div>
+
+            <div class="solution-grid">
+                <div class="solution-content">
+                    <h3>👥 Pilar 3: Comunidad De Profesionales + Coaching</h3>
+                    <p>Ejecutivos y profesionales documentando su ROI. Ves cómo otros reinvirtieron sus €3,650 ahorrados.</p>
+                    <p>Sesiones personales (Día 7, Día 21). Coach que entiende mentalidad racional/empresarial.</p>
+                    <p style="color: #ff5555; font-weight: 700; margin-top: 20px;">Tu red es tu red.</p>
                 </div>
+                <div class="solution-image" style="background-image: url('pilar 3 racional.png'); background-size: cover; background-position: center;"></div>
             </div>
         </section>
 
         <!-- TIMELINE SECTION -->
         <section class="timeline-section">
-            <h2 class="section-title">Tu Transformación (30 Días)</h2>
+            <h2 class="section-title">Tu Transformación: Lo Que Sucede En 30 Días</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-day">DÍA 1-3</div>
                     <div class="timeline-title">Dashboard Activo</div>
-                    <div class="timeline-description">€10-€30 ahorrados. Primera métrica de éxito. Tu cerebro racional ve el ROI comenzar.</div>
+                    <div class="timeline-text">€10-€30 ahorrados. Primera métrica visible. Tu cerebro racional ve el ROI comenzar. Irrefutable.</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-day">DÍA 7</div>
                     <div class="timeline-title">Proyección Clara</div>
-                    <div class="timeline-description">€70 ahorrados. Proyección anual: €3,650. Tu energía sube. Sueño mejor. Los números confirman tu elección.</div>
+                    <div class="timeline-text">€70 ahorrados. Proyección anual: €3,650. Energía sube. Sueño mejora. Los números confirman tu decisión.</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-day">DÍA 30</div>
                     <div class="timeline-title">Retorno Confirmado</div>
-                    <div class="timeline-description">€300 ahorrados. Salud recuperada. Tu inversión ya tiene 13:1 ROI. Decisión racional confirmada.</div>
+                    <div class="timeline-text">€300 ahorrados. Salud recuperada. Tu inversión tiene 13:1 ROI. Tu decisión racional confirmada por datos.</div>
                 </div>
             </div>
         </section>
@@ -812,212 +833,487 @@
         <section class="guarantee-section">
             <h2 class="section-title">La Garantía: Los Datos Deciden</h2>
             <div class="guarantee-box">
-                <div class="guarantee-badge">30-Día ROI Lock Guarantee</div>
-                <h3 class="guarantee-title">Si No Ves Tu ROI, Te Pagamos El Diferencial</h3>
-                <p class="guarantee-text">Día 30: Verifica tus números.</p>
-                <p class="guarantee-text">Si no viste €300 ahorrados + mejora medible en salud + proyección de €3,650+, te devolvemos el 100%.</p>
-                <div class="guarantee-stat">97%</div>
-                <p class="guarantee-text">De Racionales que ven su dashboard activo por 30 días ven el ROI y no piden reembolso.</p>
-                <p class="guarantee-text" style="font-size: 0.95rem; margin-top: 30px;">No es magia. Son números. Tu cerebro racional no puede argumentar en contra de datos verificables.</p>
+                <div class="guarantee-title">30-Día ROI Lock Guarantee</div>
+                <div class="guarantee-text">
+                    Si en 30 días <strong>NO VES</strong> €300 ahorrados, si no hay mejora medible en tu salud, si no ves retorno de €3,650+ proyectado...
+                </div>
+                <div style="background: rgba(255, 85, 85, 0.1); border: 1px solid rgba(255, 85, 85, 0.3); border-radius: 10px; padding: 30px; margin: 30px 0;">
+                    <div style="font-size: 1.3rem; font-weight: 800; color: #ff5555; margin-bottom: 10px;">Te devolvemos todo tu dinero</div>
+                    <div style="color: #a0a0a0;">Sin preguntas. Los datos deciden, no nosotros.</div>
+                </div>
+                <div class="guarantee-highlight">
+                    Lo obvio:<br>
+                    El 97% de Racionales que VEN su dashboard activo por 30 días ven el ROI y no piden reembolso.<br>
+                    Porque cuando VES que ahorras €10/día, tu cerebro de Racional no puede argumentar en contra.
+                </div>
             </div>
         </section>
 
-        <!-- VALUE SECTION -->
+        <!-- VALUE STACK SECTION -->
         <section class="value-section">
-            <h2 class="section-title">Lo Que Recibas (€1,785 En Valor)</h2>
-            <div class="value-stack">
-                <div class="value-item">
-                    <div class="value-number">1️⃣</div>
-                    <div class="value-title">Protocolo De ROI</div>
-                    <div class="value-description">Protocolo neurocientifico de 30 días. Hoja de ruta de máxima eficiencia. Fórmula de suplementación optimizada.</div>
-                </div>
-                <div class="value-item">
-                    <div class="value-number">2️⃣</div>
-                    <div class="value-title">Dashboard Financiero & Salud</div>
-                    <div class="value-description">€ahorrados en tiempo real. Proyección anual. Longevidad recuperada. ROI personal calculado cada día.</div>
-                </div>
-                <div class="value-item">
-                    <div class="value-number">3️⃣</div>
-                    <div class="value-title">Mini-Course: Inversión En Ti</div>
-                    <div class="value-description">5 módulos sobre finanzas + salud como activo. Cómo reinvertir los €3,650. Planificación financiera.</div>
-                </div>
-                <div class="value-item">
-                    <div class="value-number">4️⃣</div>
-                    <div class="value-title">Sesiones 1-a-1 Con Financial Health Coach (2)</div>
-                    <div class="value-description">Sesión 1 (Día 7): Refuerzo de números. Sesión 2 (Día 21): Plan de inversión de tus ahorros.</div>
-                </div>
-                <div class="value-item">
-                    <div class="value-number">5️⃣</div>
-                    <div class="value-title">Comunidad De Profesionales</div>
-                    <div class="value-description">Grupo privado de ejecutivos que optimizaron su salud. Compartir estrategias. Casos de estudio. Desafíos de ROI.</div>
-                </div>
-                <div class="value-item">
-                    <div class="value-number">6️⃣</div>
-                    <div class="value-title">Reportaje Anual De ROI</div>
-                    <div class="value-description">Documento anual que muestra exactamente lo que ganaste. Comparativa año a año. Prueba tangible de retorno.</div>
-                </div>
-                <div class="value-item">
-                    <div class="value-number">7️⃣</div>
-                    <div class="value-title">Acceso Comunitario De Por Vida</div>
-                    <div class="value-description">Incluso si pides reembolso, mantienes tu Dashboard de datos + acceso de por vida a la comunidad.</div>
+            <h2 class="section-title">¿Qué Realmente Recibes?</h2>
+            <div style="display: flex; justify-content: center; margin-bottom: 60px; text-align: center; padding: 0 20px;">
+                <div style="max-width: 500px; width: 100%;">
+                    <div style="width: 100%; aspect-ratio: 3 / 4; background-size: cover; background-position: center; border-radius: 20px; background-image: url('recibiras.png'); box-shadow: 0 10px 40px rgba(255, 85, 85, 0.2);"></div>
+                    <p style="color: #b0b0b0; margin-top: 20px; font-size: 0.95rem;">Lo que recibes en tu puerta</p>
                 </div>
             </div>
-            <div class="value-summary">
-                <div class="value-total">€1,785 en valor</div>
-                <div class="value-price">Tu inversión: €279</div>
-                <div class="value-ratio">Ratio: 6.4:1 — La mejor inversión que harás este año</div>
+            <div class="value-grid">
+                <div class="value-item">
+                    <div class="value-icon">📊</div>
+                    <div class="value-content">
+                        <h4>12 Semanas De Guía + Progreso Visible</h4>
+                        <p>Un camino claro para bajar tu ansiedad. Cada día ves exactamente dónde estás. Progreso que no puedes ignorar.</p>
+                        <div class="value-amount">Valor: €497</div>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">💊</div>
+                    <div class="value-content">
+                        <h4>Fórmula Que Calma Tu Cuerpo</h4>
+                        <p>Estabiliza la ansiedad que sientes. Desde el primer día notarás la diferencia. Tu cuerpo finalmente respira tranquilo.</p>
+                        <div class="value-amount">Valor: €197</div>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">📿</div>
+                    <div class="value-content">
+                        <h4>VERTEX — Collar De Control</h4>
+                        <p>Te ayuda a respirar profundo cuando la ansiedad aparece. Activa la calma en tu cuerpo. Control en cada respiración.</p>
+                        <div class="value-amount">Valor: €147</div>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">💍</div>
+                    <div class="value-content">
+                        <h4>ORBIT — Anillo Giratorio</h4>
+                        <p>Algo que hacer con tus manos cuando sientas la urgencia o ansiedad. Movimiento físico que te da poder. Rompe el ciclo.</p>
+                        <div class="value-amount">Valor: €147</div>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">📈</div>
+                    <div class="value-content">
+                        <h4>Seguimiento + Datos De Tu Avance</h4>
+                        <p>Cada día ves tu ansiedad bajar. Eso es real. Eso es prueba. Nadie puede discutirlo. Tu mejora es medible.</p>
+                        <div class="value-amount">Valor: €147</div>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🎯</div>
+                    <div class="value-content">
+                        <h4>2 Sesiones Personales (Día 7 Y Día 21)</h4>
+                        <p>Conversaciones directas conmigo. Celebramos tu progreso. Ajustamos lo que necesites. Apoyo real cuando más lo necesitas.</p>
+                        <div class="value-amount">Valor: €347</div>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">👥</div>
+                    <div class="value-content">
+                        <h4>Comunidad Privada — Ganadores Como Tú</h4>
+                        <p>30 días + para siempre. Personas que recuperaron su calma. Inspiración real. Apoyo que entiende exactamente lo que pasas.</p>
+                        <div class="value-amount">Valor: €147</div>
+                    </div>
+                </div>
+                <div class="value-summary">
+                    <div class="value-total">Valor Real Del Protocolo Completo</div>
+                    <div class="value-big">€1.729</div>
+                    <div class="value-price">Tu Inversión: €279</div>
+                    <div class="value-ratio" style="color: #ff5555; font-size: 1.5rem; font-weight: 800;">Ahorras €1.450</div>
+                    <p style="color: #a0a0a0; margin-top: 20px; font-size: 0.9rem;">84% de descuento en el valor real. Porque sabemos que funcionará para ti.</p>
+                </div>
             </div>
         </section>
 
         <!-- FAQ SECTION -->
         <section class="faq-section">
-            <h2 class="section-title">Preguntas Frecuentes</h2>
-            <div class="faq-items">
+            <h2 class="section-title">¿Por Qué 97% No Pide Devolución? Las Respuestas Que Necesitas</h2>
+            <div class="faq-container">
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <span>¿Por qué falló la fuerza de voluntad antes?</span>
-                        <span class="faq-toggle">▼</span>
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-text">¿He intentado antes. ¿Por qué esta vez sería diferente?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Porque antes lo intentaste emocionalmente. "Voy a dejar porque debo." No funcionó. Esta vez lo intentas racionalmente: "€3,650/año en ROI negativo es irracional." Ese argumento es diferente. Y el dashboard lo prueba cada día. No es promesa, es matemática pura.</p>
                     </div>
-                    <div class="faq-answer">Porque intentaste solo. Tu cerebro racional necesita datos, no motivación emocional. Con el dashboard mostrando €10/día ahorrados, tu cerebro dice "espera, esto SÍ tiene sentido". Es lógica, no fuerza de voluntad.</div>
                 </div>
+
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <span>¿€279 es demasiado para un experimento?</span>
-                        <span class="faq-toggle">▼</span>
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-text">€279 es mucho para un experimento. ¿Justifica el retorno?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>€279 vs. €3,650. ROI de 13:1 en un año. €279 es el costo de control de calidad. Es lo que gastas en cigarrillos en 27 días. Así que recuperas control sobre 27 días de dinero que ya gastabas. ¿Dónde puedes hacer esa inversión normalmente? No en bolsa, no en bonos. Solo en ti.</p>
                     </div>
-                    <div class="faq-answer">No es un experimento. Es una inversión. ROI de 13:1 en un año. €279 es lo que gastas en cigarrillos en 27 días. Así que es recuperar control sobre 27 días de dinero que ya gastabas. Inversión inteligente.</div>
                 </div>
+
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <span>¿Veré el ROI realmente en 7 días?</span>
-                        <span class="faq-toggle">▼</span>
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-text">¿Veré realmente el ROI en 7 días?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí. Día 7 = €70 ahorrados. Proyección anual = €3,650. Tu energía sube notoriamente. Sueño mejora. Capacidad pulmonar comienza a recuperarse. Son datos verificables. Tu cerebro racional lo VE. No es creencia. Es números.</p>
                     </div>
-                    <div class="faq-answer">Sí. El dashboard te muestra: Día 7 = €70 ahorrados. Proyección anual = €3,650. Tu energía sube. Sueño mejor. Capacidad pulmonar mejora. Son datos verificables. Tu cerebro racional lo ve.</div>
                 </div>
+
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <span>¿Qué pasa si no puedo mantenerlo sin el protocolo?</span>
-                        <span class="faq-toggle">▼</span>
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-text">¿Qué pasa si recaigo? ¿Pierdo todo mi progreso?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tu sistema nervioso se recalibra en 30 días. Si recaes, la ansiedad NO vuelve a lo que era. Tu baseline es más bajo. Además tienes técnicas + comunidad + coach. No estás solo. Y el 97% que SIENTE la diferencia no quiere volver porque los números lo prueban.</p>
                     </div>
-                    <div class="faq-answer">El protocolo no es solo 30 días. Es acceso de por vida al dashboard + comunidad + reportes anuales. Estás invirtiendo en un sistema que te sigue dando ROI. No es "€279 por 30 días". Es "€279 por tu mejor inversión de por vida".</div>
                 </div>
+
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <span>¿Cómo sé que los números son reales?</span>
-                        <span class="faq-toggle">▼</span>
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-text">¿Cuánto tiempo libre necesito cada día?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>10-15 minutos máximo. Técnicas: 10 min (o en momentos de tensión). Tomar suplementos: 2 min. Las sesiones personales son solo DOS (Día 7 y 21, 30 min cada una). Encaja en cualquier vida. Sin sacrificios. Sin cambios radicales.</p>
                     </div>
-                    <div class="faq-answer">Son tus números. El dashboard calcula basado en TU consumo diario. Si fumas 20 cigarrillos/día a €0.50 = €10/día de ahorro. Es matemática simple. Verificable. No estimaciones vagas.</div>
                 </div>
+
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <span>¿Qué tan incómodo será dejar de fumar?</span>
-                        <span class="faq-toggle">▼</span>
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-text">¿No puedo mantenerlo sin el protocolo después de 30 días?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>El protocolo no es solo 30 días. Es acceso de por vida al dashboard + comunidad + reportes anuales. Estás invirtiendo en un sistema que te sigue dando ROI visible cada año. No es "€279 por 30 días". Es "€279 por tu mejor inversión de por vida".</p>
                     </div>
-                    <div class="faq-answer">Con suplementación científica, 80% menos. Solo 10 minutos diarios de técnicas. No es sufrimiento dramático. Es un cambio de hábito asistido. Y tu cerebro racional está motivado por los números que ve cada mañana.</div>
                 </div>
+
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <span>¿La garantía es real o trucos legales?</span>
-                        <span class="faq-toggle">▼</span>
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-text">¿La garantía es real o tiene letra pequeña?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Completamente real. Día 30, verificas los números. Si no viste €300 ahorrados + mejora en tu salud + proyección de €3,650+, reembolso 100%. Sin preguntas. Los datos deciden. Necesitas que sea real para confiar. Lo entiendo.</p>
                     </div>
-                    <div class="faq-answer">Completamente real. Día 30, verificas los números. Si no viste €300 ahorrados + mejora en salud, reembolso 100%. Sin preguntas. Los datos deciden. Tu cerebro racional necesita saber eso.</div>
                 </div>
+
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <span>¿Qué pasa con mi dinero ahorrado después?</span>
-                        <span class="faq-toggle">▼</span>
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-text">¿Qué hago con los €3,650 que ahorro?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>En la sesión Día 21 planificamos exactamente eso. Opciones: Fondo de jubilación (retorno compuesto), Diversificación de portafolio, Viajes/experiencias, Educación. Es tu dinero. Tus decisiones racionales. El protocolo te ayuda a recuperarlo y a SER INTELIGENTE sobre dónde va.</p>
                     </div>
-                    <div class="faq-answer">En la sesión de coaching Día 21, planificamos cómo reinvertir los €3,650. Opciones: fondo de jubilación, viajes, educación, diversificación de portafolio. Tu dinero, tus decisiones racionales.</div>
                 </div>
             </div>
         </section>
 
         <!-- CTA SECTION -->
-        <section class="cta-section">
-            <div class="cta-box">
-                <h2 class="cta-headline">Recupera Tu ROI Personal</h2>
-                <p class="cta-text">€279 de inversión. €3,650 de retorno anual. 30 días para probarlo. 97% de Racionales que ven el dashboard activo no piden reembolso.</p>
-                <a href="#payment" class="cta-button">Acceder Ahora (30-Día Garantía)</a>
+        <section class="cta-section" id="pago">
+            <h2 class="cta-headline">Ya Viste Los Números. Ahora Actúa Racionalmente.</h2>
+            <p class="cta-subheadline">
+                €279 de inversión. €3,650 de retorno anual. 30 días para probarlo. 97% de Racionales que ven el dashboard activo no piden reembolso.
+            </p>
+            <div class="payment-buttons">
+                <a href="https://buy.stripe.com/00wcN4dfG6DCbv01t848002" class="payment-btn" onclick="trackPayment('unique')">
+                    <div class="payment-type">Pago Único</div>
+                    <div class="payment-price">€279</div>
+                </a>
+                <a href="https://buy.stripe.com/dRmaEW2B22nm56C6Ns48003" class="payment-btn" onclick="trackPayment('installments')">
+                    <div class="payment-type">3 Cuotas</div>
+                    <div class="payment-price">€93/mes</div>
+                </a>
             </div>
-        </section>
 
-        <!-- TESTIMONIALS SECTION -->
-        <section class="testimonials-section">
-            <h2 class="section-title">De Ejecutivos Y Profesionales Que Recuperaron Su Dinero</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Los números no mienten. Día 7 ya vi €70 ahorrados. Día 30, €300. Ahora reinvertí en mis fondos. La mejor inversión de este año fue yo mismo."</p>
-                    <div class="testimonial-name">Gonzalo S., CEO</div>
+            <!-- PAYMENT METHODS SECTION -->
+            <div style="margin-top: 50px; text-align: center;">
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 15px; margin-top: 30px;">
+                    <!-- Visa SVG -->
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 44px; background: #1A1F71; border-radius: 8px; box-shadow: 0 4px 12px rgba(26, 31, 113, 0.4); transition: all 0.3s ease; padding: 6px;">
+                        <svg width="32" height="22" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg">
+                            <g fill="none" fill-rule="evenodd">
+                                <rect fill="#FFFFFF" height="16" rx="2" width="24" />
+                                <path d="M2.78773262,5.91443732 C2.26459089,5.62750595 1.6675389,5.39673777 1,5.23659312 L1.0280005,5.1118821 L3.76497922,5.1118821 C4.13596254,5.12488556 4.43699113,5.23650585 4.53494636,5.63071135 L5.12976697,8.46659052 L5.31198338,9.32072617 L6.97796639,5.1118821 L8.77678896,5.1118821 L6.10288111,11.2775284 L4.30396552,11.2775284 L2.78773262,5.91443732 L2.78773262,5.91443732 Z M10.0999752,11.2840738 L8.39882877,11.2840738 L9.46284763,5.1118821 L11.163901,5.1118821 L10.0999752,11.2840738 Z M16.2667821,5.26277458 L16.0354292,6.59558538 L15.881566,6.53004446 C15.5737466,6.40524617 15.1674138,6.28053516 14.6143808,6.29371316 C13.942741,6.29371316 13.6415263,6.56277129 13.6345494,6.82545859 C13.6345494,7.11441463 13.998928,7.3048411 14.5939153,7.58725177 C15.5740257,8.02718756 16.0286384,8.56556562 16.0218476,9.26818871 C16.0080799,10.5486366 14.8460128,11.376058 13.0610509,11.376058 C12.2978746,11.3694253 11.5627918,11.2180965 11.163808,11.0475679 L11.4018587,9.66204513 L11.6258627,9.76066195 C12.1788958,9.99070971 12.5428092,10.0889775 13.221984,10.0889775 C13.7117601,10.0889775 14.2368857,9.89837643 14.2435835,9.48488392 C14.2435835,9.21565125 14.0198586,9.01850486 13.3617074,8.7164581 C12.717789,8.42086943 11.8568435,7.92848346 11.8707973,7.04197926 C11.8780532,5.84042483 13.0610509,5 14.7409877,5 C15.3990458,5 15.9312413,5.13788902 16.2667821,5.26277458 Z M18.5277524,9.0974856 L19.941731,9.0974856 C19.8717762,8.78889347 19.549631,7.31147374 19.549631,7.31147374 L19.4307452,6.77964104 C19.3467437,7.00942698 19.1998574,7.38373457 19.2069273,7.37055657 C19.2069273,7.37055657 18.6678479,8.74290137 18.5277524,9.0974856 Z M20.6276036,5.1118821 L22,11.2839865 L20.4249023,11.2839865 C20.4249023,11.2839865 20.2707601,10.5748181 20.221922,10.3581228 L18.0377903,10.3581228 C17.9746264,10.5221933 17.6807607,11.2839865 17.6807607,11.2839865 L15.8957988,11.2839865 L18.4226343,5.62399144 C18.5977072,5.22341512 18.9059917,5.1118821 19.3117663,5.1118821 L20.6276036,5.1118821 L20.6276036,5.1118821 Z" fill="#1434CB" />
+                            </g>
+                        </svg>
+                    </div>
+
+                    <!-- Mastercard SVG -->
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 44px; background: #252525; border-radius: 8px; box-shadow: 0 4px 12px rgba(37, 37, 37, 0.4); transition: all 0.3s ease; padding: 6px;">
+                        <svg width="32" height="22" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg">
+                            <g fill="none" fill-rule="evenodd">
+                                <rect fill="#252525" height="16" rx="2" width="24" />
+                                <circle cx="9" cy="8" fill="#eb001b" r="5" />
+                                <circle cx="15" cy="8" fill="#f79e1b" r="5" />
+                                <path d="m12 3.99963381c1.2144467.91220633 2 2.36454836 2 4.00036619s-.7855533 3.0881599-2 4.0003662c-1.2144467-.9122063-2-2.36454837-2-4.0003662s.7855533-3.08815986 2-4.00036619z" fill="#ff5f00" />
+                            </g>
+                        </svg>
+                    </div>
+
+                    <!-- American Express SVG -->
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 44px; background: #016FD0; border-radius: 8px; box-shadow: 0 4px 12px rgba(1, 111, 208, 0.4); transition: all 0.3s ease; padding: 6px;">
+                        <svg width="32" height="22" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg">
+                            <g fill="none" fill-rule="evenodd">
+                                <rect fill="#016fd0" height="16" rx="2" width="24" />
+                                <path d="m13.7640663 13.3938564v-5.70139231l10.1475359.00910497v1.57489503l-1.1728619 1.25339231 1.1728619 1.2648839v1.6083094h-1.8726188l-.9951823-1.0981657-.9881105 1.1023204z" fill="#fffffe" />
+                                <path d="m14.4418122 12.7687956v-4.448884h3.7722872v1.02488398h-2.550895v.69569062h2.4900774v1.0078232h-2.4900774v.6833149h2.550895v1.0371713z" fill="#016fd0" />
+                                <path d="m18.1952707 12.7687956 2.087337-2.2270055-2.0874254-2.2217901h1.6156464l1.2754917 1.41003315 1.2791161-1.41003315h1.5461657v.03500552l-2.0428729 2.18678458 2.0428729 2.1638895v.063116h-1.5617237l-1.2981216-1.4241768-1.2847735 1.4241768z" fill="#016fd0" />
+                                <path d="m14.2373481 2.6319558h2.4460552l.8591381 1.95085083v-1.95085083h3.0198453l.5207514 1.46156906.5225194-1.46156906h2.3059447v5.70139227h-12.1865193z" fill="#fffffe" />
+                                <g fill="#016fd0">
+                                    <path d="m14.7004641 3.25135912-1.9740111 4.44517127h1.3539006l.3724199-.89016575h2.0179447l.3721547.89016575h1.3875801l-1.96579-4.44517127zm.1696353 2.55743646.592-1.41507182.5915581 1.41507182z" />
+                                    <path d="m18.2119779 7.69573481v-4.44508288l1.903116.00654144.9792707 2.73272928.9856354-2.73927072h1.8316022v4.44508288l-1.1786077.01043094v-3.05334807l-1.1125746 3.04291713h-1.0758011l-1.1356464-3.05334807v3.05334807z" />
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <!-- PayPal SVG -->
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 44px; background: #003087; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 48, 135, 0.4); transition: all 0.3s ease; padding: 6px;">
+                        <svg width="28" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.901 3.838c.194.064.374.14.54.227.195-1.244-.002-2.092-.675-2.859C12.024.362 10.686 0 8.973 0H3.999a.71.71 0 0 0-.702.6L1.225 13.732c-.04.26.16.494.422.494h3.07l.77-4.883-.023.145c.055-.345.35-.6.7-.6h1.46c2.865 0 5.11-1.164 5.765-4.53.02-.1.037-.197.052-.292a3.55 3.55 0 0 0-.54-.227Z" fill="#253B80" />
+                            <path d="M12.754 3.792a5.164 5.164 0 0 0-.638-.142 8.103 8.103 0 0 0-1.286-.094H6.932a.619.619 0 0 0-.615.526l-.829 5.252-.024.153c.055-.345.35-.6.7-.6h1.46c2.866 0 5.11-1.164 5.765-4.53.02-.1.036-.197.051-.292a3.5 3.5 0 0 0-.686-.274Z" fill="#222D65" />
+                            <path d="M13.44 4.065a8.805 8.805 0 0 1-.05.292c-.657 3.367-2.9 4.53-5.766 4.53h-1.46a.709.709 0 0 0-.7.6l-.747 4.738-.211 1.343a.373.373 0 0 0 .368.432h2.588a.623.623 0 0 0 .615-.525l.026-.131.487-3.093.031-.17a.622.622 0 0 1 .615-.525h.387c2.508 0 4.47-1.018 5.044-3.964.24-1.23.116-2.258-.518-2.98a2.475 2.475 0 0 0-.709-.547Z" fill="#179BD7" />
+                        </svg>
+                    </div>
+
+                    <!-- Amazon Pay SVG -->
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 44px; background: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3); transition: all 0.3s ease; padding: 6px;">
+                        <svg width="25" height="16" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_6080_1729)">
+                                <rect width="25" height="16" rx="1" fill="white"/>
+                                <path d="M24.0385 0H0.961538C0.430495 0 0 0.434148 0 0.969697V15.0303C0 15.5659 0.430495 16 0.961538 16H24.0385C24.5695 16 25 15.5659 25 15.0303V0.969697C25 0.434148 24.5695 0 24.0385 0Z" stroke="#EAEAEA"/>
+                                <mask id="mask0_6080_1729" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="3" y="2" width="19" height="13">
+                                    <path d="M22 2H3V14.8058H22V2Z" fill="white"/>
+                                </mask>
+                                <g mask="url(#mask0_6080_1729)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M19.9156 11.7201C17.9161 13.2082 15.0175 13.9995 12.5213 13.9995C9.02283 13.9995 5.87257 12.6952 3.48882 10.5245C3.30169 10.354 3.46839 10.1213 3.69354 10.2535C6.26533 11.7627 9.44601 12.6718 12.7312 12.6718C14.9472 12.6718 17.3832 12.2081 19.6249 11.2492C19.9626 11.1041 20.2462 11.4734 19.9156 11.7201ZM20.7472 10.7621C21.0032 11.0926 20.4627 12.4534 20.2215 13.0612C20.1483 13.2451 20.305 13.3193 20.4703 13.18C21.5427 12.2752 21.8201 10.379 21.6007 10.105C21.3827 9.83343 19.5076 9.59965 18.363 10.4101C18.1868 10.5346 18.2172 10.707 18.4124 10.6831C19.0569 10.6055 20.4917 10.4316 20.7472 10.7621Z" fill="#FF9900"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.8524 8.62089L19.9336 3.27894C19.9773 3.17069 19.9996 3.09454 19.9996 3.04999C19.9996 2.97384 19.9554 2.93552 19.8671 2.93552H19.3375C19.2363 2.93552 19.1675 2.9518 19.129 2.98341C19.091 3.0155 19.0535 3.08543 19.0155 3.19368L17.7384 6.89466L16.4143 3.19368C16.3763 3.08543 16.3387 3.0155 16.3008 2.98341C16.2628 2.9518 16.1934 2.93552 16.0922 2.93552H15.5247C15.4364 2.93552 15.3922 2.97384 15.3922 3.04999C15.3922 3.09454 15.4141 3.17069 15.4582 3.27894L17.2839 7.81955L17.1044 8.30621C16.997 8.6118 16.8773 8.82157 16.7448 8.93603C16.6123 9.05054 16.4261 9.10755 16.1868 9.10755C16.0794 9.10755 15.9944 9.10082 15.9317 9.08834C15.8686 9.07591 15.821 9.06919 15.7897 9.06919C15.6952 9.06919 15.6477 9.12958 15.6477 9.25026V9.49839C15.6477 9.58743 15.6634 9.65257 15.6952 9.69381C15.7265 9.73499 15.7769 9.76561 15.8467 9.78431C16.0039 9.82838 16.1839 9.85137 16.3858 9.85137C16.7453 9.85137 17.0369 9.75607 17.2606 9.56494C17.4853 9.37477 17.6824 9.05964 17.8524 8.62089Z" fill="#232F3E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.0834 4.24833C9.99179 3.93987 9.8612 3.6774 9.69068 3.46138C9.52065 3.24537 9.31265 3.07964 9.06661 2.96517C8.82107 2.85069 8.54657 2.7937 8.24355 2.7937C7.95998 2.7937 7.68217 2.84734 7.41142 2.95559C7.14023 3.06384 6.88472 3.22286 6.64489 3.43264L6.59789 3.12706C6.57884 3.00014 6.50619 2.93643 6.37986 2.93643H5.96379C5.83797 2.93643 5.77478 3.00014 5.77478 3.12706V9.54717C5.77478 9.67457 5.83797 9.73779 5.96379 9.73779H6.52187C6.6482 9.73779 6.71088 9.67412 6.71088 9.54717V7.31519C7.12079 7.69021 7.60951 7.87794 8.17706 7.87794C8.48573 7.87794 8.76645 7.81568 9.01865 7.69213C9.2708 7.56806 9.48502 7.39468 9.66171 7.17197C9.8384 6.94972 9.97565 6.67961 10.073 6.36109C10.1708 6.04301 10.2197 5.68669 10.2197 5.29246C10.2207 4.90502 10.1746 4.55677 10.0834 4.24833ZM7.95998 7.11451C7.53063 7.11451 7.11462 6.9622 6.71139 6.65662V3.99543C7.10841 3.70278 7.53114 3.5567 7.97897 3.5567C8.83675 3.5567 9.26559 4.15158 9.26559 5.34037C9.26514 6.52345 8.83009 7.11451 7.95998 7.11451Z" fill="#232F3E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.3488 3.16822C14.0647 2.92059 13.6235 2.79654 13.0246 2.79654C12.7283 2.79654 12.4319 2.82384 12.1356 2.87749C11.8387 2.93161 11.5898 3.00298 11.388 3.09206C11.3125 3.12415 11.2616 3.1572 11.2365 3.19217C11.2113 3.22713 11.1985 3.2894 11.1985 3.37801V3.63522C11.1985 3.74969 11.2394 3.80717 11.3215 3.80717C11.3467 3.80717 11.3737 3.80238 11.4023 3.7928C11.4307 3.78322 11.4545 3.77556 11.473 3.76885C11.9589 3.62276 12.4219 3.54948 12.8636 3.54948C13.2417 3.54948 13.5067 3.61941 13.6582 3.75975C13.8097 3.89961 13.8852 4.14101 13.8852 4.48441V5.11377C13.444 5.00552 13.0465 4.95191 12.6931 4.95191C12.1384 4.95191 11.6972 5.09032 11.369 5.3667C11.0413 5.64308 10.877 6.01381 10.877 6.47792C10.877 6.9109 11.0094 7.25525 11.2745 7.51298C11.539 7.77066 11.8985 7.89902 12.3526 7.89902C12.6238 7.89902 12.8964 7.8449 13.1709 7.7371C13.4454 7.62936 13.6957 7.47609 13.9227 7.2792L13.9702 7.59388C13.9892 7.71462 14.0586 7.77495 14.1788 7.77495H14.5853C14.7112 7.77495 14.7748 7.71123 14.7748 7.58434V4.32254C14.7743 3.80094 14.6323 3.41633 14.3488 3.16822ZM13.8852 6.69825C13.6772 6.85723 13.4597 6.97797 13.2327 7.06079C13.0056 7.14367 12.7881 7.18485 12.5801 7.18485C12.334 7.18485 12.145 7.11971 12.0125 6.98943C11.88 6.85916 11.814 6.67334 11.814 6.43142C11.814 5.87822 12.1702 5.60139 12.8826 5.60139C13.0465 5.60139 13.2151 5.61291 13.3884 5.63489C13.5618 5.65743 13.7276 5.6876 13.8852 5.72545V6.69825Z" fill="#232F3E"/>
+                                </g>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_6080_1729">
+                                    <rect width="25" height="16" rx="1" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+
+                    <!-- Google Pay SVG -->
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 44px; background: #F8F8F8; border-radius: 8px; box-shadow: 0 4px 12px rgba(66, 133, 244, 0.35); transition: all 0.3s ease; padding: 6px;">
+                        <svg width="60" height="26" viewBox="170 170 753 400" xmlns="http://www.w3.org/2000/svg">
+                            <g id="G_Pay_Lockup_1_">
+                                <g id="Pay_Typeface_3_">
+                                    <path id="Letter_p_3_" fill="#3C4043" d="M529.3,384.2v60.5h-19.2V295.3H561c12.9,0,23.9,4.3,32.9,12.9c9.2,8.6,13.8,19.1,13.8,31.5c0,12.7-4.6,23.2-13.8,31.7c-8.9,8.5-19.9,12.7-32.9,12.7h-31.7V384.2z M529.3,313.7v52.1h32.1c7.6,0,14-2.6,19-7.7c5.1-5.1,7.7-11.3,7.7-18.3c0-6.9-2.6-13-7.7-18.1c-5-5.3-11.3-7.9-19-7.9h-32.1V313.7z"/>
+                                    <path id="Letter_a_3_" fill="#3C4043" d="M657.9,339.1c14.2,0,25.4,3.8,33.6,11.4c8.2,7.6,12.3,18,12.3,31.2v63h-18.3v-14.2h-0.8c-7.9,11.7-18.5,17.5-31.7,17.5c-11.3,0-20.7-3.3-28.3-10s-11.4-15-11.4-25c0-10.6,4-19,12-25.2c8-6.3,18.7-9.4,32-9.4c11.4,0,20.8,2.1,28.1,6.3v-4.4c0-6.7-2.6-12.3-7.9-17c-5.3-4.7-11.5-7-18.6-7c-10.7,0-19.2,4.5-25.4,13.6l-16.9-10.6C625.9,345.8,639.7,339.1,657.9,339.1z M633.1,413.3c0,5,2.1,9.2,6.4,12.5c4.2,3.3,9.2,5,14.9,5c8.1,0,15.3-3,21.6-9s9.5-13,9.5-21.1c-6-4.7-14.3-7.1-25-7.1c-7.8,0-14.3,1.9-19.5,5.6C635.7,403.1,633.1,407.8,633.1,413.3z"/>
+                                    <path id="Letter_y_3_" fill="#3C4043" d="M808.2,342.4l-64,147.2h-19.8l23.8-51.5L706,342.4h20.9l30.4,73.4h0.4l29.6-73.4H808.2z"/>
+                                </g>
+                                <g id="G_Mark_1_">
+                                    <path id="Blue_500" fill="#4285F4" d="M452.93,372c0-6.26-0.56-12.25-1.6-18.01h-80.48v33L417.2,387c-1.88,10.98-7.93,20.34-17.2,26.58v21.41h27.59C443.7,420.08,452.93,398.04,452.93,372z"/>
+                                    <path id="Green_500_1_" fill="#34A853" d="M400.01,413.58c-7.68,5.18-17.57,8.21-29.14,8.21c-22.35,0-41.31-15.06-48.1-35.36h-28.46v22.08c14.1,27.98,43.08,47.18,76.56,47.18c23.14,0,42.58-7.61,56.73-20.71L400.01,413.58z"/>
+                                    <path id="Yellow_500_1_" fill="#FABB05" d="M320.09,370.05c0-5.7,0.95-11.21,2.68-16.39v-22.08h-28.46c-5.83,11.57-9.11,24.63-9.11,38.47s3.29,26.9,9.11,38.47l28.46-22.08C321.04,381.26,320.09,375.75,320.09,370.05z"/>
+                                    <path id="Red_500" fill="#E94235" d="M370.87,318.3c12.63,0,23.94,4.35,32.87,12.85l24.45-24.43c-14.85-13.83-34.21-22.32-57.32-22.32c-33.47,0-62.46,19.2-76.56,47.18l28.46,22.08C329.56,333.36,348.52,318.3,370.87,318.3z"/>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <!-- Klarna SVG -->
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 44px; background: #FFA8CD; border-radius: 8px; box-shadow: 0 4px 12px rgba(255, 168, 205, 0.4); transition: all 0.3s ease; padding: 6px;">
+                        <svg width="32" height="32" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_23_1479)">
+                                <path d="M0 2.56848C0 1.18777 1.11929 0.0684814 2.5 0.0684814H13.5C14.8807 0.0684814 16 1.18777 16 2.56848V13.5685C16 14.9492 14.8807 16.0685 13.5 16.0685H2.5C1.11929 16.0685 0 14.9492 0 13.5685V2.56848Z" fill="#FFA8CD"/>
+                                <path d="M11.5515 2.95847H9.33281C9.33281 4.78346 8.21622 6.41867 6.51959 7.58667L5.85256 8.05387V2.95847H3.54688V13.1785H5.85256V8.11228L9.66634 13.1785H12.4796L8.81077 8.33129C10.4784 7.11949 11.566 5.23606 11.5515 2.95847Z" fill="#0B051D"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_23_1479">
+                                    <rect width="16" height="16" fill="white" transform="translate(0 0.0684814)"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
                 </div>
-                <div class="testimonial">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Como profesional, necesitaba datos. El dashboard me dio exactamente eso. Cada mañana veo mi ROI. Es la gamificación más efectiva que probé jamás."</p>
-                    <div class="testimonial-name">Valentina M., Consultora</div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Intenté 5 veces con fuerza de voluntad. Fracasé. Esto fue diferente porque mi cerebro racional NO podía argumentar en contra de los números. Funciona."</p>
-                    <div class="testimonial-name">Alberto C., Emprendedor</div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Lo que me vendió fue la garantía basada en números. Si no veo €300 ahorrados, reembolso. Pero vi €310 en Día 30. Era inevitable."</p>
-                    <div class="testimonial-name">Catalina L., Ejecutiva</div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"El costo de oportunidad de €3,650 me dolía cada día. Ahora eso es dinero en mis inversiones. Eficiencia total."</p>
-                    <div class="testimonial-name">Felipe H., Inversor</div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"No es sobre dejar de fumar. Es sobre recuperar control sobre tus decisiones. Los datos lo hacen irresistible."</p>
-                    <div class="testimonial-name">Daniela P., Directora</div>
+            </div>
+
+            <!-- SOCIAL PROOF STATS -->
+            <div style="margin-top: 40px; text-align: center;">
+                <div style="border: 2px solid #ff5555; border-radius: 12px; padding: 20px; display: inline-block; max-width: 400px;">
+                    <p style="font-size: 16px; font-weight: 600; color: #FFFFFF; margin: 0; line-height: 1.6;">
+                        <span style="font-size: 20px; color: #ff5555;">97%</span> que ve su dashboard activo 30 días no pide reembolso<br>
+                        <span style="font-size: 14px; color: #CCCCCC;">Porque VEN su ROI. Los números no mienten.</span>
+                    </p>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- STICKY PAYMENT BUTTON -->
-    <div class="sticky-payment" id="stickyPayment">
-        <a href="#payment" class="sticky-btn">💰 Comenzar (€279)</a>
+    <!-- SOCIAL PROOF TESTIMONIALS -->
+    <div style="width: 100%; padding: 60px 40px;">
+        <h3 style="text-align: center; font-size: 24px; font-weight: 700; color: #FFFFFF; margin-bottom: 40px; margin-top: 0;">Profesionales Que Maximizaron Su ROI</h3>
+        <div id="testimonial-slider" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1200px; margin: 0 auto;" onmouseover="clearInterval(window.sliderInterval)" onmouseout="startSliderAutoScroll();">
+            <!-- Testimonio 1 -->
+            <div style="width: 100%; max-width: 400px; text-align: center;">
+                <div style="width: 100%; aspect-ratio: 3 / 4; background-image: url('reviews/1.png'); background-size: cover; background-position: center; border-radius: 12px; box-shadow: 0 8px 24px rgba(255, 85, 85, 0.3); margin: 0 auto 20px;"></div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 600; margin: 0 0 10px 0;">Gonzalo S.</h4>
+                <p style="color: #CCCCCC; font-size: 14px; margin: 0; line-height: 1.6;">Los números no mienten. Día 7 ya vi €70 ahorrados. Día 30, €300. Ahora reinvertí en mis fondos. La mejor inversión de este año fui yo.</p>
+            </div>
+
+            <!-- Testimonio 2 -->
+            <div style="width: 100%; max-width: 400px; text-align: center;">
+                <div style="width: 100%; aspect-ratio: 3 / 4; background-image: url('reviews/2.png'); background-size: cover; background-position: center; border-radius: 12px; box-shadow: 0 8px 24px rgba(255, 85, 85, 0.3); margin: 0 auto 20px;"></div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 600; margin: 0 0 10px 0;">Valentina M.</h4>
+                <p style="color: #CCCCCC; font-size: 14px; margin: 0; line-height: 1.6;">Como profesional, necesitaba datos. El dashboard me dio exactamente eso. Cada mañana veo mi ROI. Es la gamificación más efectiva que probé.</p>
+            </div>
+
+            <!-- Testimonio 3 -->
+            <div style="width: 100%; max-width: 400px; text-align: center;">
+                <div style="width: 100%; aspect-ratio: 3 / 4; background-image: url('reviews/3.png'); background-size: cover; background-position: center; border-radius: 12px; box-shadow: 0 8px 24px rgba(255, 85, 85, 0.3); margin: 0 auto 20px;"></div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 600; margin: 0 0 10px 0;">Alberto C.</h4>
+                <p style="color: #CCCCCC; font-size: 14px; margin: 0; line-height: 1.6;">Intenté 5 veces con fuerza de voluntad. Fracasé. Esto fue diferente porque mi cerebro racional NO podía argumentar en contra de los números. Funciona.</p>
+            </div>
+
+            <!-- Testimonio 4 -->
+            <div style="width: 100%; max-width: 400px; text-align: center;">
+                <div style="width: 100%; aspect-ratio: 3 / 4; background-image: url('reviews/4.png'); background-size: cover; background-position: center; border-radius: 12px; box-shadow: 0 8px 24px rgba(255, 85, 85, 0.3); margin: 0 auto 20px;"></div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 600; margin: 0 0 10px 0;">Catalina L.</h4>
+                <p style="color: #CCCCCC; font-size: 14px; margin: 0; line-height: 1.6;">Lo que me vendió fue la garantía basada en números. Si no veo €300 ahorrados, reembolso. Pero vi €310 en Día 30. Era inevitable.</p>
+            </div>
+
+            <!-- Testimonio 5 -->
+            <div style="width: 100%; max-width: 400px; text-align: center;">
+                <div style="width: 100%; aspect-ratio: 3 / 4; background-image: url('reviews/5.png'); background-size: cover; background-position: center; border-radius: 12px; box-shadow: 0 8px 24px rgba(255, 85, 85, 0.3); margin: 0 auto 20px;"></div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 600; margin: 0 0 10px 0;">Felipe H.</h4>
+                <p style="color: #CCCCCC; font-size: 14px; margin: 0; line-height: 1.6;">El costo de oportunidad de €3,650 me dolía cada día. Ahora eso es dinero en mis inversiones. Eficiencia total. Recuperé el control.</p>
+            </div>
+
+            <!-- Testimonio 6 -->
+            <div style="width: 100%; max-width: 400px; text-align: center;">
+                <div style="width: 100%; aspect-ratio: 3 / 4; background-image: url('reviews/6.png'); background-size: cover; background-position: center; border-radius: 12px; box-shadow: 0 8px 24px rgba(255, 85, 85, 0.3); margin: 0 auto 20px;"></div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 600; margin: 0 0 10px 0;">Daniela P.</h4>
+                <p style="color: #CCCCCC; font-size: 14px; margin: 0; line-height: 1.6;">No es sobre dejar de fumar. Es sobre recuperar control sobre tus decisiones. Los datos lo hacen irresistible. Ahora soy racional conmigo mismo.</p>
+            </div>
+
+        </div>
     </div>
 
-    <!-- Meta Pixel Event -->
     <script>
-        fbq('track', 'Resultado - El Racional');
-    </script>
+        // Global functions
+        function trackPayment(type) {
+            console.log('Payment type:', type);
+            fbq('track', 'AddToCart', { content_name: 'El Racional - ' + type });
+        }
 
-    <!-- FAQ Toggle Script -->
-    <script>
+        function toggleFAQ(button) {
+            const faqItem = button.closest('.faq-item');
+            const answer = faqItem.querySelector('.faq-answer');
+            button.classList.toggle('active');
+            answer.classList.toggle('show');
+        }
+
+        // Main initialization
         document.addEventListener('DOMContentLoaded', function() {
-            const faqItems = document.querySelectorAll('.faq-item');
+            // Open first FAQ by default
+            const firstFAQButton = document.querySelector('.faq-question');
+            if (firstFAQButton) {
+                const faqItem = firstFAQButton.closest('.faq-item');
+                const answer = faqItem.querySelector('.faq-answer');
+                firstFAQButton.classList.add('active');
+                answer.classList.add('show');
+            }
 
-            faqItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    faqItems.forEach(other => {
-                        if (other !== item) {
-                            other.classList.remove('active');
-                        }
-                    });
-                    this.classList.toggle('active');
+            // Autoscroll testimonial slider (only on mobile)
+            const slider = document.getElementById('testimonial-slider');
+            window.sliderInterval = null;
+
+            function startSliderAutoScroll() {
+                if (window.innerWidth > 768) return;
+                if (window.sliderInterval) return;
+
+                window.sliderInterval = setInterval(() => {
+                    slider.scrollTop += 1;
+                    if (slider.scrollTop >= slider.scrollHeight - slider.clientHeight) {
+                        slider.scrollTop = 0;
+                    }
+                }, 40);
+            }
+
+            if (slider) {
+                startSliderAutoScroll();
+            }
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768 && window.sliderInterval) {
+                    clearInterval(window.sliderInterval);
+                    window.sliderInterval = null;
+                }
+            });
+
+            // Hide scrollbar
+            const style = document.createElement('style');
+            style.textContent = `#testimonial-slider::-webkit-scrollbar { display: none; }`;
+            document.head.appendChild(style);
+
+            // Sticky payment button visibility
+            const paymentBtn = document.getElementById('sticky-payment-btn');
+            const hero = document.querySelector('.hero');
+            const ctaSection = document.getElementById('pago');
+
+            if (paymentBtn && hero && ctaSection) {
+                window.addEventListener('scroll', () => {
+                    const heroBottom = hero.getBoundingClientRect().bottom;
+                    const ctaTop = ctaSection.getBoundingClientRect().top;
+
+                    if (heroBottom < 0 && ctaTop > window.innerHeight) {
+                        paymentBtn.style.display = 'flex';
+                    } else {
+                        paymentBtn.style.display = 'none';
+                    }
+                });
+            }
+
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
                 });
             });
 
-            // Sticky payment button visibility
-            const hero = document.getElementById('hero');
-            const stickyPayment = document.getElementById('stickyPayment');
+            // Meta Pixel Events
+            fbq('track', 'ViewContent', {
+                content_name: 'Resultado - El Racional',
+                content_type: 'result_page',
+                currency: 'EUR'
+            });
 
-            window.addEventListener('scroll', function() {
-                const heroBottom = hero.offsetTop + hero.offsetHeight;
-                if (window.scrollY > heroBottom) {
-                    stickyPayment.classList.add('show');
-                } else {
-                    stickyPayment.classList.remove('show');
-                }
+            // Track Stripe checkout button clicks
+            document.querySelectorAll('a[href*="stripe.com"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const paymentType = this.textContent.includes('Cuotas') ? '3 Cuotas' : 'Pago Único';
+                    fbq('track', 'InitiateCheckout', {
+                        content_name: `Checkout - ${paymentType} - El Racional`,
+                        content_type: 'product',
+                        value: 279,
+                        currency: 'EUR',
+                        content_category: 'payment'
+                    });
+                });
             });
         });
     </script>
+
+    <!-- Sticky Payment Button -->
+    <a href="#pago" id="sticky-payment-btn" style="position: fixed; bottom: 30px; right: 30px; background: linear-gradient(135deg, #ff5555 0%, #cc3333 100%); color: #FFFFFF; padding: 14px 24px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 14px; display: none; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(255, 85, 85, 0.4); transition: all 0.3s ease; z-index: 999; gap: 8px;">
+        <span style="font-size: 18px;">↓</span>
+        Ir al Pago
+    </a>
+
 </body>
 </html>
