@@ -304,6 +304,11 @@ function generateUniqueId() {
 
 function sendLeadNotification(nombre, email, telefono, persona, respuestasLegibles, idUnico) {
   try {
+    if (!nombre || !email || !persona || !idUnico) {
+      Logger.log('❌ Error: Faltan datos para enviar email');
+      return;
+    }
+
     const subject = `🔥 NUEVO LEAD - ${persona.toUpperCase()} - ${nombre}`;
 
     const respuestasHtml = Object.entries(respuestasLegibles)
