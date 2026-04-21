@@ -786,7 +786,8 @@
                     nombre: nombre,
                     email: email,
                     telefono: telefono,
-                    respuestas: selectedAnswers
+                    respuestas: selectedAnswers,
+                    valor: 279
                     // ⚠️ NO enviamos "persona" - será calculado por el servidor
                 };
 
@@ -820,11 +821,13 @@
         }
 
         function showSuccess(nombre, personaDetectada) {
-            // Meta Pixel - Track Lead
+            // Meta Pixel - Track Lead with value
             fbq('track', 'Lead', {
                 content_name: `Quiz Completado - ${personaDetectada}`,
                 content_category: 'quiz_completion',
-                currency: 'EUR'
+                currency: 'EUR',
+                value: 279,
+                content_type: 'product'
             });
 
             // ✨ Redirigir a la página del perfil correspondiente

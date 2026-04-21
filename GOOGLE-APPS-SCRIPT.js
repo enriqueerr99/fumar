@@ -58,6 +58,9 @@ function doPost(e) {
     const respuestasLegibles = convertAnswersToReadable(data.respuestas);
     const respuestas = JSON.stringify(respuestasLegibles);
 
+    // Valor del cliente potencial (279€)
+    const valor = data.valor || 279;
+
     // Añade fila al sheet
     sheet.appendRow([
       timestamp,
@@ -66,13 +69,14 @@ function doPost(e) {
       telefono,
       persona,
       respuestas,
-      idUnico
+      idUnico,
+      valor
     ]);
 
     Logger.log('✅ Lead guardado: ' + nombre + ' (' + persona + ')');
 
     // ✨ ENVÍA NOTIFICACIÓN POR EMAIL
-    sendLeadNotification(nombre, email, telefono, persona, respuestasLegibles, idUnico);
+    sendLeadNotification(nombre, email, telefono, persona, respuestasLegibles, idUnico, valor);
     Logger.log('📧 Email de notificación enviado a ' + NOTIFICATION_EMAIL);
 
     // Respuesta exitosa
@@ -302,14 +306,15 @@ function generateUniqueId() {
 // ✨ FUNCIÓN - Enviar notificación de lead por email
 // ─────────────────────────────────────────────────────────────────────────────
 
-function sendLeadNotification(nombre, email, telefono, persona, respuestasLegibles, idUnico) {
+function sendLeadNotification(nombre, email, telefono, persona, respuestasLegibles, idUnico, valor) {
   try {
     if (!nombre || !email || !persona || !idUnico) {
       Logger.log('❌ Error: Faltan datos para enviar email');
       return;
     }
 
-    const subject = `🔥 NUEVO LEAD - ${persona.toUpperCase()} - ${nombre}`;
+    const valorFormatted = valor ? `€${valor}` : '€279';
+    const subject = `🔥 NUEVO LEAD - ${persona.toUpperCase()} - ${nombre} (${valorFormatted})`;
 
     const respuestasHtml = Object.entries(respuestasLegibles)
       .map(([pregunta, respuesta]) => {
@@ -343,6 +348,7 @@ function sendLeadNotification(nombre, email, telefono, persona, respuestasLegibl
               <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
               <p><strong>Teléfono:</strong> ${telefono}</p>
               <p><strong>Tipo de Persona:</strong> <span class="badge">${persona.toUpperCase()}</span></p>
+              <p><strong>Valor Potencial:</strong> <strong style="color: #ff5555;">${valorFormatted}</strong></p>
               <p><strong>Fecha:</strong> ${new Date().toLocaleString('es-ES')}</p>
             </div>
 
