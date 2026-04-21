@@ -9,6 +9,7 @@
 // CONFIGURACIÓN
 const SHEET_ID = '1zFGo1AsoQstAP_iyhg1fVQ-hYeRH63bnbMRIjyX2WnA';
 const SHEET_NAME = 'Hoja 1';
+const NOTIFICATION_EMAIL = 'enrique.rodriguezdrop@gmail.com';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // DATOS DE REFERENCIA - Array de preguntas y opciones
@@ -69,6 +70,10 @@ function doPost(e) {
     ]);
 
     Logger.log('✅ Lead guardado: ' + nombre + ' (' + persona + ')');
+
+    // ✨ ENVÍA NOTIFICACIÓN POR EMAIL
+    sendLeadNotification(nombre, email, telefono, persona, respuestasLegibles, idUnico);
+    Logger.log('📧 Email de notificación enviado a ' + NOTIFICATION_EMAIL);
 
     // Respuesta exitosa
     return ContentService
@@ -291,6 +296,85 @@ function generateUniqueId() {
   const timestamp = Date.now().toString(36);
   const randomStr = Math.random().toString(36).substring(2, 8);
   return `FUMAR-${timestamp}-${randomStr}`.toUpperCase();
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// ✨ FUNCIÓN - Enviar notificación de lead por email
+// ─────────────────────────────────────────────────────────────────────────────
+
+function sendLeadNotification(nombre, email, telefono, persona, respuestasLegibles, idUnico) {
+  try {
+    const subject = `🔥 NUEVO LEAD - ${persona.toUpperCase()} - ${nombre}`;
+
+    const respuestasHtml = Object.entries(respuestasLegibles)
+      .map(([pregunta, respuesta]) => {
+        const respuestaStr = Array.isArray(respuesta) ? respuesta.join(', ') : respuesta;
+        return `<tr><td style="padding: 8px; border-bottom: 1px solid #eee;"><strong>${pregunta}</strong></td><td style="padding: 8px; border-bottom: 1px solid #eee;">${respuestaStr}</td></tr>`;
+      })
+      .join('');
+
+    const htmlBody = `
+      <html>
+        <head>
+          <style>
+            body { font-family: Arial, sans-serif; color: #333; }
+            .header { background: linear-gradient(135deg, #ff5555 0%, #ff8888 100%); color: white; padding: 20px; border-radius: 8px; }
+            .content { padding: 20px; background: #f9f9f9; border-radius: 8px; margin-top: 15px; }
+            .lead-info { background: white; padding: 15px; border-radius: 6px; margin-bottom: 15px; border-left: 4px solid #ff5555; }
+            table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+            .badge { display: inline-block; background: #ff5555; color: white; padding: 6px 12px; border-radius: 20px; font-weight: bold; }
+            .footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; color: #888; font-size: 0.9em; }
+          </style>
+        </head>
+        <body>
+          <div class="header">
+            <h2>🔥 NUEVO LEAD CAPTURADO</h2>
+            <p style="margin: 0;">Lead ID: ${idUnico}</p>
+          </div>
+
+          <div class="content">
+            <div class="lead-info">
+              <p><strong>Nombre:</strong> ${nombre}</p>
+              <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+              <p><strong>Teléfono:</strong> ${telefono}</p>
+              <p><strong>Tipo de Persona:</strong> <span class="badge">${persona.toUpperCase()}</span></p>
+              <p><strong>Fecha:</strong> ${new Date().toLocaleString('es-ES')}</p>
+            </div>
+
+            <h3>Respuestas del Quiz</h3>
+            <table>
+              <thead style="background: #f0f0f0;">
+                <tr>
+                  <th style="text-align: left; padding: 10px;">Pregunta</th>
+                  <th style="text-align: left; padding: 10px;">Respuesta</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${respuestasHtml}
+              </tbody>
+            </table>
+
+            <div class="footer">
+              <p>Este email fue generado automáticamente por el sistema de captación de leads de VivirSinHumo.</p>
+              <p><a href="https://docs.google.com/spreadsheets/d/${SHEET_ID}/edit">Ver todos los leads en la Sheet</a></p>
+            </div>
+          </div>
+        </body>
+      </html>
+    `;
+
+    GmailApp.sendEmail(
+      NOTIFICATION_EMAIL,
+      subject,
+      `Nuevo lead: ${nombre} (${persona})`,
+      {
+        htmlBody: htmlBody,
+        noReply: false
+      }
+    );
+  } catch (error) {
+    Logger.log('❌ Error enviando email: ' + error.toString());
+  }
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
